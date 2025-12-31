@@ -18,21 +18,21 @@ const categorias = [
     mostrarNoMenu: true
   },
   {
-    id: "emagrecimento",
-    nome: "Manipulados para emagrecimento",
-    nomeMenu: "Emagrecimento",
+    id: "pnl",
+    nome: "Treinamentos em PNL",
+    nomeMenu: "PNL",
     mostrarNoMenu: true
   },
   {
-    id: "desempenhofisico",
-    nome: "Manipulados para desempenho físico",
-    nomeMenu: "Desempenho físico",
+    id: "oratoria",
+    nome: "Treinamentos em Oratória",
+    nomeMenu: "Oratória",
     mostrarNoMenu: true
   },
   {
-    id: "saude",
-    nome: "Manipulados para saúde e bem-estar",
-    nomeMenu: "Saúde",
+    id: "palestas",
+    nome: "Palestras",
+    nomeMenu: "Palestras",
     mostrarNoMenu: true
   }
   
@@ -45,19 +45,19 @@ const categorias = [
 const produtos = [
   {
     id: "1",
-    nome: "Emagrecimento",
-    categoria: "emagrecimento",
+    nome: "Treinamento em PNL básico",
+    categoria: "pnl",
     preco: 90.00,
     imagem: "assets/img/imgpoteteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
     descricao: {
-      resumo: "Deseja melhorar o humor e dormir de forma tranquila?",
+      resumo: "Treinamento em PNL Básico",
       
        oQueE: `
       
-      O 5-HTP é um precursor da serotonina...otonina...O 5-HTP é um precursor da
+      Treinamento em PNL busca...
       
       `,      
       composicao: "5-Hidroxitriptofano 50mg...",
@@ -74,15 +74,15 @@ const produtos = [
 
  {
     id: "2",
-    nome: "Emagrecimento1",
-    categoria: "emagrecimento",
+    nome: "Treinamento em PNL Intermediário",
+    categoria: "pnl",
     preco: 90.00,
     imagem: "assets/img/imgpoteteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
     descricao: {
-      resumo: "Deseja melhorar o humor e dormir de forma tranquila?",
+      resumo: "Treinamento em PNL busca...",
       oQueE: "O 5-HTP é um precursor da serotonina...",
       composicao: "5-Hidroxitriptofano 50mg...",
       comoUsar: "Tomar 1 cápsula antes de dormir...",
