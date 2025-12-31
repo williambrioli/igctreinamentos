@@ -1,0 +1,1155 @@
+/* ============================================================
+   RESET BÁSICO
+   ============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FFFFFF;
+  color: #333;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+
+/* ============================================================
+   VARIÁVEIS DE CORES (PALETA DA FARMÁCIA)
+   ============================================================ */
+:root {
+  --azul-escuro: #1B7396;   /* institucional */
+  --azul-medio:  #01A1DB;   /* destaque */
+  --turquesa:    #2CCCD3;   /* apoio / promoção */
+  --coral:       #C49154;   /* CTA suave */
+  --rosa-claro:  #EBEBEB;   /* fundo leve */
+
+  --branco: #FFFFFF;
+  --cinza-claro: #F5F5F5;
+  --cinza: #777;
+  --preto: #000000;
+}
+
+/* ============================================================
+   CONTAINER PADRÃO
+   ============================================================ */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   BANNER DINÂMICO
+   ============================================================ */
+.banner {
+  background-color: var(--branco);
+  padding: 48px 0;
+  margin-bottom: 8px; /* 👈 ESPAÇO ENTRE DESTAQUES E CATEGORIAS */
+}
+
+.banner h2 {
+  margin-bottom: 16px;
+  color: var(--azul-escuro);
+}
+
+
+/* ============================================================
+   CARD DE PRODUTO
+   ============================================================ */
+.card {
+  background-color: transparent; /* 🔹 remove fundo branco */
+  border: 1.3px solid var(--cinza); /* 🔹 contorno azul */
+  border-radius: 16px;
+
+  box-shadow: none; /* 🔹 remove sombra pesada */
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  width: 100%;
+  max-width: 100%;
+}
+
+
+.card h3 {
+  font-size: 1rem;
+  color: var(--preto);
+  font-weight: normal;
+}
+
+.card .preco {
+  font-weight: bold;
+  color: var(--preto);
+}
+
+.texto-parcelamento {
+  display: block;
+  margin-top: 4px;
+
+  font-size: 0.8rem;
+  color: #777; /* cinza elegante */
+}
+
+.card .descricao {
+  font-size: 0.85rem;
+  color: var(--cinza);
+  display: none; /* JS controla */
+
+   /* 🔽 ISSO RESOLVE O PROBLEMA PARA O TEXTO SEGUIR TAMENHO DO CARD */
+  width: 100%;
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* ===========================
+   BOTÕES GENÉRICOS DO CARD
+   =========================== */
+
+.card button:not(.btn-comprar) {
+  padding: 0;
+  border: none;
+  background-color: #F5F5F5;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+}
+
+.descricao {
+  display: inline-block;
+  margin: 6px 0 10px;
+  padding: 6px 12px;
+
+  font-size: 0.85rem;
+  color: #666;
+
+  border: 1px solid #ccc;
+  border-radius: 14px;
+
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.descricao:hover {
+  background-color: #f3f3f3;
+  border-color: #999;
+  color: #333;
+}
+
+/* ===========================
+   ESCONDER DESCRIÇÃO LONGA NO CARD
+   =========================== */
+
+.card .descricao {
+  display: none;
+}
+
+/* ============================================================
+ ICONE DE LANÇAMENTO PRODUTO NO CARD
+   ============================================================ */
+.card {
+  position: relative; /* obrigatório para posicionar o selo */
+}
+
+.badge-lancamento {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+
+  background-color: #e8f4f8;
+  color: #0a6fa1;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  padding: 4px 8px;
+  border-radius: 12px;
+
+  border: 1px solid #b9dcea;
+}
+
+
+
+/* ============================================================
+   AÇÕES DO CARD (QUANTIDADE + COMPRAR LADO A LADO) 
+   ============================================================ */
+
+.card-acoes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* QUANTIDADE (formato oval) */
+.quantidade {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dcdcdc;
+  border-radius: 999px;
+  padding: 4px 8px;   /* 🔽 mais fino */
+  gap: 8px;           /* 🔽 menos espaço interno */
+  background: transparent;
+}
+
+.quantidade button {
+  background: none;
+  border: none;
+  font-size: 16px;      /* 🔽 menor */
+  font-weight: 400;     /* 🔽 não é bold */
+  cursor: pointer;
+  color: #333;
+  width: 20px;
+  line-height: 1;
+}
+.quantidade span {
+  font-size: 14px;
+  min-width: 16px;
+  text-align: center;
+}
+
+/* BOTÃO COMPRAR (pill verde) */
+.btn-comprar {
+  flex: 1;                 /* 🔹 ocupa mais espaço que a quantidade */
+  background-color: #2e8b2d;
+  color: #fff;
+  border: none;
+  border-radius: 999px;    /* 🔹 pill perfeito */
+  padding: 14px 24px;      /* 🔹 MAIOR */
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-comprar:hover {
+  background-color: #256f24;
+}
+
+
+.card img {
+  width: 100%;
+  height: 220px;        /* altura fixa no desktop */
+  object-fit: contain; /* NÃO corta, só enquadra */
+  background-color: transparent; /* 🔹 remove fundo branco */;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background-color: var(--azul-escuro);
+  color: var(--branco);
+  padding: 32px 0;
+}
+
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;       /* 🔥 permite quebrar linha */
+  gap: 32px;             /* espaço entre blocos */
+  align-items: flex-start;
+}
+
+
+@media (min-width: 1024px) {
+  .footer-info,
+  .footer-social,
+  .footer-mapa {
+    flex: 1;
+  }
+
+  .footer-whatsapp {
+    flex: 0 0 200px;
+  }
+}
+
+
+.footer-info,
+.footer-social,
+.footer-whatsapp {
+  min-width: 200px;
+}
+
+.footer-info {
+  text-align: left;
+}
+
+.footer-info h3 {
+  margin-bottom: 8px;
+}
+
+.footer-info p {
+  margin-bottom: 16px;
+  color: #FFFFFF;
+  max-width: 420px;
+}
+
+.footer-info .footer-social {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-social a {
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-social a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* ============================================================
+   RESPONSIVO MOBILE
+   ============================================================ */
+@media (max-width: 768px) {
+  
+.header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+
+  /* 🔽 ADICIONE ISTO */
+  .card img {
+    height: 300px; /* menor no celular */
+  }
+
+   
+   .header-bottom-content {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  margin: 0 auto;
+}
+
+ .header-bottom-content {
+  flex-direction: column;
+  gap: 16px;
+}
+
+.category-box,
+.search-box {
+  max-width: 100%;
+}  
+
+.card-acoes {
+    gap: 10px;
+  }
+
+  .btn-comprar {
+    font-size: 0.95rem;
+  }   
+
+   /* ============================================================
+   MOBILE – SCROLL HORIZONTAL (TODAS AS SESSÕES)
+   ============================================================ */
+
+  
+  .card {
+    flex: 0 0 99%;
+    max-width: 99%;
+    scroll-snap-align: start;
+  }
+
+  /* Destaques iguais às categorias */
+  .banner-cards {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .banner-cards .card {
+    flex: 0 0 99%;
+    max-width: 99%;
+    scroll-snap-align: start;
+  }
+
+/* mobile: setas somem */
+
+  .banner-slider .arrow {
+    display: none;
+  }
+
+  .banner-track .card {
+    flex: 0 0 99%;
+    max-width: 99%;
+  }
+   
+}
+
+/* ============================================================
+   SESSÕES DE CATEGORIA (FULL WIDTH COM ESPAÇO)
+   ============================================================ */
+
+.categoria-section {
+  width: 100%;
+  background-color: var(--branco); /* MESMO CINZA DOS DESTAQUES */
+  padding: 32px 0; /* 🔹 espaço interno da sessão */
+  margin-bottom: 8px; /* 🔹 espaço ENTRE uma sessão e outra */
+}
+
+/* título da categoria */
+.categoria-section h2 {
+  margin-bottom: 24px;
+  color: var(--azul-escuro);
+}
+
+/* ============================================================
+   SLIDER PROFISSIONAL – LIMPO E SEM CORTE
+   ============================================================ */
+
+.slider {
+  position: relative;
+  margin: 0 auto;
+  width: fit-content;
+  max-width: 100%;
+}
+
+/* ===== TRACK ===== */
+.slider-track {
+  display: flex;
+  gap: 16px;
+  overflow: hidden;
+}
+
+/* CARD FIXO */
+.slider-track .card {
+  flex: 0 0 260px;
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 1024px) {
+  .slider-track {
+    width: calc((260px * 4) + (16px * 3)); /* 4 cards inteiros */
+  }
+}
+
+/* ===== SETAS ===== */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.arrow.left {
+  left: -14px;
+}
+
+.arrow.right {
+  right: -14px;
+}
+
+/* ===== DOTS ===== */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.slider-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #cfcfcf;
+}
+
+.slider-dots span.active {
+  background: var(--azul-escuro);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .slider-track {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .slider-track .card {
+    flex: 0 0 99%;
+    scroll-snap-align: start;
+  }
+
+  .arrow {
+    display: none;
+  }
+}
+
+
+/* ============================================================
+   TÍTULO DAS SEÇÕES — AJUSTE APENAS NO MOBILE
+   ============================================================ */
+@media (max-width: 768px) {
+
+  .categoria-section h2 {
+    font-size: 1.2rem;        /* diminui o tamanho */
+    white-space: nowrap;      /* força uma única linha */
+    overflow: hidden;         /* esconde excesso */
+    text-overflow: ellipsis;  /* adiciona "..." se for muito longo */
+    margin-bottom: 12px;
+  }
+
+}
+
+/* ============================================================
+   SLIDER DE PROPAGANDA — PROFISSIONAL
+   ============================================================ */
+
+.ads-slider {
+  width: 100%;
+  background-color: transparent;
+  padding: 0px;          /* 🔥 ESSENCIAL padding: 0 16px;  */
+  margin-top: 24px; /* 👈 ESPAÇO ENTRE HEADER E SLIDE */
+}
+
+/* container alinhado com o site */
+.ads-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+       /* mesmo raio dos cards border-radius: 16px; */
+}
+
+/* trilha */
+.ads-track {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+/* imagens */
+.ads-track img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: contain; /* 🔹 NÃO CORTA */
+  background-color: transparent;
+  
+}
+
+/* desktop */
+@media (min-width: 769px) {
+  .ads-track img {
+    height: 700px;
+    
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .ads-track img {
+    height: 200px;
+    
+  }
+}
+
+/* ============================================================
+   DOTS — SLIDER DE PROPAGANDA
+   ============================================================ */
+
+.ads-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+  margin-bottom: 6px; /* 👈 RESPIRO AQUI */
+}
+
+.ads-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #cfcfcf;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ads-dots span.active {
+  background-color: #0b6c8f; /* azul da marca */
+  transform: scale(1.2);
+}
+
+/* ============================================================
+   BARRA DE PROGRESSO DO SLIDER DE ADS
+   ============================================================ */
+
+.ads-progress {
+  width: 45%; /* 🔽 55% menor que a imagem */
+  height: 2px; /* mantém fininha */
+  background-color: rgba(0,0,0,0.08);
+  margin: 8px auto 6px; /* 🔥 centraliza */
+  overflow: hidden;
+  border-radius: 999px;
+}
+
+.ads-progress-bar {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background-color: var(--azul-escuro); /* cor do site */
+}
+
+/* ============================================================
+   MAPA NO FOOTER
+   ============================================================ */
+
+.footer-mapa {
+  flex: 1;
+  min-width: 300px;
+}
+
+.footer-mapa h3 {
+  margin-bottom: 8px;
+}
+
+.mapa-acoes {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  justify-content: flex-start; /* ou center, se preferir */
+}
+
+.mapa-acoes a {
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.mapa-acoes a:hover {
+  text-decoration: underline;
+}
+
+
+/* ============================================================
+   ÍCONES DE REDES SOCIAIS NO FOOTER
+   ============================================================ */
+
+.footer-social .social-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-social .social-link svg {
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+}
+
+.footer-social .social-link:hover {
+  opacity: 0.85;
+}
+
+/* ============================================================
+   RODAPÉ — INFORMAÇÕES LEGAIS
+   ============================================================ */
+
+.footer-legal {
+  margin-top: 24px;
+  padding: 16px 0;
+  text-align: center;
+  color: #ffffff;
+  font-size: 0.8rem; /* texto menor */
+  line-height: 1.5;
+}
+
+.footer-divider {
+  border: none;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.4); /* branco discreto */
+  margin: 0 auto 16px;
+  width: 40%;
+}
+
+.footer-legal-title {
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+
+@media (max-width: 768px) {
+  .footer-legal {
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+    font-size: 0.6rem; /* texto menor */
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding-bottom: 110px; /* espaço para o botão flutuante */
+  }
+}
+
+/* ================= PRODUTO ================= */
+
+.produto-card {
+  display: flex;
+  gap: 32px;
+  margin: 40px 0;
+}
+
+
+.produto-imagem {
+  position: relative;
+}
+
+/* IMAGEM DO PRODUTO — DESKTOP */
+@media (min-width: 769px) {
+  .produto-imagem img {
+    width: 300px;
+    border-radius: 16px;
+  }
+}
+
+
+/* ================================
+   BOTÃO DE VÍDEO (PREVIEW)
+   ================================ */
+
+.produto-video-btn {
+  position: absolute;
+  bottom: 16px;
+  right:  16px;
+
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  padding: 0;
+
+  border: none;
+  background: #000;
+  cursor: pointer;
+  overflow: hidden;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+/* vídeo dentro da bolinha */
+.produto-video-btn video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none; /* 🔥 importante */
+}
+
+/* ícone de play */
+.play-indicador {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  font-size: 20px;
+  background: rgba(0,0,0,0.35);
+
+  pointer-events: none;
+}
+
+
+/* ================================
+   MODAL DE VÍDEO (FLUTUANTE)
+   ================================ */
+
+.video-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.video-content {
+  position: relative;
+  background: #000;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 720px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+/* vídeo fica abaixo */
+.video-content video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+}
+
+/* botão X fica acima */
+.video-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  z-index: 10; /* 🔥 ISSO É O SEGREDO */
+
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+
+/* ================================
+   INFO DO PRODUTO (PÁGINA)
+   ================================ */
+
+.produto-info {
+  max-width: 360px;
+}
+
+.produto-preco {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 8px 0 4px;
+}
+
+.produto-parcelamento {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+/* linha de ações */
+.produto-acoes {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+
+.produto-quantidade span {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* botão comprar (já existente, só garantindo alinhamento) */
+.btn-comprar {
+  padding: 10px 24px;
+}
+
+/* ================================
+   ANEL DA QUANTIDADE (PRODUTO)
+   ================================ */
+
+.produto-quantidade-anel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 999px; /* anel */
+}
+
+.produto-quantidade-anel button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: #f5f5f5;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.produto-quantidade-anel span {
+  min-width: 18px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ================================
+   RESUMO DO PRODUTO
+   ================================ */
+
+.produto-resumo {
+  margin: 8px 0 12px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* ================================
+   BADGE LANÇAMENTO — PRODUTO
+   ================================ */
+
+.badge-lancamento-produto {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #eaf6ff;
+  color: #0077b6;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 12px;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .badge-lancamento-produto {
+    font-size: 0.55rem;
+    padding: 3px 6px;
+    border-radius: 8px;
+   
+  }
+}
+
+
+ /* =========================================================
+   PRODUTO — MOBILE (LAYOUT LADO A LADO, SEM CORTAR TEXTO)
+   ========================================================= */
+@media (max-width: 768px) {
+
+  .produto-card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .produto-imagem {
+    flex: 0 0 34%;
+    max-width: 34%;
+    position: relative;
+  }
+
+  .produto-imagem img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* bolinha do vídeo no lado esquerdo da imagem */
+  .produto-video-btn {
+    position: absolute;
+    bottom: -16px;
+    left: 12px;
+    right: auto;
+    width: 44px;
+    height: 44px;
+  }
+
+  .produto-info {
+    flex: 1;
+    min-width: 0; /* 🔥 ESSENCIAL PRA NÃO CORTAR TEXTO */
+    text-align: left;
+  }
+
+  .produto-info h1 {
+    font-size: 1.1rem;
+    line-height: 1.3;
+    word-break: break-word;
+    margin-bottom: 6px;
+  }
+
+  .produto-resumo {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+
+  .produto-preco {
+    font-size: 1.1rem;
+  }
+
+  .produto-acoes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+   .produto-quantidade-anel {
+    transform: scale(0.9); /* reduz ~10% tudo */
+    transform-origin: left center;
+  }
+
+}
+
+.produto-quantidade-anel {
+    flex-shrink: 0; /* não encolhe */
+  }
+
+  .btn-comprar {
+  flex: 1;
+  min-width: auto;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+}
+
+/* ===============================
+   BUSCA ESTILO MARKETPLACE
+   =============================== */
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  max-height: 320px;
+  overflow-y: auto;
+  display: none;
+  z-index: 9999;
+}
+
+.search-results.active {
+  display: block;
+}
+
+.search-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-item:hover {
+  background: #f2f2f2;
+}
+
+.search-item img {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.search-item span {
+  font-size: 14px;
+  color: #333;
+}
+
+
+/* 🔒 impede a busca invisível de bloquear cliques */
+.search-results {
+  pointer-events: none;
+}
+
+.search-results.active {
+  pointer-events: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* mantém layout original do header */
+.search-box {
+  position: relative;
+  flex: 1;
+}
+
+/* dropdown da busca */
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 9999;
+  display: none;
+}
+
+.search-results.active {
+  display: block;
+}
+
+/* item da busca */
+.search-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.search-item:hover {
+  background: #f2f2f2;
+}
+
+.search-item img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+}
+
+
+/* ============================================================
+   TÍTULOS DAS SEÇÕES — PÁGINA DE PRODUTO
+   ============================================================ */
+
+#produto-descricao h2 {
+  color: var(--azul-escuro); /* mesma cor das categorias */
+  font-size: 1.2rem;        /* menor que o padrão */
+  font-weight: 600;
+  margin: 24px 0 8px;
+}
+

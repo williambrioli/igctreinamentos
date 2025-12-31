@@ -1,0 +1,164 @@
+/* ============================================================
+   EMPURRA SITE PARA BAIXO (MENU FIXO)
+   ============================================================ */
+
+body {
+  padding-top: 88px; /* altura do header fixo */
+}
+
+/* ============================================================
+   HEADER FIXO
+   ============================================================ */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: var(--azul-escuro);
+  color: var(--branco);
+  padding: 16px 0;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* ============================================================
+   LOGO
+   ============================================================ */
+
+.logo img {
+  height: 65px;
+  width: auto;
+  display: block;
+}
+
+/* ============================================================
+   MENU DESKTOP
+   ============================================================ */
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+}
+
+.nav a {
+  color: var(--branco);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   BUSCA
+   ============================================================ */
+
+.search-box input {
+  width: 560px;
+  padding: 12px 16px;
+  border-radius: 24px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--azul-medio);
+  box-shadow: 0 0 0 2px rgba(1, 161, 219, 0.15);
+}
+
+/* ============================================================
+   BOTÃO HAMBÚRGUER
+   ============================================================ */
+
+.menu-toggle {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1100;
+
+  background-color: transparent; /*var(--azul-escuro);  MESMO AZUL DO HEADER */
+  border: none;
+  border-radius: 2px; /* 🔽 menos arredondado */
+
+  padding: 2px 2px; /* 🔽 MENOR FUNDO */
+  font-size: 1.5rem; /* 🔽 risquinhos um pouco menores */
+  color: #808080; /* risquinhos brancos */
+  cursor: pointer;
+
+  display: none; /* escondido no desktop */
+}
+
+/* ============================================================
+   MOBILE (MENU FLUTUANTE)
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+   .header {
+    position: relative; /* 🔓 solta o header no mobile */
+  }
+
+  body {
+    padding-top: 0; /* remove espaço extra */
+  }
+  /* mostra botão */
+  .menu-toggle {
+    display: block;
+  }
+.menu-toggle {
+    display: block;
+    position: fixed;     /* 🔒 flutuante */
+    top: 16px;
+    left: 16px;
+    z-index: 1100;
+}
+  /* esconde menu desktop */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100vh;
+    background-color: #ffffff;
+    padding-top: 88px;
+    transition: left 0.3s ease;
+    z-index: 1002;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.15);
+  }
+
+  /* menu aberto */
+  .nav.active {
+    left: 0;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .nav a {
+    color: #222;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+
+  .nav a:hover {
+    color: var(--azul-escuro);
+  }
+
+  /* busca ocupa largura total */
+  .search-box input {
+    width: 100%;
+  }
+}
