@@ -123,7 +123,7 @@ const produtos = [
     id: "3",
     nome: "Treinamento em PNL Avançado",
     categoria: "pnl",
-    preco: 1.497.00,
+    preco: 1497.00,
     imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
