@@ -64,9 +64,21 @@ const produtos = [
       O treinamento tem como...
       
       `,      
-      composicao: "Metodologia validada",
-      comoUsar: "Para quem é...",
-      advertencias: "muito bom"
+      composicao: `
+      
+      Metodologia validada
+      
+      `,
+      comoUsar: `
+      
+      Para quem é...
+      
+      `,
+      advertencias: `
+      
+      muito bom
+
+      `
     },
          
     destaque: true,
@@ -78,9 +90,9 @@ const produtos = [
 
  {
     id: "2",
-    nome: "pnl",
-    categoria: "Treinamento em PNL Intermediário",
-    preco: 90.00,
+    nome: "Treinamento em PNL Intermediário",
+    categoria: "pnl",
+    preco: 997.00,
     imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
