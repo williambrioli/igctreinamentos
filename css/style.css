@@ -125,13 +125,9 @@ img {
 .card button:not(.btn-comprar) {
   padding: 0;
   border: none;
-  background-color: var(--coral);
+  background-color: #F5F5F5;
   border: 1px solid #ccc;
   border-radius: 14px;
-}
-
-.btn-comprar:hover {
-  background-color: #D97706;
 }
 
 .descricao {
@@ -232,7 +228,7 @@ img {
 /* BOTÃO COMPRAR (pill verde) */
 .btn-comprar {
   flex: 1;                 /* 🔹 ocupa mais espaço que a quantidade */
-  background-color: #2e8b2d;
+  background-color: var(--coral);
   color: #fff;
   border: none;
   border-radius: 999px;    /* 🔹 pill perfeito */
@@ -245,7 +241,7 @@ img {
 }
 
 .btn-comprar:hover {
-  background-color: #256f24;
+  background-color: #D97706;
 }
 
 
