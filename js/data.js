@@ -53,16 +53,20 @@ const produtos = [
       "assets/videos/5htp.mp4"
     ],
     descricao: {
-      resumo: "Deseja melhorar o humor e dormir de forma tranquila?",
+      resumo: `
+   
+       Treinamento em pnl busca...
+       
+       `,
       
        oQueE: `
       
-      O 5-HTP é um precursor da serotonina...otonina...O 5-HTP é um precursor da
+      O treinamento tem como...
       
       `,      
-      composicao: "5-Hidroxitriptofano 50mg...",
-      comoUsar: "Tomar 1 cápsula antes de dormir...",
-      advertencias: "Não utilizar sem orientação profissional..."
+      composicao: "Metodologia validada",
+      comoUsar: "Para quem é...",
+      advertencias: "muito bom"
     },
          
     destaque: true,
