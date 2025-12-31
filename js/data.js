@@ -45,73 +45,24 @@ const categorias = [
 const produtos = [
   {
     id: "1",
-    nome: "Treinamento em PNL básico",
+    nome: "Treinamento em PNL Básico",
     categoria: "pnl",
-    preco: 798.00,
+    preco: 90.00,
     imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
     descricao: {
-      resumo: "Treinamento em PNL Básico",
+      resumo: "Deseja melhorar o humor e dormir de forma tranquila?",
       
        oQueE: `
       
-      Treinamento em PNL busca...
+      O 5-HTP é um precursor da serotonina...otonina...O 5-HTP é um precursor da
       
       `,      
-      composicao: ` 
-      
-      5-Hidroxitriptofano 50mg... 
-      
-      `,
-       
-      comoUsar: `
-      
-      Tomar 1 cápsula antes de dormir... 
-      
-      `,
-      advertencias: `
-      
-      Não utilizar sem orientação profissional... 
-      
-      `
-    },
-
-
- {
-    id: "2",
-    nome: "Treinamento em PNL Avançado",
-    categoria: "pnl",
-    preco: 997.00,
-    imagem: "assets/img/imgteste.png",
-    videos: [
-      "assets/videos/5htp.mp4"
-    ],
-    descricao: {
-      resumo: "Treinamento em PNL Avançado",
-      
-       oQueE: `
-      
-      Treinamento em PNL busca...
-      
-      `,      
-      composicao: ` 
-      
-      5-Hidroxitriptofano 50mg... 
-      
-      `,
-       
-      comoUsar: `
-      
-      Tomar 1 cápsula antes de dormir... 
-      
-      `,
-      advertencias: `
-      
-      Não utilizar sem orientação profissional... 
-      
-      `
+      composicao: "5-Hidroxitriptofano 50mg...",
+      comoUsar: "Tomar 1 cápsula antes de dormir...",
+      advertencias: "Não utilizar sem orientação profissional..."
     },
          
     destaque: true,
@@ -119,11 +70,36 @@ const produtos = [
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
     },
+
+
+ {
+    id: "2",
+    nome: "pnl",
+    categoria: "Treinamento em PNL Intermediário",
+    preco: 90.00,
+    imagem: "assets/img/imgteste.png",
+    videos: [
+      "assets/videos/5htp.mp4"
+    ],
+    descricao: {
+      resumo: "Deseja melhorar o humor e dormir de forma tranquila?",
+      oQueE: "O 5-HTP é um precursor da serotonina...",
+      composicao: "5-Hidroxitriptofano 50mg...",
+      comoUsar: "Tomar 1 cápsula antes de dormir...",
+      advertencias: "Não utilizar sem orientação profissional..."
+    },
+         
+    destaque: true,
+    mostrarlancamento: false,
+    mostrarVideo: true,
+    textoParcelamento: "ou 1x de R$ 90,00"
+    },
+   
 {
     id: "3",
-    nome: "Treinamento em PNL Avançado",
-    categoria: "pnl",
-    preco: 1497.00,
+    nome: "Emagrecimento2",
+    categoria: "emagrecimento",
+    preco: 90.00,
     imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
@@ -146,7 +122,7 @@ const produtos = [
 {
     id: "4",
     nome: "Emagrecimento3",
-    categoria: "pnl",
+    categoria: "emagrecimento",
     preco: 90.00,
     imagem: "assets/img/imgteste.png",
     videos: [
@@ -171,7 +147,7 @@ const produtos = [
 {
     id: "5",
     nome: "Emagrecimento4",
-    categoria: "pnl",
+    categoria: "emagrecimento",
     preco: 90.00,
     imagem: "assets/img/imgteste.png",
     videos: [
@@ -196,7 +172,7 @@ const produtos = [
 {
     id: "6",
     nome: "Emagrecimento5",
-    categoria: "pnl",
+    categoria: "emagrecimento",
     preco: 90.00,
     imagem: "assets/img/imgteste.png",
     videos: [
@@ -224,7 +200,7 @@ const produtos = [
     nome: "Desempenho Físico",
     categoria: "desempenhofisico",
     preco: 90.00,
-    imagem: "assets/img/imgteste.png",
+    imagem: "assets/img/imgpoteteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -248,7 +224,7 @@ const produtos = [
     nome: "Desempenho Físico1",
     categoria: "desempenhofisico",
     preco: 90.00,
-    imagem: "assets/img/imgteste.png",
+    imagem: "assets/img/imgpoteteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -273,7 +249,7 @@ const produtos = [
     nome: "Desempenho Físico2",
     categoria: "desempenhofisico",
     preco: 90.00,
-    imagem: "assets/img/imgteste.png",
+    imagem: "assets/img/imgpoteteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -298,7 +274,7 @@ const produtos = [
     nome: "Desempenho Físico3",
     categoria: "desempenhofisico",
     preco: 90.00,
-    imagem: "assets/img/imgteste.png",
+    imagem: "assets/img/imgpoteteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -322,7 +298,7 @@ const produtos = [
     nome: "Desempenho Físico4",
     categoria: "desempenhofisico",
     preco: 90.00,
-    imagem: "assets/img/imgteste.png",
+    imagem: "assets/img/imgpoteteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -347,7 +323,7 @@ const produtos = [
     nome: "Desempenho Físico5",
     categoria: "desempenhofisico",
     preco: 90.00,
-    imagem: "assets/img/imgteste.png",
+    imagem: "assets/img/imgpoteteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -371,7 +347,7 @@ const produtos = [
     nome: "Saúde",
     categoria: "saude",
     preco: 90.00,
-    imagem: "assets/img/imgteste.png",
+    imagem: "assets/img/imgpoteteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -394,7 +370,7 @@ const produtos = [
     nome: "Saúde1",
     categoria: "saude",
     preco: 90.00,
-    imagem: "assets/img/imgteste.png",
+    imagem: "assets/img/imgpoteteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -418,7 +394,7 @@ const produtos = [
     nome: "Saúde2",
     categoria: "saude",
     preco: 90.00,
-    imagem: "assets/img/imgteste.png",
+    imagem: "assets/img/imgpoteteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -443,7 +419,7 @@ const produtos = [
     nome: "Saúde3",
     categoria: "saude",
     preco: 90.00,
-    imagem: "assets/img/imgteste.png",
+    imagem: "assets/img/imgpoteteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -467,7 +443,7 @@ const produtos = [
     nome: "Saúde4",
     categoria: "saude",
     preco: 90.00,
-    imagem: "assets/img/imgteste.png",
+    imagem: "assets/img/imgpoteteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -509,3 +485,4 @@ window.produtos = produtos;
 
 - As imagens devem estar na pasta /assets/img/
 */
+
