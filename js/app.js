@@ -136,7 +136,7 @@ function criarCardProduto(produto, isBanner = false) {
     <button class="btn-mais">+</button>
   </div>
 
-  <button class="btn-comprar">Comprar</button>
+  <button class="btn-comprar">Reservar vaga</button>
 </div>
 
   `;
