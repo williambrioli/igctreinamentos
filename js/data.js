@@ -47,7 +47,7 @@ const produtos = [
     id: "1",
     nome: "Treinamento em PNL básico",
     categoria: "pnl",
-    preco: 90.00,
+    preco: 798.00,
     imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
@@ -60,9 +60,58 @@ const produtos = [
       Treinamento em PNL busca...
       
       `,      
-      composicao: "5-Hidroxitriptofano 50mg...",
-      comoUsar: "Tomar 1 cápsula antes de dormir...",
-      advertencias: "Não utilizar sem orientação profissional..."
+      composicao: ` 
+      
+      5-Hidroxitriptofano 50mg... 
+      
+      `,
+       
+      comoUsar: `
+      
+      Tomar 1 cápsula antes de dormir... 
+      
+      `,
+      advertencias: `
+      
+      Não utilizar sem orientação profissional... 
+      
+      `
+    },
+
+
+ {
+    id: "2",
+    nome: "Treinamento em PNL Avançado",
+    categoria: "pnl",
+    preco: 997.00,
+    imagem: "assets/img/imgteste.png",
+    videos: [
+      "assets/videos/5htp.mp4"
+    ],
+    descricao: {
+      resumo: "Treinamento em PNL Avançado",
+      
+       oQueE: `
+      
+      Treinamento em PNL busca...
+      
+      `,      
+      composicao: ` 
+      
+      5-Hidroxitriptofano 50mg... 
+      
+      `,
+       
+      comoUsar: `
+      
+      Tomar 1 cápsula antes de dormir... 
+      
+      `,
+      advertencias: `
+      
+      Não utilizar sem orientação profissional... 
+      
+      `
     },
          
     destaque: true,
@@ -70,36 +119,11 @@ const produtos = [
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
     },
-
-
- {
-    id: "2",
-    nome: "Treinamento em PNL Intermediário",
-    categoria: "pnl",
-    preco: 90.00,
-    imagem: "assets/img/imgteste.png",
-    videos: [
-      "assets/videos/5htp.mp4"
-    ],
-    descricao: {
-      resumo: "Treinamento em PNL busca...",
-      oQueE: "O 5-HTP é um precursor da serotonina...",
-      composicao: "5-Hidroxitriptofano 50mg...",
-      comoUsar: "Tomar 1 cápsula antes de dormir...",
-      advertencias: "Não utilizar sem orientação profissional..."
-    },
-         
-    destaque: true,
-    mostrarlancamento: false,
-    mostrarVideo: true,
-    textoParcelamento: "ou 1x de R$ 90,00"
-    },
-   
 {
     id: "3",
-    nome: "Emagrecimento2",
-    categoria: "emagrecimento",
-    preco: 90.00,
+    nome: "Treinamento em PNL Avançado",
+    categoria: "pnl",
+    preco: 1.497.00,
     imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
@@ -122,7 +146,7 @@ const produtos = [
 {
     id: "4",
     nome: "Emagrecimento3",
-    categoria: "emagrecimento",
+    categoria: "pnl",
     preco: 90.00,
     imagem: "assets/img/imgteste.png",
     videos: [
@@ -147,7 +171,7 @@ const produtos = [
 {
     id: "5",
     nome: "Emagrecimento4",
-    categoria: "emagrecimento",
+    categoria: "pnl",
     preco: 90.00,
     imagem: "assets/img/imgteste.png",
     videos: [
@@ -172,7 +196,7 @@ const produtos = [
 {
     id: "6",
     nome: "Emagrecimento5",
-    categoria: "emagrecimento",
+    categoria: "pnl",
     preco: 90.00,
     imagem: "assets/img/imgteste.png",
     videos: [
