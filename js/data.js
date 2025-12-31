@@ -48,7 +48,7 @@ const produtos = [
     nome: "Treinamento em PNL básico",
     categoria: "pnl",
     preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
+    imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -77,7 +77,7 @@ const produtos = [
     nome: "Treinamento em PNL Intermediário",
     categoria: "pnl",
     preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
+    imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -100,7 +100,7 @@ const produtos = [
     nome: "Emagrecimento2",
     categoria: "emagrecimento",
     preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
+    imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -124,7 +124,7 @@ const produtos = [
     nome: "Emagrecimento3",
     categoria: "emagrecimento",
     preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
+    imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -149,7 +149,7 @@ const produtos = [
     nome: "Emagrecimento4",
     categoria: "emagrecimento",
     preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
+    imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -174,7 +174,7 @@ const produtos = [
     nome: "Emagrecimento5",
     categoria: "emagrecimento",
     preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
+    imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -200,7 +200,7 @@ const produtos = [
     nome: "Desempenho Físico",
     categoria: "desempenhofisico",
     preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
+    imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -224,7 +224,7 @@ const produtos = [
     nome: "Desempenho Físico1",
     categoria: "desempenhofisico",
     preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
+    imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -249,7 +249,7 @@ const produtos = [
     nome: "Desempenho Físico2",
     categoria: "desempenhofisico",
     preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
+    imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -274,7 +274,7 @@ const produtos = [
     nome: "Desempenho Físico3",
     categoria: "desempenhofisico",
     preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
+    imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -298,7 +298,7 @@ const produtos = [
     nome: "Desempenho Físico4",
     categoria: "desempenhofisico",
     preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
+    imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -323,7 +323,7 @@ const produtos = [
     nome: "Desempenho Físico5",
     categoria: "desempenhofisico",
     preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
+    imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -347,7 +347,7 @@ const produtos = [
     nome: "Saúde",
     categoria: "saude",
     preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
+    imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -370,7 +370,7 @@ const produtos = [
     nome: "Saúde1",
     categoria: "saude",
     preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
+    imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -394,7 +394,7 @@ const produtos = [
     nome: "Saúde2",
     categoria: "saude",
     preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
+    imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -419,7 +419,7 @@ const produtos = [
     nome: "Saúde3",
     categoria: "saude",
     preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
+    imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
@@ -443,7 +443,7 @@ const produtos = [
     nome: "Saúde4",
     categoria: "saude",
     preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
+    imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
