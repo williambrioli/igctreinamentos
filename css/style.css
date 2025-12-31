@@ -22,20 +22,27 @@ img {
 
 
 /* ============================================================
-   VARIÁVEIS DE CORES (PALETA DA FARMÁCIA)
+   VARIÁVEIS DE CORES (PALETA DA IGC TREINAMENTOS)
    ============================================================ */
 :root {
-  --azul-escuro: #1B7396;   /* institucional */
-  --azul-medio:  #01A1DB;   /* destaque */
-  --turquesa:    #2CCCD3;   /* apoio / promoção */
-  --coral:       #C49154;   /* CTA suave */
-  --rosa-claro:  #EBEBEB;   /* fundo leve */
+  /* AUTORIDADE / EDUCAÇÃO PREMIUM */
+  --azul-escuro: #0A2540;   /* principal – header, footer, títulos */
+  --azul-medio:  #1D4ED8;   /* foco, hover, detalhes */
 
+  /* CONVERSÃO */
+  --coral:       #F59E0B;   /* CTA (comprar / inscreva-se) */
+
+  /* APOIO VISUAL */
+  --turquesa:    #CBD5E1;   /* divisões suaves */
+  --rosa-claro:  #F7F9FC;   /* fundo alternativo */
+
+  /* NEUTROS */
   --branco: #FFFFFF;
-  --cinza-claro: #F5F5F5;
-  --cinza: #777;
-  --preto: #000000;
+  --cinza-claro: #E5E7EB;
+  --cinza: #4B5563;
+  --preto: #111827;
 }
+
 
 /* ============================================================
    CONTAINER PADRÃO
