@@ -56,9 +56,6 @@ function renderProdutos(listaProdutos) {
   produtosContainer.innerHTML = "";
 
   categorias.forEach(cat => {
-
-     if (cat.mostrarNaPagina === false) return;
-     
     const produtosDaCategoria = listaProdutos.filter(p => p.categoria === cat.id);
     if (produtosDaCategoria.length === 0) return;
 
@@ -103,18 +100,7 @@ container.appendChild(slider);
 container.appendChild(dots);
 section.appendChild(container);
 produtosContainer.appendChild(section);
-
-
-if (cat.tipo === "auto" && cat.autoplay) {
-  slider.dataset.auto = "true"; // 👈 MARCA O SLIDER
-
-  iniciarAutoSlider({
-    slider,
-    intervalo: cat.intervalo || 6000
      
-  });
-}
-
   });
 }
 
@@ -270,9 +256,6 @@ document.addEventListener("click", function (event) {
 // ============================================================
 
 document.querySelectorAll(".slider").forEach(slider => {
-
-   if (slider.dataset.auto === "true") return; // 👈 IGNORA AUTO
-   
   const track = slider.querySelector(".slider-track");
   const left = slider.querySelector(".arrow.left");
   const right = slider.querySelector(".arrow.right");
@@ -435,50 +418,4 @@ function inicializarAds() {
 
 // inicia quando DOM estiver pronto
 document.addEventListener("DOMContentLoaded", inicializarAds);
-
-
-
-// ============================================================
-// AUTO-SLIDE PARA CATEGORIAS (PADRÃO ADS SIMPLIFICADO)
-// ============================================================
-
-function iniciarAutoSlider({ slider, intervalo }) {
-  const track = slider.querySelector(".slider-track");
-  const cards = track.children;
-  const dotsContainer = slider.parentElement.querySelector(".slider-dots");
-
-  if (!track || cards.length <= 1) return;
-
-  let index = Math.floor(Math.random() * cards.length);
-  const cardWidth = cards[0].offsetWidth + 16;
-
-  // cria dots
-  dotsContainer.innerHTML = "";
-  cards.forEach((_, i) => {
-    const dot = document.createElement("span");
-    if (i === index) dot.classList.add("active");
-    dotsContainer.appendChild(dot);
-  });
-
-  const dots = dotsContainer.querySelectorAll("span");
-
-  function atualizar() {
-    track.scrollTo({
-      left: index * cardWidth,
-      behavior: "smooth"
-    });
-
-    dots.forEach((d, i) =>
-      d.classList.toggle("active", i === index)
-    );
-  }
-
-  atualizar();
-
-  setInterval(() => {
-    index = (index + 1) % cards.length;
-    atualizar();
-  }, intervalo);
-}
-
 
