@@ -1179,7 +1179,16 @@ img {
 .ads-logos .logos-track img {
   min-width: 100%;
   max-width: 100%;
-  height: 90px;
+  height: 160px;        /* 👈 aumenta o logo */
   object-fit: contain;
-  padding: 16px;
+  padding: 24px 32px;   /* mais respiro */
 }
+
+
+.ads-logos-title {
+  text-align: center;
+  font-size: 1.8rem;     /* aumenta um pouco */
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
