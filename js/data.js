@@ -15,25 +15,40 @@ const categorias = [
     id: "inicio",
     nome: "#",
     nomeMenu: "Início",
-    mostrarNoMenu: true
+    mostrarNoMenu: true,
+    mostrarNaPagina: true,
+    tipo: "normal" // normal | auto
   },
   {
     id: "pnl",
     nome: "Treinamentos em PNL",
     nomeMenu: "PNL",
-    mostrarNoMenu: true
+    mostrarNoMenu: true,
+    mostrarNaPagina: true,
+    tipo: "auto", // normal | auto
+    autoplay: true, 
+    intervalo: 7000
   },
   {
     id: "oratoria",
     nome: "Treinamentos em Oratória",
     nomeMenu: "Oratória",
-    mostrarNoMenu: true
+    mostrarNoMenu: true,
+    mostrarNaPagina: true,
+    tipo: "auto", // normal | auto
+    autoplay: true, 
+    intervalo: 7000
+    
   },
   {
     id: "palestas",
     nome: "Palestras",
     nomeMenu: "Palestras",
-    mostrarNoMenu: true
+    mostrarNoMenu: true,
+    mostrarNaPagina: true,
+    tipo: "auto", // normal | auto
+    autoplay: true, 
+    intervalo: 7000
   }
   
 ];
