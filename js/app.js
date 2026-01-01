@@ -416,6 +416,93 @@ function inicializarAds() {
   setInterval(trocarSlideAds, adsInterval);
 }
 
+
+
+// ============================================================
+// SLIDER logos + DOTS (COM RANDOM REAL)
+// ============================================================
+
+function inicializarAdsLogos() {
+  const adsTrack = document.querySelector(".logos-track");
+  const adsImages = document.querySelectorAll(".logos-track img");
+  const adsDotsContainer = document.querySelector(".logos-dots");
+  const progressBar = document.querySelector(".logos-progress-bar");
+   
+  if (!adsTrack || adsImages.length === 0) return;
+
+  let adsIndex = Math.floor(Math.random() * adsImages.length);
+  const adsInterval = 2000;
+
+  // cria dots
+  adsDotsContainer.innerHTML = "";
+  adsImages.forEach((_, i) => {
+    const dot = document.createElement("span");
+    adsDotsContainer.appendChild(dot);
+
+    dot.addEventListener("click", () => {
+      adsIndex = i;
+      atualizarAds();
+    });
+  });
+
+  const adsDots = adsDotsContainer.querySelectorAll("span");
+
+   function iniciarProgresso() {
+  if (!progressBar) return;
+
+  progressBar.style.transition = "none";
+  progressBar.style.width = "0%";
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      progressBar.style.transition = `width ${adsInterval}ms linear`;
+      progressBar.style.width = "100%";
+    });
+  });
+}
+  function atualizarAds() {
+    adsTrack.style.transform = `translateX(-${adsIndex * 100}%)`;
+
+    adsDots.forEach((dot, i) =>
+      dot.classList.toggle("active", i === adsIndex)
+    );
+
+     iniciarProgresso(); // 🔥 AQUI a barra começa a crescer
+  }
+
+  function trocarSlideAds() {
+    adsIndex = (adsIndex + 1) % adsImages.length;
+    atualizarAds();
+  }
+
+  // 🔑 ESPERA AS IMAGENS CARREGAREM
+  let carregadas = 0;
+
+  adsImages.forEach(img => {
+    if (img.complete) {
+      carregadas++;
+    } else {
+      img.onload = () => {
+        carregadas++;
+        if (carregadas === adsImages.length) {
+          atualizarAds(); // aplica random corretamente
+        }
+      };
+    }
+  });
+
+  if (carregadas === adsImages.length) {
+    atualizarAds();
+  }
+
+  setInterval(trocarSlideAds, adsInterval);
+}
+
+
 // inicia quando DOM estiver pronto
-document.addEventListener("DOMContentLoaded", inicializarAds);
+document.addEventListener("DOMContentLoaded", () => {
+  inicializarAds();
+  inicializarAdsLogos();
+});
+
 
