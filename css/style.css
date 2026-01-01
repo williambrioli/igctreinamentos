@@ -1160,3 +1160,22 @@ img {
   margin: 24px 0 8px;
 }
 
+
+
+
+
+.ads-logos {
+  margin: 80px 0;
+  text-align: center;
+}
+
+.ads-logos-title {
+  margin-bottom: 24px;
+  font-size: 1.6rem;
+}
+
+.logos-track img {
+  max-height: 80px;
+  object-fit: contain;
+  padding: 0 32px;
+}
