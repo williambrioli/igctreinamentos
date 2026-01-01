@@ -106,6 +106,8 @@ produtosContainer.appendChild(section);
 
 
 if (cat.tipo === "auto" && cat.autoplay) {
+  slider.dataset.auto = "true"; // 👈 MARCA O SLIDER
+
   iniciarAutoSlider({
     slider,
     intervalo: cat.intervalo || 6000
@@ -268,6 +270,9 @@ document.addEventListener("click", function (event) {
 // ============================================================
 
 document.querySelectorAll(".slider").forEach(slider => {
+
+   if (slider.dataset.auto === "true") return; // 👈 IGNORA AUTO
+   
   const track = slider.querySelector(".slider-track");
   const left = slider.querySelector(".arrow.left");
   const right = slider.querySelector(".arrow.right");
