@@ -1355,4 +1355,62 @@ img {
   }
 }
 
+/* ============================================================
+   BLOCO INSTITUCIONAL – EBWU
+   ============================================================ */
+
+.institucional-ebwu {
+  padding: 96px 0;
+}
+
+/* grid específico */
+.ebwu-grid {
+  grid-template-columns: 1fr 1fr;
+  margin-top: 48px;
+}
+
+/* texto mais largo */
+.ebwu-texto {
+  grid-column: 1 / -1;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ebwu-texto p {
+  margin-bottom: 20px;
+}
+
+/* botão alinhado */
+.ebwu-texto .btn {
+  margin-top: 24px;
+}
+
+/* imagens */
+.institucional-ebwu .institucional-imagem img {
+  max-height: 360px;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .institucional-ebwu {
+    padding: 64px 0;
+  }
+
+  .ebwu-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .institucional-ebwu .institucional-imagem img {
+    max-height: 280px;
+  }
+}
 
