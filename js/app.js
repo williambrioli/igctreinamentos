@@ -556,14 +556,21 @@ function initEquipeSlider() {
   }
 
   function update() {
-    const cardWidth = cards[0].offsetWidth + 32;
-    track.style.transform =
-      `translateX(-${index * cardWidth * cardsPerView}px)`;
 
-    [...dotsContainer.children].forEach((d, i) =>
-      d.classList.toggle("active", i === index)
-    );
+  /* 🔒 MOBILE: não usa transform */
+  if (window.innerWidth < 768) {
+    return;
   }
+
+  const cardWidth = cards[0].offsetWidth + 32;
+  track.style.transform =
+    `translateX(-${index * cardWidth * cardsPerView}px)`;
+
+  [...dotsContainer.children].forEach((d, i) =>
+    d.classList.toggle("active", i === index)
+  );
+}
+
 
   update();
 
