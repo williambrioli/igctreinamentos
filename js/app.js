@@ -699,3 +699,113 @@ function stopAutoPlay() {
 window.addEventListener("load", initDepoimentos);
 window.addEventListener("resize", initDepoimentos);
 
+
+
+
+
+/* ======================================================
+   IGC – VÍDEOS INSTITUCIONAIS o que o igc faz por voce
+   ====================================================== */
+
+function initIgcVideos() {
+
+  const videos = [
+    "b8gtT8X6Z2w",
+    "1Wnwnk0BfN8",
+    "qBl3cML4dew"
+  ];
+
+  const track = document.querySelector(".igc-videos-track");
+  const dotsContainer = document.querySelector(".igc-videos-dots");
+  const modal = document.getElementById("igcVideoModal");
+  const modalFrame = document.getElementById("igcVideoFrame");
+  const closeBtn = document.getElementById("igcVideoClose");
+
+  if (!track || !dotsContainer) return;
+
+  track.innerHTML = "";
+  dotsContainer.innerHTML = "";
+
+  videos.forEach(id => {
+    const card = document.createElement("div");
+    card.className = "igc-video-card";
+    card.innerHTML = `
+      <img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="Vídeo IGC">
+    `;
+
+    card.onclick = () => {
+      modal.classList.add("active");
+      modalFrame.innerHTML = `
+        <iframe
+          src="https://www.youtube.com/embed/${id}?autoplay=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen>
+        </iframe>
+      `;
+    };
+
+    track.appendChild(card);
+  });
+
+  const isDesktop = window.innerWidth >= 1024;
+  const perPage = isDesktop ? 3 : 1;
+  const pages = Math.ceil(videos.length / perPage);
+  let page = 0;
+
+  for (let i = 0; i < pages; i++) {
+    const dot = document.createElement("span");
+    if (i === 0) dot.classList.add("active");
+    dot.onclick = () => {
+      page = i;
+      update();
+    };
+    dotsContainer.appendChild(dot);
+  }
+
+  function update() {
+    const cardWidth = track.children[0].offsetWidth + 24;
+    track.style.transform =
+      `translateX(-${page * cardWidth * perPage}px)`;
+
+    [...dotsContainer.children].forEach((d, i) =>
+      d.classList.toggle("active", i === page)
+    );
+  }
+
+  update();
+
+  /* AUTOPLAY */
+  let timer = setInterval(() => {
+    page = (page + 1) % pages;
+    update();
+  }, 6000);
+
+  function stopAuto() {
+    clearInterval(timer);
+  }
+
+  function startAuto() {
+    timer = setInterval(() => {
+      page = (page + 1) % pages;
+      update();
+    }, 6000);
+  }
+
+  closeBtn.onclick = () => {
+    modal.classList.remove("active");
+    modalFrame.innerHTML = "";
+    startAuto();
+  };
+
+  modal.onclick = e => {
+    if (e.target === modal) {
+      modal.classList.remove("active");
+      modalFrame.innerHTML = "";
+      startAuto();
+    }
+  };
+}
+
+window.addEventListener("load", initIgcVideos);
+window.addEventListener("resize", initIgcVideos);
+
