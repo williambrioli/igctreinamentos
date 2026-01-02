@@ -577,7 +577,7 @@ const equipe = [
   {
     nome: " Prof. Francisco Arcanjo",
     imagem: "assets/img/equipe/francisco.jpg",
-    texto: "Atua há mais de X anos formando líderes e equipes de alta performance.",
+    texto: "Como treinador e palestrante, ajuda pessoas a desenvolverem uma comunicação eficaz em todos os âmbitos da vida, impulsionando o crescimento pessoal e profissional. É criador dos métodos COES e EVOLUI",
     link: "https://franciscoarcanjo.com.br/"
   }
 ];
