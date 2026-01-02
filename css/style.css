@@ -1676,7 +1676,7 @@ a.btn-comprar {
 
 /* ======================================================
    MODAL DE VÍDEO
-   ====================================================== */
+   ======================================================
 
 .video-modal {
   position: fixed;
@@ -1690,7 +1690,26 @@ a.btn-comprar {
 
 .video-modal.active {
   display: flex;
+}                            */
+
+
+
+/* ======================================================
+   MODAL DE VÍDEO — EXCLUSIVO PARA DEPOIMENTOS
+   ====================================================== */
+
+.depoimentos .video-modal,
+.depoimentos .video-modal.active {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
 }
+
+
 
 .video-modal-content {
   position: relative;
