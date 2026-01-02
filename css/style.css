@@ -1388,7 +1388,7 @@ img {
 
 /* imagens */
 .institucional-ebwu .institucional-imagem img {
-  max-height: 360px;
+  max-height: 400px;
   object-fit: contain;
   background: #ffffff;
   padding: 3px;
