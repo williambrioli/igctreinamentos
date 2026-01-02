@@ -113,11 +113,11 @@ function montarProduto(produto) {
 
 function abrirVideo(src) {
   const modal = document.createElement("div");
-  modal.className = "video-modal";
+  modal.className = "produto-video-modal";
 
   modal.innerHTML = `
-    <div class="video-content">
-      <button class="video-close" aria-label="Fechar vídeo">✕</button>
+    <div class="produto-video-content">
+      <button class="produto-video-close" aria-label="Fechar vídeo">✕</button>
       <video controls autoplay>
         <source src="${src}" type="video/mp4">
       </video>
