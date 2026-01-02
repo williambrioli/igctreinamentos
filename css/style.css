@@ -1526,18 +1526,6 @@ a.btn-comprar {
   }
 }
 
-/* DESKTOP — equipe NÃO desliza */
-@media (min-width: 1024px) {
-  .institucional-equipe .equipe-track {
-    justify-content: center;     /* centraliza os 3 cards */
-    transform: none !important;  /* trava qualquer movimento */
-  }
-
-  .institucional-equipe .equipe-dots {
-    display: none;               /* dots não fazem sentido no desktop */
-  }
-}
-
 
 /* =========================================================
    EQUIPE — MOBILE CORRIGIDO (CENTRALIZADO, SEM SUMIR)
@@ -1581,3 +1569,30 @@ a.btn-comprar {
     color: #ffffff;
   }
 }
+
+
+/* DESKTOP — EQUIPE COMO SLIDER REAL */
+@media (min-width: 1024px) {
+
+  .equipe-slider {
+    max-width: 1040px; /* 3 cards + gaps */
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .equipe-track {
+    display: flex;
+    gap: 32px;
+    transition: transform 0.6s ease;
+    will-change: transform;
+  }
+
+  .equipe-card {
+    flex: 0 0 320px;
+  }
+
+  .equipe-dots {
+    display: flex;
+  }
+}
+
