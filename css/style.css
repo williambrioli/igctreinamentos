@@ -1564,7 +1564,7 @@ a.btn-comprar {
 
 
 /* =========================================
-   MOBILE — SLIDE LIMPO E CENTRALIZADO
+   MOBILE — EQUIPE (CORREÇÃO FINAL)
    ========================================= */
 @media (max-width: 768px) {
 
@@ -1574,30 +1574,34 @@ a.btn-comprar {
 
   .equipe-slider {
     overflow: hidden;
+    width: 100%;
   }
 
+  /* 🔑 O TRACK NÃO TEM PADDING */
   .equipe-track {
     display: flex;
-    gap: 24px;
-    padding: 0 16px;              /* 🔑 SEGREDO DO CORTE */
+    gap: 16px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
   }
 
+  /* 🔑 O CARD É O LIMITADOR */
   .equipe-card {
-    flex: 0 0 100%;
-    max-width: 100%;
+    flex: 0 0 90%;
+    max-width: 90%;
+    margin: 0 auto;              /* 🔥 centraliza sempre */
     scroll-snap-align: center;
   }
 
+  /* 🔑 IMAGEM IGUAL AO DESKTOP */
   .equipe-card img {
     width: 100%;
-    height: auto;                 /* 🔑 não estoura */
-    max-height: 320px;            /* 🔑 controle visual */
-    object-fit: contain;          /* 🔑 nunca corta */
-    border-radius: 16px;
-    background: transparent;      /* 🔥 remove quadro interno */
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 16px;         /* igual desktop */
+    background: transparent;     /* sem quadro interno */
   }
 }
 
