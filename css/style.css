@@ -1382,8 +1382,8 @@ img {
   text-align: left;
 }
 
-/* botão alinhado */
-.ebwu-texto .btn {
+/* botão centralizado dentro do bloco EBWU */
+.ebwu-texto .btn-comprar {
   display: inline-flex;
   margin: 24px auto 0;
   
