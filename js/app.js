@@ -579,3 +579,58 @@ window.addEventListener("resize", initEquipeSlider);
 
 
 
+/* ============================================================
+   VIDEO MODEL BLOCO DE TESTEMUNHOS O QUE DIZEM NOSSOS ALUNOS
+   ============================================================ */
+
+
+
+(() => {
+  const track = document.querySelector('.testimonials-track');
+  const cards = document.querySelectorAll('.testimonial-card');
+  const dotsContainer = document.querySelector('.testimonials-dots');
+  let index = 0;
+
+  const perPage = window.innerWidth <= 768 ? 1 : 3;
+  const pages = Math.ceil(cards.length / perPage);
+
+  for (let i = 0; i < pages; i++) {
+    const dot = document.createElement('span');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  }
+
+  const dots = dotsContainer.querySelectorAll('span');
+
+  function goTo(i) {
+    index = i;
+    track.style.transform = `translateX(-${i * 100}%)`;
+    dots.forEach(d => d.classList.remove('active'));
+    dots[i].classList.add('active');
+  }
+
+  setInterval(() => {
+    index = (index + 1) % pages;
+    goTo(index);
+  }, 5000);
+
+  // MODAL
+  const modal = document.getElementById('videoModal');
+  const iframe = document.getElementById('videoIframe');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      iframe.src = `https://www.youtube.com/embed/${card.dataset.video}?autoplay=1`;
+      modal.classList.add('active');
+    });
+  });
+
+  modal.addEventListener('click', e => {
+    if (e.target === modal || e.target.classList.contains('video-close')) {
+      iframe.src = '';
+      modal.classList.remove('active');
+    }
+  });
+})();
+
