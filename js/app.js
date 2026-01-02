@@ -579,108 +579,94 @@ window.addEventListener("resize", initEquipeSlider);
 
 
 
-/* =========================================================
-   DEPOIMENTOS — SLIDER + MODAL
-   ========================================================= */
+// ================================
+// SLIDER + MODAL — DEPOIMENTOS
+// ================================
+document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelector('.depoimentos-slider');
+  if (!slider) return; // 🔥 impede erro se não existir
 
-const testimonialCards = document.querySelectorAll('.testimonial-card');
-const testimonialTrack = document.querySelector('.testimonials-track');
-const testimonialDots = document.querySelector('.testimonials-dots');
+  const track = slider.querySelector('.depoimentos-track');
+  const cards = slider.querySelectorAll('.depoimento-card');
+  const dotsContainer = slider.querySelector('.depoimentos-dots');
 
-let testimonialIndex = 0;
+  let index = 0;
+  let visible = window.innerWidth >= 1024 ? 3 : 1;
 
-/* THUMB DO YOUTUBE */
-testimonialCards.forEach(card => {
-  const id = card.dataset.video;
-  card.style.setProperty(
-    '--thumb',
-    `url(https://img.youtube.com/vi/${id}/hqdefault.jpg)`
-  );
-  card.style.backgroundImage =
-    `url(https://img.youtube.com/vi/${id}/hqdefault.jpg)`;
-});
+  function updateSlider() {
+    const cardWidth = cards[0].offsetWidth;
+    const gap = 24;
+    const move = index * (cardWidth + gap);
+    track.style.transform = `translateX(-${move}px)`;
 
-/* DOTS */
-testimonialCards.forEach((_, i) => {
-  const dot = document.createElement('span');
-  if (i === 0) dot.classList.add('active');
-  testimonialDots.appendChild(dot);
-});
+    dotsContainer.querySelectorAll('span').forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+  }
 
-function updateTestimonialSlider() {
-  const cardWidth = testimonialCards[0].offsetWidth + 24;
-  testimonialTrack.style.transform =
-    `translateX(-${testimonialIndex * cardWidth}px)`;
+  function createDots() {
+    dotsContainer.innerHTML = '';
+    const pages = cards.length - visible + 1;
+    for (let i = 0; i < pages; i++) {
+      const dot = document.createElement('span');
+      dot.addEventListener('click', () => {
+        index = i;
+        updateSlider();
+      });
+      dotsContainer.appendChild(dot);
+    }
+  }
 
-  testimonialDots.querySelectorAll('span').forEach((dot, i) => {
-    dot.classList.toggle('active', i === testimonialIndex);
+  function autoSlide() {
+    setInterval(() => {
+      index++;
+      if (index > cards.length - visible) index = 0;
+      updateSlider();
+    }, 5000);
+  }
+
+  createDots();
+  updateSlider();
+  autoSlide();
+
+  window.addEventListener('resize', () => {
+    visible = window.innerWidth >= 1024 ? 3 : 1;
+    index = 0;
+    createDots();
+    updateSlider();
   });
-}
 
-/* AUTO SLIDE DESKTOP */
-if (window.innerWidth >= 1024) {
-  setInterval(() => {
-    testimonialIndex =
-      (testimonialIndex + 1) % testimonialCards.length;
-    updateTestimonialSlider();
-  }, 5000);
-}
+  // ==========================
+  // MODAL DE VÍDEO (YOUTUBE)
+  // ==========================
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const videoId = card.dataset.video;
+      if (!videoId) return;
 
-/* MODAL */
-testimonialCards.forEach(card => {
-  card.addEventListener('click', () => {
-    const videoId = card.dataset.video;
+      const modal = document.createElement('div');
+      modal.className = 'video-modal';
+      modal.innerHTML = `
+        <div class="video-content">
+          <button class="video-close">×</button>
+          <iframe 
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+          </iframe>
+        </div>
+      `;
 
-    const modal = document.createElement('div');
-    modal.className = 'video-modal';
-    modal.innerHTML = `
-      <div class="video-content">
-        <button class="video-close">✕</button>
-        <iframe
-          src="https://www.youtube.com/embed/${videoId}?autoplay=1"
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen>
-        </iframe>
-      </div>
-    `;
+      document.body.appendChild(modal);
 
-    document.body.appendChild(modal);
-
-    modal.addEventListener('click', e => {
-      if (e.target.classList.contains('video-modal') ||
-          e.target.classList.contains('video-close')) {
-        modal.remove();
-      }
+      modal.addEventListener('click', e => {
+        if (e.target.classList.contains('video-modal') || 
+            e.target.classList.contains('video-close')) {
+          modal.remove();
+        }
+      });
     });
   });
 });
-
-
-
-/* ===============================
-   MODAL DE VÍDEOS – DEPOIMENTOS
-================================ */
-
-const modal = document.getElementById("videoModal");
-const iframe = document.getElementById("videoFrame");
-const closeBtn = document.querySelector(".video-close");
-
-document.querySelectorAll(".depoimento-card").forEach(card => {
-  card.addEventListener("click", () => {
-    const videoId = card.dataset.video;
-    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-    modal.classList.add("active");
-  });
-});
-
-closeBtn.addEventListener("click", closeVideo);
-modal.addEventListener("click", e => {
-  if (e.target === modal) closeVideo();
-});
-
-function closeVideo() {
-  iframe.src = "";
-  modal.classList.remove("active");
-}
 
