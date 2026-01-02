@@ -1402,6 +1402,13 @@ img {
   display: inline-block;
 }
 
+a.btn-comprar {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /* ============================================================
    MOBILE
