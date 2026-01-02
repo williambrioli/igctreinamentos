@@ -1564,27 +1564,33 @@ a.btn-comprar {
 
 
 /* =========================================
-   MOBILE — AJUSTE DA IMAGEM DA EQUIPE
+   MOBILE — SLIDE LIMPO E CENTRALIZADO
    ========================================= */
 @media (max-width: 768px) {
 
-  .equipe-card img {
-    height: 220px;          /* altura controlada */
-    width: 100%;
-    object-fit: contain;   /* 🔑 NÃO corta */
-    object-position: center;
-    background: rgba(255,255,255,0.04); /* respiro elegante */
-    border-radius: 16px;
-  }
-
-.equipe-card {
-    max-width: 92%;
-    margin: 0 auto;       /* centraliza */
-  }
-
-
-   .institucional-equipe {
+  .institucional-equipe {
     overflow-x: hidden;
   }
-   
+
+  .equipe-track {
+    display: flex;
+    gap: 24px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .equipe-card {
+    width: 88%;
+    max-width: 360px;
+    margin: 0 auto;
+    scroll-snap-align: center;
+  }
+
+  .equipe-card img {
+    width: 100%;
+    height: 220px;          /* CONTROLE REAL */
+    object-fit: contain;   /* 🔑 nunca corta */
+    object-position: center;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.05);
+  }
 }
