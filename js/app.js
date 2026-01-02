@@ -647,19 +647,53 @@ function initDepoimentos() {
     );
   }
 
+
+  // ================================
+// AUTOPLAY (MOBILE E DESKTOP)
+// ================================
+let autoPlayInterval = null;
+
+function startAutoPlay() {
+  stopAutoPlay(); // evita duplicar
+
+  autoPlayInterval = setInterval(() => {
+    page++;
+
+    if (page >= pages) {
+      page = 0;
+    }
+
+    update();
+  }, 4000); // tempo em ms (4000 = 4 segundos)
+}
+
+function stopAutoPlay() {
+  if (autoPlayInterval) {
+    clearInterval(autoPlayInterval);
+    autoPlayInterval = null;
+  }
+}
+ 
+
   update();
+  startAutoPlay();
+
 
   closeBtn.onclick = () => {
-    modal.classList.remove("active");
-    modalFrame.innerHTML = "";
-  };
+  modal.classList.remove("active");
+  modalFrame.innerHTML = "";
+  startAutoPlay(); // VOLTA O AUTOPLAY
+};
+
 
   modal.onclick = e => {
-    if (e.target === modal) {
-      modal.classList.remove("active");
-      modalFrame.innerHTML = "";
-    }
-  };
+  if (e.target === modal) {
+    modal.classList.remove("active");
+    modalFrame.innerHTML = "";
+    startAutoPlay(); // VOLTA O AUTOPLAY
+  }
+};
+
 }
 
 window.addEventListener("load", initDepoimentos);
