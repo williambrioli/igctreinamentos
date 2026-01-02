@@ -1540,7 +1540,7 @@ a.btn-comprar {
 
 
 /* =========================================================
-   EQUIPE — MOBILE DEFINITIVO (SEM SUMIR, SEM CORTAR)
+   EQUIPE — MOBILE CORRIGIDO (CENTRALIZADO, SEM SUMIR)
    ========================================================= */
 @media (max-width: 768px) {
 
@@ -1549,20 +1549,23 @@ a.btn-comprar {
   }
 
   .equipe-slider {
-    overflow: hidden;
     width: 100%;
+    overflow: hidden;
   }
 
   .equipe-track {
     display: flex;
-    gap: 16px;
-    transition: transform 0.5s ease;
+    gap: 0;
+    transition: transform 0.4s ease;
+    will-change: transform;
   }
 
   .equipe-card {
-    flex: 0 0 100%;
-    max-width: 100%;
+    flex: 0 0 90%;
+    max-width: 90%;
+    margin: 0 5%;
     padding: 20px;
+    border-radius: 20px;
   }
 
   .equipe-card img {
@@ -1570,7 +1573,7 @@ a.btn-comprar {
     height: auto;
     border-radius: 16px;
     object-fit: cover;
-    background: transparent;
+    display: block;
   }
 
   .equipe-card h3,
@@ -1578,4 +1581,3 @@ a.btn-comprar {
     color: #ffffff;
   }
 }
-
