@@ -518,17 +518,15 @@ function initEquipeSlider() {
   track.innerHTML = "";
   dotsContainer.innerHTML = "";
 
-  equipe.forEach((pessoa) => {
+  equipe.forEach(pessoa => {
     const card = document.createElement("div");
     card.className = "equipe-card";
-
     card.innerHTML = `
       <img src="${pessoa.imagem}" alt="${pessoa.nome}">
       <h3>${pessoa.nome}</h3>
       <p>${pessoa.texto}</p>
       <a href="${pessoa.link}" class="btn-comprar">Conheça mais</a>
     `;
-
     track.appendChild(card);
   });
 
@@ -537,61 +535,67 @@ function initEquipeSlider() {
 
   const isDesktop = window.innerWidth >= 1024;
   const cardsPerView = isDesktop ? 3 : 1;
-  const totalPages = Math.ceil(cards.length / cardsPerView);
+
+  const totalPages = isDesktop
+    ? Math.ceil(cards.length / cardsPerView)
+    : cards.length;
 
   let index = Math.floor(Math.random() * totalPages);
 
-  // cria dots
+  const cardWidth = cards[0].offsetWidth + 32;
+
+  // dots
   for (let i = 0; i < totalPages; i++) {
     const dot = document.createElement("span");
     if (i === index) dot.classList.add("active");
+
     dot.onclick = () => {
       index = i;
-      update();
+      track.scrollTo({
+        left: index * cardWidth,
+        behavior: "smooth"
+      });
+      updateDots();
     };
+
     dotsContainer.appendChild(dot);
   }
 
-  function update() {
-    const cardWidth = cards[0].offsetWidth + 32;
-
-    // 📱 MOBILE — scroll real
-    if (window.innerWidth < 768) {
-      track.scrollLeft = index * cardWidth;
-    }
-
-    // 💻 DESKTOP — transform
-    if (window.innerWidth >= 768) {
-      track.style.transform =
-        `translateX(-${index * cardWidth * cardsPerView}px)`;
-    }
-
-    // dots
+  function updateDots() {
     [...dotsContainer.children].forEach((d, i) =>
       d.classList.toggle("active", i === index)
     );
   }
 
-  // ================================
-  // MOBILE — dots acompanham swipe
-  // ================================
+  function update() {
+    if (window.innerWidth < 768) {
+      track.scrollLeft = index * cardWidth;
+    } else {
+      track.style.transform =
+        `translateX(-${index * cardWidth * cardsPerView}px)`;
+    }
+    updateDots();
+  }
+
+  // swipe mobile
   if (window.innerWidth < 768) {
-    const cardWidth = cards[0].offsetWidth + 32;
-
     track.addEventListener("scroll", () => {
-      const novoIndex = Math.round(track.scrollLeft / cardWidth);
+      const novoIndex = Math.floor(
+        (track.scrollLeft + cardWidth / 2) / cardWidth
+      );
 
-      if (novoIndex !== index) {
-        index = novoIndex;
-        [...dotsContainer.children].forEach((dot, i) =>
-          dot.classList.toggle("active", i === index)
-        );
-      }
+      index = Math.min(
+        Math.max(novoIndex, 0),
+        totalPages - 1
+      );
+
+      updateDots();
     });
   }
 
   update();
 }
+
 
   
 
