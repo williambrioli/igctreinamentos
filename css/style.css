@@ -1558,3 +1558,31 @@ a.btn-comprar {
     display: none;               /* dots não fazem sentido no desktop */
   }
 }
+
+
+
+
+
+/* =========================================
+   MOBILE — AJUSTE DA IMAGEM DA EQUIPE
+   ========================================= */
+@media (max-width: 768px) {
+
+  .equipe-card img {
+    height: 240px;          /* 🔑 tamanho ideal no mobile */
+    object-fit: cover;     /* corta com elegância */
+    object-position: top;  /* prioriza rosto */
+    border-radius: 16px;
+  }
+
+.equipe-card {
+    max-width: 92%;
+    margin: 0 auto;       /* centraliza */
+  }
+
+
+   .institucional-equipe {
+    overflow-x: hidden;
+  }
+   
+}
