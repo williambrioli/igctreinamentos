@@ -557,19 +557,25 @@ function initEquipeSlider() {
 
   function update() {
 
-  /* 🔒 MOBILE: não usa transform */
+  const cardWidth = cards[0].offsetWidth + 32;
+
+  // 📱 MOBILE — usa scroll real
   if (window.innerWidth < 768) {
-    return;
+    track.scrollLeft = index * cardWidth;
   }
 
-  const cardWidth = cards[0].offsetWidth + 32;
-  track.style.transform =
-    `translateX(-${index * cardWidth * cardsPerView}px)`;
+  // 💻 DESKTOP — usa transform
+  if (window.innerWidth >= 768) {
+    track.style.transform =
+      `translateX(-${index * cardWidth * cardsPerView}px)`;
+  }
 
+  // 🔘 dots sincronizados
   [...dotsContainer.children].forEach((d, i) =>
     d.classList.toggle("active", i === index)
   );
 }
+
 
 
   update();
