@@ -1427,9 +1427,9 @@ a.btn-comprar {
 
   /* remove COMPLETAMENTE o efeito de cartão apenas da imagem de baixo */
   .institucional-ebwu .institucional-imagem.sem-quadro-mobile img {
-    background: transparent;
+    background: #fffff;
     padding: 0;
-    border-radius: 0;
+    border-radius: 16px;
     box-shadow: none;
   }
 
