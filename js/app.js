@@ -578,4 +578,90 @@ window.addEventListener("resize", initEquipeSlider);
 
 
 
+/* ======================================================
+   DEPOIMENTOS – SLIDER + MODAL YOUTUBE
+   ====================================================== */
+
+const depoimentosVideos = [
+  "BEV6upQhPEA",
+  "7uC4pstQS4Y",
+  "Fu-WNt6muDc",
+  "PQn3T-R6BmQ",
+  "nyRvRtNetrA",
+  "DZR50Zx1mGU"
+];
+
+function initDepoimentos() {
+  const track = document.querySelector(".depoimentos-track");
+  const dots = document.querySelector(".depoimentos-dots");
+  const modal = document.getElementById("videoModal");
+  const modalFrame = document.getElementById("videoModalFrame");
+  const closeBtn = document.getElementById("videoModalClose");
+
+  if (!track || !dots) return;
+
+  track.innerHTML = "";
+  dots.innerHTML = "";
+
+  depoimentosVideos.forEach(id => {
+    const card = document.createElement("div");
+    card.className = "depoimento-card";
+    card.innerHTML = `
+      <img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="Depoimento">
+    `;
+    card.onclick = () => {
+      modal.classList.add("active");
+      modalFrame.innerHTML = `
+        <iframe 
+          src="https://www.youtube.com/embed/${id}?autoplay=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen>
+        </iframe>
+      `;
+    };
+    track.appendChild(card);
+  });
+
+  const isDesktop = window.innerWidth >= 1024;
+  const perPage = isDesktop ? 3 : 1;
+  const pages = Math.ceil(depoimentosVideos.length / perPage);
+  let page = 0;
+
+  for (let i = 0; i < pages; i++) {
+    const dot = document.createElement("span");
+    if (i === 0) dot.classList.add("active");
+    dot.onclick = () => {
+      page = i;
+      update();
+    };
+    dots.appendChild(dot);
+  }
+
+  function update() {
+    const cardWidth = track.children[0].offsetWidth + 24;
+    track.style.transform =
+      `translateX(-${page * cardWidth * perPage}px)`;
+
+    [...dots.children].forEach((d, i) =>
+      d.classList.toggle("active", i === page)
+    );
+  }
+
+  update();
+
+  closeBtn.onclick = () => {
+    modal.classList.remove("active");
+    modalFrame.innerHTML = "";
+  };
+
+  modal.onclick = e => {
+    if (e.target === modal) {
+      modal.classList.remove("active");
+      modalFrame.innerHTML = "";
+    }
+  };
+}
+
+window.addEventListener("load", initDepoimentos);
+window.addEventListener("resize", initDepoimentos);
 
