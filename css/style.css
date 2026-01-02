@@ -1510,41 +1510,6 @@ a.btn-comprar {
   background: #fff;
 }
 
-/* MOBILE — EQUIPE (SLIDER CORRETO E CENTRALIZADO) */
-@media (max-width: 768px) {
-
-  .institucional-equipe {
-    overflow: hidden;
-  }
-
-  .equipe-slider {
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .equipe-track {
-    display: flex;
-    gap: 16px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .equipe-card {
-    flex: 0 0 85%;
-    max-width: 85%;
-    scroll-snap-align: center;
-
-    /* 🔑 ISSO RESOLVE O SUMIÇO */
-    margin: 0;
-  }
-}
-
-
-
-
-
-
 
 
 /* =========================================
@@ -1576,10 +1541,9 @@ a.btn-comprar {
 
 
 
-
-/* =========================================
-   MOBILE — EQUIPE (CORREÇÃO FINAL)
-   ========================================= */
+/* =========================================================
+   MOBILE — EQUIPE (SLIDER LIMPO, CENTRAL E SEM CORTE)
+   ========================================================= */
 @media (max-width: 768px) {
 
   .institucional-equipe {
@@ -1587,35 +1551,37 @@ a.btn-comprar {
   }
 
   .equipe-slider {
-    overflow: hidden;
     width: 100%;
+    overflow: hidden;
   }
 
-  /* 🔑 O TRACK NÃO TEM PADDING */
   .equipe-track {
     display: flex;
     gap: 16px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+
+    justify-content: flex-start; /* 🔥 ESSENCIAL */
   }
 
-  /* 🔑 O CARD É O LIMITADOR */
   .equipe-card {
-    flex: 0 0 90%;
-    max-width: 90%;
-    margin: 0 auto;              /* 🔥 centraliza sempre */
+    flex: 0 0 88%;
+    max-width: 88%;
+
     scroll-snap-align: center;
+
+    margin: 0;              /* 🔥 NUNCA auto em slider */
   }
 
-  /* 🔑 IMAGEM IGUAL AO DESKTOP */
   .equipe-card img {
     width: 100%;
     height: auto;
-    max-height: 300px;
+    max-height: 320px;
     object-fit: cover;
-    border-radius: 16px;         /* igual desktop */
-    background: transparent;     /* sem quadro interno */
+    border-radius: 16px;     /* igual desktop */
+    background: transparent;
   }
 }
+
 
