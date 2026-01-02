@@ -1424,10 +1424,12 @@ a.btn-comprar {
     gap: 32px;
   }
 
-  .sem-quadro-mobile img {
+
+  .institucional-ebwu .sem-quadro-mobile img {
     background: transparent;
     padding: 0;
     border-radius: 3px;
+  
   }
 }
 
