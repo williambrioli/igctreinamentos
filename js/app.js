@@ -506,3 +506,35 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+
+
+// ============================================================
+// Randomização automática do slider equipe
+// ============================================================
+
+
+function renderEquipe() {
+  const container = document.getElementById("equipe-container");
+  if (!container || !equipe) return;
+
+  equipe.forEach(pessoa => {
+    const card = document.createElement("div");
+    card.className = "card card-equipe";
+
+    card.innerHTML = `
+      <img src="${pessoa.imagem}" alt="${pessoa.nome}">
+      <h3>${pessoa.nome}</h3>
+      <p>${pessoa.texto}</p>
+      <a href="${pessoa.link}" target="_blank" class="btn-comprar">
+        Conheça mais
+      </a>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+renderEquipe();
+
+
