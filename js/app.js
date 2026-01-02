@@ -567,15 +567,14 @@ function initEquipeSlider() {
     );
   }
 
-  function update() {
-    if (window.innerWidth < 768) {
-      track.scrollLeft = index * cardWidth;
-    } else {
-      track.style.transform =
-        `translateX(-${index * cardWidth * cardsPerView}px)`;
-    }
-    updateDots();
-  }
+ function update() {
+  track.scrollTo({
+    left: index * cardWidth,
+    behavior: "smooth"
+  });
+  updateDots();
+}
+
 
   // swipe mobile
   if (window.innerWidth < 768) {
