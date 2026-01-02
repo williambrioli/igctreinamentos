@@ -564,7 +564,7 @@ const produtos = [
 const equipe = [
   {
     nome: "Dr. Paulo Takahashi",
-    imagem: "assets/img/equipe/paulo.jpeg",
+    imagem: "assets/img/equipe/paulo.jpg",
     texto: "Dr. Paulo Takahashi, é Consultor Empresarial,  Master Trainer, Especialista em Alta-Performance. Atua há mais de 20 anos transformando e desenvolvendo a vida de pessoas, equipes e empresas. É um dos responsáveis pelo desenvolvimento da Programação Neurolinguística (PNL) no Brasil e Japão.",
     link: "https://paulotakahashi.com.br"
   },
