@@ -1543,17 +1543,18 @@ a.btn-comprar {
 
   .equipe-track {
     display: flex;
-    gap: 0;
-    transition: transform 0.4s ease;
-    will-change: transform;
+    gap: 16px;                 /* espaço entre cards */
+    padding: 0 16px;           /* respiro lateral da tela */
+    box-sizing: border-box;
   }
 
   .equipe-card {
-    flex: 0 0 90%;
-    max-width: 90%;
-    margin: 0 5%;
+    flex: 0 0 85%;             /* largura ideal no mobile */
+    max-width: 85%;
+    margin: 0;                 /* 🔥 remove o deslocamento */
     padding: 20px;
     border-radius: 20px;
+    scroll-snap-align: center; /* 🔥 centraliza no swipe */
   }
 
   .equipe-card img {
