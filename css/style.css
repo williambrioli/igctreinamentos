@@ -1601,109 +1601,96 @@ a.btn-comprar {
 
 
 
-/* ===============================
-   DEPOIMENTOS – VÍDEOS
+/* ==============================
+   DEPOIMENTOS - VIDEOS
 ================================ */
 
-.depoimentos {
-  background: linear-gradient(180deg, #061b2e, #041425);
+.testimonials-section {
   padding: 80px 0;
-}
-
-.depoimentos-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.depoimentos-title {
   text-align: center;
+}
+
+.testimonials-section h2 {
   color: #fff;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
-.depoimentos-slider {
-  overflow: hidden;
-}
-
-.depoimentos-track {
+.testimonials-slider {
   display: flex;
   gap: 24px;
-  transition: transform 0.5s ease;
-}
-
-/* CARD */
-.depoimento-card {
-  flex: 0 0 360px;
-}
-
-/* MINIATURA */
-.video-thumb {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 18px;
   overflow: hidden;
+  justify-content: center;
+}
+
+.testimonial-card {
+  width: 320px;
+  height: 180px;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
-.video-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* PLAY */
-.play-btn {
+/* Play icon */
+.testimonial-card::after {
+  content: '';
+  width: 64px;
+  height: 64px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/7/75/YouTube_social_white_squircle_%282017%29.svg')
+    no-repeat center;
+  background-size: contain;
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.4)
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='40,30 70,50 40,70' fill='white'/></svg>")
-    center/64px no-repeat;
+  margin: auto;
 }
 
-/* DOTS */
-.depoimentos-dots {
+/* Dots */
+.testimonials-dots {
+  margin-top: 24px;
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-top: 24px;
 }
 
-.depoimentos-dots span {
-  width: 8px;
-  height: 8px;
-  background: #777;
+.testimonials-dots span {
+  width: 10px;
+  height: 10px;
+  background: rgba(255,255,255,0.4);
   border-radius: 50%;
+  cursor: pointer;
 }
 
-.depoimentos-dots span.active {
-  background: #fff;
+.testimonials-dots span.active {
+  background: #f9a825;
 }
 
-/* MOBILE */
+/* Mobile */
 @media (max-width: 768px) {
-  .depoimento-card {
-    flex: 0 0 85%;
+  .testimonials-slider {
+    justify-content: flex-start;
+  }
+
+  .testimonial-card {
+    width: 85%;
     margin: 0 auto;
   }
 }
 
 
 
+/* ==============================
+   MODAL VIDEO
+================================ */
 
-
-
-
-
-
-/* MODAL VIDEO */
 .video-modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0,0,0,0.85);
   display: none;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   z-index: 9999;
 }
 
@@ -1713,30 +1700,21 @@ a.btn-comprar {
 
 .video-modal-content {
   width: 90%;
-  max-width: 720px;
-  aspect-ratio: 16 / 9;
-  background: #000;
-  border-radius: 16px;
+  max-width: 800px;
   position: relative;
 }
 
 .video-modal iframe {
   width: 100%;
-  height: 100%;
+  height: 450px;
   border-radius: 16px;
 }
 
 .video-close {
   position: absolute;
-  top: -14px;
-  right: -14px;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: none;
-  background: #000;
+  top: -32px;
+  right: 0;
   color: #fff;
-  font-size: 20px;
+  font-size: 32px;
   cursor: pointer;
 }
-
