@@ -1436,47 +1436,79 @@ a.btn-comprar {
 
 
 /* ============================================================
-   BLOCO INSTITUCIONAL — EQUIPE
+   BLOCO EQUIPE – SLIDER INDEPENDENTE
    ============================================================ */
 
 .institucional-equipe {
+  background: linear-gradient(180deg, #0A2540 0%, #081c33 100%);
   padding: 96px 0;
 }
 
-.card-equipe {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 20px;
-  padding: 24px;
-  text-align: left;
+.equipe-slider {
+  overflow: hidden;
 }
 
-.card-equipe img {
-  height: 260px;
-  object-fit: cover;
+.equipe-track {
+  display: flex;
+  gap: 32px;
+  transition: transform 0.6s ease;
+}
+
+.equipe-card {
+  background: rgba(255,255,255,0.06);
+  border-radius: 20px;
+  padding: 24px;
+  width: 320px;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.equipe-card img {
+  width: 100%;
   border-radius: 16px;
   margin-bottom: 16px;
 }
 
-.card-equipe h3 {
-  color: #fff;
+.equipe-card h3 {
+  font-size: 1.1rem;
   margin-bottom: 8px;
 }
 
-.card-equipe p {
+.equipe-card p {
+  font-size: 0.9rem;
   color: #d1d9e6;
-  font-size: 0.95rem;
-  margin-bottom: 16px;
+}
+
+.equipe-card .btn-comprar {
+  margin-top: 16px;
 }
 
 /* dots */
-.equipe-dots span.active {
-  background: #ffffff;
+.equipe-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
 }
 
-/* MOBILE */
+.equipe-dots span {
+  width: 8px;
+  height: 8px;
+  background: #cfcfcf;
+  border-radius: 50%;
+}
+
+.equipe-dots span.active {
+  background: #fff;
+}
+
+/* mobile */
 @media (max-width: 768px) {
-  .card-equipe {
-    flex: 0 0 95%;
+  .equipe-track {
+    gap: 16px;
+  }
+
+  .equipe-card {
+    width: 90%;
   }
 }
