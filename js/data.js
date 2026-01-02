@@ -556,6 +556,38 @@ const produtos = [
    
 ];
 
+
+/* ============================================================
+   INTEGRANTES DA EQUIPE IGC
+   ============================================================ */
+
+const equipe = [
+  {
+    nome: "Dr. Paulo Takahashi",
+    imagem: "assets/img/equipe/paulo.jpeg",
+    texto: "Dr. Paulo Takahashi, é Consultor Empresarial,  Master Trainer, Especialista em Alta-Performance. Atua há mais de 20 anos transformando e desenvolvendo a vida de pessoas, equipes e empresas. É um dos responsáveis pelo desenvolvimento da Programação Neurolinguística (PNL) no Brasil e Japão.",
+    link: "https://paulotakahashi.com.br"
+  },
+  {
+    nome: "Dr. William Brioli",
+    imagem: "assets/img/equipe/william.jpg",
+    texto: "Especialista em comunicação, oratória e treinamentos corporativos de alto impacto. Há 22 anos dedica sua carreira ao desenvolvimento humano — ajudando pessoas, casais, líderes e equipes corporativas a compreenderem suas emoções, fortalecerem seus vínculos e alcançarem alta performance com equilíbrio entre vida e trabalho.",
+    link: "https://williambrioli.com.br"
+  },
+  {
+    nome: " Prof. Francisco Arcanjo",
+    imagem: "assets/img/equipe/francisco.jpg",
+    texto: "Atua há mais de X anos formando líderes e equipes de alta performance.",
+    link: "https://franciscoarcanjo.com.br/"
+  }
+];
+
+
+
+
+
+
+
 window.produtos = produtos;
 
 /* ============================================================
