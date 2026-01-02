@@ -565,12 +565,10 @@ function initEquipeSlider() {
     );
   }
 
+   
   update();
 
-  setInterval(() => {
-    index = (index + 1) % totalPages;
-    update();
-  }, 6000);
+  
 }
 
 window.addEventListener("load", initEquipeSlider);
