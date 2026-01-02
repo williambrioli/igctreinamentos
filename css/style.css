@@ -1601,176 +1601,142 @@ a.btn-comprar {
 
 
 
-/* ================================
-   BLOCO: O QUE DIZEM NOSSOS ALUNOS
+/* ===============================
+   DEPOIMENTOS – VÍDEOS
 ================================ */
 
-.testimonials {
-  background: linear-gradient(180deg, #071d33, #0b2b4a);
-  padding: 80px 16px;
+.depoimentos {
+  background: linear-gradient(180deg, #061b2e, #041425);
+  padding: 80px 0;
 }
 
-.testimonials-title {
-  text-align: center;
-  color: #fff;
-  font-size: 32px;
-  margin-bottom: 48px;
-}
-
-.testimonials-slider {
-  overflow: hidden;
+.depoimentos-inner {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.testimonials-track {
+.depoimentos-title {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.depoimentos-slider {
+  overflow: hidden;
+}
+
+.depoimentos-track {
   display: flex;
   gap: 24px;
-  transition: transform 0.6s ease;
+  transition: transform 0.5s ease;
 }
 
-.testimonial-card {
-  flex: 0 0 calc(33.333% - 16px);
-  aspect-ratio: 16 / 9;
-  background: #000;
-  border-radius: 16px;
-  cursor: pointer;
+/* CARD */
+.depoimento-card {
+  flex: 0 0 360px;
+}
+
+/* MINIATURA */
+.video-thumb {
   position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-/* Play icon */
-.testimonial-card::after {
-  content: "▶";
+.video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* PLAY */
+.play-btn {
   position: absolute;
-  color: #fff;
-  font-size: 48px;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0,0,0,0.35);
-  border-radius: 16px;
+  background: rgba(0,0,0,0.4)
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='40,30 70,50 40,70' fill='white'/></svg>")
+    center/64px no-repeat;
 }
 
-/* Dots */
-.testimonials-dots {
+/* DOTS */
+.depoimentos-dots {
   display: flex;
   justify-content: center;
   gap: 8px;
   margin-top: 24px;
 }
 
-.testimonials-dots span {
+.depoimentos-dots span {
   width: 8px;
   height: 8px;
-  background: #6b7c8f;
+  background: #777;
   border-radius: 50%;
-  cursor: pointer;
 }
 
-.testimonials-dots span.active {
+.depoimentos-dots span.active {
   background: #fff;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .testimonial-card {
-    flex: 0 0 100%;
+  .depoimento-card {
+    flex: 0 0 85%;
+    margin: 0 auto;
   }
 }
 
 
-/* =========================================================
-   DEPOIMENTOS — SLIDER ISOLADO
-   ========================================================= */
 
-.testimonials {
-  padding: 96px 0;
-  background: linear-gradient(180deg, #0A2540 0%, #081c33 100%);
-}
 
-.testimonials-slider {
-  overflow: hidden;
-  max-width: 1100px;
-  margin: 0 auto;
-}
 
-.testimonials-track {
-  display: flex;
-  gap: 24px;
-  transition: transform 0.5s ease;
-  will-change: transform;
-}
 
-/* CARD DE VÍDEO */
-.testimonial-card {
-  flex: 0 0 320px;
-  height: 200px;
-  border-radius: 20px;
-  background-color: #000;
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-}
 
-/* THUMB YOUTUBE */
-.testimonial-card::before {
-  content: "";
-  position: absolute;
+
+
+/* MODAL VIDEO */
+.video-modal {
+  position: fixed;
   inset: 0;
-  background-size: cover;
-  background-position: center;
-}
-
-/* PLAY */
-.testimonial-card::after {
-  content: "▶";
-  position: absolute;
-  inset: 0;
-  display: flex;
+  background: rgba(0,0,0,0.75);
+  display: none;
   align-items: center;
   justify-content: center;
-  font-size: 48px;
-  color: #fff;
-  background: rgba(0,0,0,0.35);
+  z-index: 9999;
 }
 
-/* DOTS */
-.testimonials-dots {
+.video-modal.active {
   display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 24px;
 }
 
-.testimonials-dots span {
-  width: 8px;
-  height: 8px;
+.video-modal-content {
+  width: 90%;
+  max-width: 720px;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 16px;
+  position: relative;
+}
+
+.video-modal iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+.video-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: #cfcfcf;
-}
-
-.testimonials-dots span.active {
-  background: #fff;
-}
-
-/* ===================== MOBILE ===================== */
-@media (max-width: 768px) {
-
-  .testimonials-slider {
-    width: 100%;
-  }
-
-  .testimonials-track {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-  }
-
-  .testimonial-card {
-    flex: 0 0 90%;
-    margin: 0 5%;
-    scroll-snap-align: center;
-  }
-
+  border: none;
+  background: #000;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
 }
 
