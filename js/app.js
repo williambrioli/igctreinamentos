@@ -510,10 +510,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function initEquipeSlider() {
+  const slider = document.querySelector(".equipe-slider");
   const track = document.querySelector(".equipe-track");
   const dotsContainer = document.querySelector(".equipe-dots");
+  const leftArrow = slider?.querySelector(".arrow.left");
+  const rightArrow = slider?.querySelector(".arrow.right");
 
-  if (!track || !dotsContainer) return;
+  if (!slider || !track || !dotsContainer) return;
 
   track.innerHTML = "";
   dotsContainer.innerHTML = "";
@@ -535,29 +538,21 @@ function initEquipeSlider() {
 
   const isDesktop = window.innerWidth >= 1024;
   const cardsPerView = isDesktop ? 3 : 1;
-
   const totalPages = isDesktop
     ? Math.ceil(cards.length / cardsPerView)
     : cards.length;
 
   let index = Math.floor(Math.random() * totalPages);
-
   const cardWidth = cards[0].offsetWidth + 32;
 
-  // dots
+  // DOTS
   for (let i = 0; i < totalPages; i++) {
     const dot = document.createElement("span");
     if (i === index) dot.classList.add("active");
-
     dot.onclick = () => {
       index = i;
-      track.scrollTo({
-        left: index * cardWidth,
-        behavior: "smooth"
-      });
-      updateDots();
+      update();
     };
-
     dotsContainer.appendChild(dot);
   }
 
@@ -567,27 +562,38 @@ function initEquipeSlider() {
     );
   }
 
- function update() {
-  track.scrollTo({
-    left: index * cardWidth,
-    behavior: "smooth"
-  });
-  updateDots();
-}
+  function update() {
+    if (isDesktop) {
+      track.scrollTo({
+        left: index * cardWidth * cardsPerView,
+        behavior: "smooth"
+      });
+    } else {
+      track.scrollLeft = index * cardWidth;
+    }
+    updateDots();
+  }
 
+  // SETAS (DESKTOP)
+  if (isDesktop) {
+    leftArrow?.addEventListener("click", () => {
+      index = Math.max(0, index - 1);
+      update();
+    });
 
-  // swipe mobile
-  if (window.innerWidth < 768) {
+    rightArrow?.addEventListener("click", () => {
+      index = Math.min(totalPages - 1, index + 1);
+      update();
+    });
+  }
+
+  // SWIPE (MOBILE)
+  if (!isDesktop) {
     track.addEventListener("scroll", () => {
       const novoIndex = Math.floor(
         (track.scrollLeft + cardWidth / 2) / cardWidth
       );
-
-      index = Math.min(
-        Math.max(novoIndex, 0),
-        totalPages - 1
-      );
-
+      index = Math.min(Math.max(novoIndex, 0), totalPages - 1);
       updateDots();
     });
   }
