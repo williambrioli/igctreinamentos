@@ -1512,3 +1512,24 @@ a.btn-comprar {
     width: 90%;
   }
 }
+
+
+/* =========================================
+   SLIDER ESTÁTICO — SEM DESLOCAMENTO
+   ========================================= */
+
+.slider-estatico .slider-track {
+  justify-content: center;
+  transform: none !important;
+}
+
+.slider-estatico .slider-dots {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .slider-estatico .slider-track {
+    overflow-x: hidden;
+  }
+}
+
