@@ -670,3 +670,37 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+
+/* ==============================
+   VIDEOS DEPOIMENTOS
+================================ */
+
+const testimonialCards = document.querySelectorAll('.testimonial-card');
+const videoModal = document.getElementById('videoModal');
+const videoIframe = document.getElementById('videoIframe');
+const closeVideo = document.getElementById('closeVideo');
+
+/* Carrega thumbnails */
+testimonialCards.forEach(card => {
+  const id = card.dataset.video;
+  card.style.backgroundImage =
+    `url(https://img.youtube.com/vi/${id}/hqdefault.jpg)`;
+
+  card.addEventListener('click', () => {
+    videoIframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+    videoModal.classList.add('active');
+  });
+});
+
+/* Fechar modal */
+function closeModal() {
+  videoModal.classList.remove('active');
+  videoIframe.src = '';
+}
+
+closeVideo.addEventListener('click', closeModal);
+videoModal.addEventListener('click', e => {
+  if (e.target === videoModal) closeModal();
+});
+
