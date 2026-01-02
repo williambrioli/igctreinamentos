@@ -567,3 +567,48 @@ function initEquipeSlider() {
 }
 
 initEquipeSlider();
+
+
+/* ==============================
+   SLIDER EQUIPE — DESKTOP
+============================== */
+
+(function () {
+  const track = document.querySelector('.equipe-track');
+  const dotsContainer = document.querySelector('.equipe-dots');
+  const cards = document.querySelectorAll('.equipe-card');
+
+  if (!track || !dotsContainer || cards.length <= 3) return;
+
+  const cardsPerView = 3;
+  const totalPages = Math.ceil(cards.length / cardsPerView);
+  let currentPage = 0;
+
+  // cria dots
+  dotsContainer.innerHTML = '';
+  for (let i = 0; i < totalPages; i++) {
+    const dot = document.createElement('span');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goToPage(i));
+    dotsContainer.appendChild(dot);
+  }
+
+  const dots = dotsContainer.querySelectorAll('span');
+
+  function goToPage(page) {
+    currentPage = page;
+    const offset = page * (320 + 32) * cardsPerView;
+    track.style.transform = `translateX(-${offset}px)`;
+
+    dots.forEach(d => d.classList.remove('active'));
+    dots[page].classList.add('active');
+  }
+
+  // autoplay
+  setInterval(() => {
+    currentPage = (currentPage + 1) % totalPages;
+    goToPage(currentPage);
+  }, 5000);
+
+})();
+
