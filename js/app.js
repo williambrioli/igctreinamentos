@@ -509,18 +509,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// ============================================================
-// Randomização automática do slider equipe
-// ============================================================
+/* ============================================================
+   SLIDER EQUIPE – INDEPENDENTE (NÃO QUEBRA NADA)
+   ============================================================ */
 
+function initEquipeSlider() {
+  const track = document.querySelector(".equipe-track");
+  const dotsContainer = document.querySelector(".equipe-dots");
 
-function renderEquipe() {
-  const container = document.getElementById("equipe-container");
-  if (!container || !equipe) return;
+  if (!track || !dotsContainer) return;
 
-  equipe.forEach(pessoa => {
+  track.innerHTML = "";
+  dotsContainer.innerHTML = "";
+
+  equipe.forEach((pessoa) => {
     const card = document.createElement("div");
-    card.className = "card card-equipe";
+    card.className = "equipe-card";
 
     card.innerHTML = `
       <img src="${pessoa.imagem}" alt="${pessoa.nome}">
@@ -531,10 +535,35 @@ function renderEquipe() {
       </a>
     `;
 
-    container.appendChild(card);
+    track.appendChild(card);
   });
+
+  const cards = track.children;
+  let index = Math.floor(Math.random() * cards.length);
+
+  [...cards].forEach((_, i) => {
+    const dot = document.createElement("span");
+    if (i === index) dot.classList.add("active");
+    dot.onclick = () => {
+      index = i;
+      update();
+    };
+    dotsContainer.appendChild(dot);
+  });
+
+  function update() {
+    track.style.transform = `translateX(-${index * (cards[0].offsetWidth + 32)}px)`;
+    [...dotsContainer.children].forEach((d, i) =>
+      d.classList.toggle("active", i === index)
+    );
+  }
+
+  update();
+
+  setInterval(() => {
+    index = (index + 1) % cards.length;
+    update();
+  }, 6000);
 }
 
-renderEquipe();
-
-
+initEquipeSlider();
