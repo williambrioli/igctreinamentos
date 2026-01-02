@@ -1537,11 +1537,6 @@ a.btn-comprar {
    SLIDER ESTÁTICO — SEM DESLOCAMENTO
    ========================================= */
 
-.slider-estatico .slider-track {
-  justify-content: center;
-  transform: none !important;
-}
-
 .slider-estatico .slider-dots {
   display: none;
 }
