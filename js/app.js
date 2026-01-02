@@ -544,6 +544,37 @@ function initEquipeSlider() {
 
   let index = 0;
 
+// cria setas corretamente
+const slider = document.querySelector(".equipe-slider");
+
+let left = slider.querySelector(".arrow.left");
+let right = slider.querySelector(".arrow.right");
+
+if (!left && !right) {
+  left = document.createElement("button");
+  right = document.createElement("button");
+
+  left.className = "arrow left";
+  right.className = "arrow right";
+
+  left.innerHTML = "‹";
+  right.innerHTML = "›";
+
+  slider.appendChild(left);
+  slider.appendChild(right);
+}
+
+left.onclick = () => {
+  index = Math.max(0, index - 1);
+  update();
+};
+
+right.onclick = () => {
+  index = Math.min(totalPages - 1, index + 1);
+  update();
+};
+
+
   // cria dots corretamente
   for (let i = 0; i < totalPages; i++) {
     const dot = document.createElement("span");
