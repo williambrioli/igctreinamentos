@@ -126,7 +126,7 @@ function abrirVideo(src) {
 
   document.body.appendChild(modal);
 
-  const btnClose = modal.querySelector(".video-close");
+  const btnClose = modal.querySelector(".produto-video-close");
 
   // 🔹 FECHAR PELO X
   btnClose.addEventListener("click", (e) => {
