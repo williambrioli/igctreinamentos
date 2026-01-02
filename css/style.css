@@ -1680,46 +1680,97 @@ a.btn-comprar {
 }
 
 
-/* ================================
-   VIDEO MODAL: O QUE DIZEM NOSSOS ALUNOS
-================================ */
+/* =========================================================
+   DEPOIMENTOS — SLIDER ISOLADO
+   ========================================================= */
 
+.testimonials {
+  padding: 96px 0;
+  background: linear-gradient(180deg, #0A2540 0%, #081c33 100%);
+}
 
-.video-modal {
-  position: fixed;
+.testimonials-slider {
+  overflow: hidden;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.testimonials-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+/* CARD DE VÍDEO */
+.testimonial-card {
+  flex: 0 0 320px;
+  height: 200px;
+  border-radius: 20px;
+  background-color: #000;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* THUMB YOUTUBE */
+.testimonial-card::before {
+  content: "";
+  position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.8);
-  display: none;
+  background-size: cover;
+  background-position: center;
+}
+
+/* PLAY */
+.testimonial-card::after {
+  content: "▶";
+  position: absolute;
+  inset: 0;
+  display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
-}
-
-.video-modal.active {
-  display: flex;
-}
-
-.video-modal-content {
-  position: relative;
-  width: 90%;
-  max-width: 800px;
-  aspect-ratio: 16 / 9;
-}
-
-.video-modal iframe {
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-}
-
-.video-close {
-  position: absolute;
-  top: -40px;
-  right: 0;
-  background: none;
+  font-size: 48px;
   color: #fff;
-  font-size: 32px;
-  border: none;
-  cursor: pointer;
+  background: rgba(0,0,0,0.35);
+}
+
+/* DOTS */
+.testimonials-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.testimonials-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cfcfcf;
+}
+
+.testimonials-dots span.active {
+  background: #fff;
+}
+
+/* ===================== MOBILE ===================== */
+@media (max-width: 768px) {
+
+  .testimonials-slider {
+    width: 100%;
+  }
+
+  .testimonials-track {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .testimonial-card {
+    flex: 0 0 90%;
+    margin: 0 5%;
+    scroll-snap-align: center;
+  }
+
 }
 
