@@ -656,3 +656,31 @@ testimonialCards.forEach(card => {
   });
 });
 
+
+
+/* ===============================
+   MODAL DE VÍDEOS – DEPOIMENTOS
+================================ */
+
+const modal = document.getElementById("videoModal");
+const iframe = document.getElementById("videoFrame");
+const closeBtn = document.querySelector(".video-close");
+
+document.querySelectorAll(".depoimento-card").forEach(card => {
+  card.addEventListener("click", () => {
+    const videoId = card.dataset.video;
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    modal.classList.add("active");
+  });
+});
+
+closeBtn.addEventListener("click", closeVideo);
+modal.addEventListener("click", e => {
+  if (e.target === modal) closeVideo();
+});
+
+function closeVideo() {
+  iframe.src = "";
+  modal.classList.remove("active");
+}
+
