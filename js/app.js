@@ -542,7 +542,7 @@ function initEquipeSlider() {
   const cardsPerView = isDesktop ? 3 : 1;
   const totalPages = Math.ceil(cards.length / cardsPerView);
 
-  let index = 0;
+  let index = Math.floor(Math.random() * totalPages);
 
   // cria dots corretamente
   for (let i = 0; i < totalPages; i++) {
@@ -574,11 +574,16 @@ function initEquipeSlider() {
 
   update();
 
+  // ================================
+// AUTOPLAY — SOMENTE DESKTOP
+// ================================
+if (window.innerWidth >= 1024) {
   setInterval(() => {
     index = (index + 1) % totalPages;
     update();
-  }, 20000);
+  }, 6000);
 }
+
 
 window.addEventListener("load", initEquipeSlider);
 window.addEventListener("resize", initEquipeSlider);
