@@ -1395,6 +1395,14 @@ img {
   border-radius: 16px;
 }
 
+
+/* garante botão institucional igual ao de compra */
+.institucional-ebwu .btn {
+  text-decoration: none;
+  display: inline-block;
+}
+
+
 /* ============================================================
    MOBILE
    ============================================================ */
