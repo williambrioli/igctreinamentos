@@ -807,14 +807,30 @@ img {
   z-index: 9999;
 }
 
+/* 🔒 ISOLA MODAL DE VÍDEO DO PRODUTO */
+.produto .video-modal,
+.produto-page .video-modal {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  z-index: 99999 !important;
+}
+
+.produto-page {
+  overflow: visible;
+}
+
 .video-content {
   position: relative;
+  z-index: 100000;
   background: #000;
   border-radius: 16px;
   width: 90%;
   max-width: 720px;
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  
 }
 
 /* vídeo fica abaixo */
