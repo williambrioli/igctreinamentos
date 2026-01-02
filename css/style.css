@@ -1384,7 +1384,9 @@ img {
 
 /* botão alinhado */
 .ebwu-texto .btn {
-  margin-top: 24px;
+  display: inline-flex;
+  margin: 24px auto 0;
+  
 }
 
 /* imagens */
