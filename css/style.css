@@ -454,7 +454,7 @@ img {
 /* ===== DESKTOP ===== */
 @media (min-width: 1024px) {
   .slider-track {
-    width: calc((300px * 4) + (16px * 3)); /* 4 cards inteiros */
+    width: calc((260px * 4) + (16px * 3)); /* 4 cards inteiros */
   }
 }
 
