@@ -1571,6 +1571,28 @@ a.btn-comprar {
 }
 
 
+/* =========================================================
+   EQUIPE — SWIPE NATIVO NO MOBILE (SEM CONFLITO)
+   ========================================================= */
+@media (max-width: 768px) {
+
+  /* libera o scroll horizontal só da equipe */
+  .institucional-equipe .equipe-track {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* cada card encaixa certinho no swipe */
+  .institucional-equipe .equipe-card {
+    scroll-snap-align: start;
+  }
+
+}
+
+
+
+
 /* DESKTOP — EQUIPE COMO SLIDER REAL */
 @media (min-width: 1024px) {
 
