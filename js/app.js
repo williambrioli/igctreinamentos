@@ -570,7 +570,7 @@ function initEquipeSlider() {
   setInterval(() => {
     index = (index + 1) % totalPages;
     update();
-  }, 6000);
+  }, 20000);
 }
 
 window.addEventListener("load", initEquipeSlider);
@@ -664,7 +664,7 @@ function startAutoPlay() {
     }
 
     update();
-  }, 4000); // tempo em ms (4000 = 4 segundos)
+  }, 20000); // tempo em ms (4000 = 4 segundos)
 }
 
 function stopAutoPlay() {
@@ -778,7 +778,7 @@ function initIgcVideos() {
   let timer = setInterval(() => {
     page = (page + 1) % pages;
     update();
-  }, 6000);
+  }, 22000);
 
   function stopAuto() {
     clearInterval(timer);
