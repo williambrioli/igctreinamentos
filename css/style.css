@@ -1372,9 +1372,9 @@ img {
 /* texto mais largo */
 .ebwu-texto {
   grid-column: 1 / -1;
-  max-width: 720px;
+  max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 
 .ebwu-texto p {
