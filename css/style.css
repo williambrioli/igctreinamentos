@@ -1510,22 +1510,36 @@ a.btn-comprar {
   background: #fff;
 }
 
-/* MOBILE — equipe desliza corretamente */
+/* MOBILE — EQUIPE (SLIDER CORRETO E CENTRALIZADO) */
 @media (max-width: 768px) {
 
+  .institucional-equipe {
+    overflow: hidden;
+  }
+
   .equipe-slider {
-    overflow-x: hidden;
+    width: 100%;
+    overflow: hidden;
   }
 
   .equipe-track {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 
   .equipe-card {
-    width: 90%;
+    flex: 0 0 85%;
+    max-width: 85%;
     scroll-snap-align: center;
+
+    /* 🔑 ISSO RESOLVE O SUMIÇO */
+    margin: 0;
   }
 }
+
 
 
 
@@ -1599,7 +1613,7 @@ a.btn-comprar {
     width: 100%;
     height: auto;
     max-height: 300px;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 16px;         /* igual desktop */
     background: transparent;     /* sem quadro interno */
   }
