@@ -1569,9 +1569,11 @@ a.btn-comprar {
 @media (max-width: 768px) {
 
   .equipe-card img {
-    height: 240px;          /* 🔑 tamanho ideal no mobile */
-    object-fit: cover;     /* corta com elegância */
-    object-position: top;  /* prioriza rosto */
+    height: 220px;          /* altura controlada */
+    width: 100%;
+    object-fit: contain;   /* 🔑 NÃO corta */
+    object-position: center;
+    background: rgba(255,255,255,0.04); /* respiro elegante */
     border-radius: 16px;
   }
 
