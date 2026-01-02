@@ -1448,6 +1448,14 @@ a.btn-comprar {
   overflow: hidden;
 }
 
+/* LIMITADOR DO SLIDER DA EQUIPE */
+.equipe-slider {
+  max-width: 1100px;   /* largura segura para 3 cards */
+  margin: 0 auto;      /* centraliza */
+  overflow: hidden;    /* impede escapar */
+}
+
+
 .equipe-track {
   display: flex;
   gap: 32px;
@@ -1502,16 +1510,27 @@ a.btn-comprar {
   background: #fff;
 }
 
-/* mobile */
+/* MOBILE — equipe desliza corretamente */
 @media (max-width: 768px) {
+
+  .equipe-slider {
+    overflow-x: hidden;
+  }
+
   .equipe-track {
-    gap: 16px;
+    scroll-snap-type: x mandatory;
   }
 
   .equipe-card {
     width: 90%;
+    scroll-snap-align: center;
   }
 }
+
+
+
+
+
 
 
 /* =========================================
@@ -1533,3 +1552,14 @@ a.btn-comprar {
   }
 }
 
+/* DESKTOP — equipe NÃO desliza */
+@media (min-width: 1024px) {
+  .institucional-equipe .equipe-track {
+    justify-content: center;     /* centraliza os 3 cards */
+    transform: none !important;  /* trava qualquer movimento */
+  }
+
+  .institucional-equipe .equipe-dots {
+    display: none;               /* dots não fazem sentido no desktop */
+  }
+}
