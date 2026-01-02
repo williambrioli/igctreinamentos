@@ -1549,8 +1549,8 @@ a.btn-comprar {
   }
 
   .equipe-card {
-    flex: 0 0 85%;             /* largura ideal no mobile */
-    max-width: 85%;
+    flex: 0 0 100%;             /* largura ideal no mobile */
+    max-width: 100%;
     margin: 0;                 /* 🔥 remove o deslocamento */
     padding: 20px;
     border-radius: 20px;
