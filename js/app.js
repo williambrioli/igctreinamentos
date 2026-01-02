@@ -579,58 +579,80 @@ window.addEventListener("resize", initEquipeSlider);
 
 
 
-/* ============================================================
-   VIDEO MODEL BLOCO DE TESTEMUNHOS O QUE DIZEM NOSSOS ALUNOS
-   ============================================================ */
+/* =========================================================
+   DEPOIMENTOS — SLIDER + MODAL
+   ========================================================= */
 
+const testimonialCards = document.querySelectorAll('.testimonial-card');
+const testimonialTrack = document.querySelector('.testimonials-track');
+const testimonialDots = document.querySelector('.testimonials-dots');
 
+let testimonialIndex = 0;
 
-(() => {
-  const track = document.querySelector('.testimonials-track');
-  const cards = document.querySelectorAll('.testimonial-card');
-  const dotsContainer = document.querySelector('.testimonials-dots');
-  let index = 0;
+/* THUMB DO YOUTUBE */
+testimonialCards.forEach(card => {
+  const id = card.dataset.video;
+  card.style.setProperty(
+    '--thumb',
+    `url(https://img.youtube.com/vi/${id}/hqdefault.jpg)`
+  );
+  card.style.backgroundImage =
+    `url(https://img.youtube.com/vi/${id}/hqdefault.jpg)`;
+});
 
-  const perPage = window.innerWidth <= 768 ? 1 : 3;
-  const pages = Math.ceil(cards.length / perPage);
+/* DOTS */
+testimonialCards.forEach((_, i) => {
+  const dot = document.createElement('span');
+  if (i === 0) dot.classList.add('active');
+  testimonialDots.appendChild(dot);
+});
 
-  for (let i = 0; i < pages; i++) {
-    const dot = document.createElement('span');
-    if (i === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goTo(i));
-    dotsContainer.appendChild(dot);
-  }
+function updateTestimonialSlider() {
+  const cardWidth = testimonialCards[0].offsetWidth + 24;
+  testimonialTrack.style.transform =
+    `translateX(-${testimonialIndex * cardWidth}px)`;
 
-  const dots = dotsContainer.querySelectorAll('span');
+  testimonialDots.querySelectorAll('span').forEach((dot, i) => {
+    dot.classList.toggle('active', i === testimonialIndex);
+  });
+}
 
-  function goTo(i) {
-    index = i;
-    track.style.transform = `translateX(-${i * 100}%)`;
-    dots.forEach(d => d.classList.remove('active'));
-    dots[i].classList.add('active');
-  }
-
+/* AUTO SLIDE DESKTOP */
+if (window.innerWidth >= 1024) {
   setInterval(() => {
-    index = (index + 1) % pages;
-    goTo(index);
+    testimonialIndex =
+      (testimonialIndex + 1) % testimonialCards.length;
+    updateTestimonialSlider();
   }, 5000);
+}
 
-  // MODAL
-  const modal = document.getElementById('videoModal');
-  const iframe = document.getElementById('videoIframe');
+/* MODAL */
+testimonialCards.forEach(card => {
+  card.addEventListener('click', () => {
+    const videoId = card.dataset.video;
 
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      iframe.src = `https://www.youtube.com/embed/${card.dataset.video}?autoplay=1`;
-      modal.classList.add('active');
+    const modal = document.createElement('div');
+    modal.className = 'video-modal';
+    modal.innerHTML = `
+      <div class="video-content">
+        <button class="video-close">✕</button>
+        <iframe
+          src="https://www.youtube.com/embed/${videoId}?autoplay=1"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen>
+        </iframe>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    modal.addEventListener('click', e => {
+      if (e.target.classList.contains('video-modal') ||
+          e.target.classList.contains('video-close')) {
+        modal.remove();
+      }
     });
   });
-
-  modal.addEventListener('click', e => {
-    if (e.target === modal || e.target.classList.contains('video-close')) {
-      iframe.src = '';
-      modal.classList.remove('active');
-    }
-  });
-})();
+});
 
