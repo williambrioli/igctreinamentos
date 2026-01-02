@@ -1571,22 +1571,6 @@ a.btn-comprar {
 }
 
 
-@media (max-width: 768px) {
-  .equipe-track {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-  }
-
-  .equipe-card {
-    scroll-snap-align: start;
-  }
-
-  .equipe-slider .arrow {
-    display: none;
-  }
-}
-
-
 /* DESKTOP — EQUIPE COMO SLIDER REAL */
 @media (min-width: 1024px) {
 

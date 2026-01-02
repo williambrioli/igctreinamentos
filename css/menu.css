@@ -18,14 +18,14 @@ body {
   z-index: 999;
   background-color: var(--azul-escuro);
   color: var(--branco);
-  padding: 20px 0;
+  padding: 16px 0;
 }
 
 .header-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  gap: 16px;
 }
 
 /* ============================================================
@@ -33,7 +33,7 @@ body {
    ============================================================ */
 
 .logo img {
-  height: 90px;
+  height: 80px;
   width: auto;
   display: block;
 }
@@ -45,27 +45,18 @@ body {
 .nav ul {
   list-style: none;
   display: flex;
-  gap: 28px; /* MAIS RESPIRO ENTRE OS ITENS */
-  align-items: center;
+  gap: 16px;
 }
 
 .nav a {
   color: var(--branco);
   text-decoration: none;
   font-size: 0.95rem;
-  font-weight: 500;
-  line-height: 1.25;
-  text-align: center;
-  white-space: normal;   /* 🔥 permite quebrar linha */
-  max-width: 150px;      /* 🔥 controla largura do item */
 }
 
 .nav a:hover {
   text-decoration: underline;
 }
-
-
-
 
 /* ============================================================
    BUSCA
