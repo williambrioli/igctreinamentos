@@ -1424,12 +1424,10 @@ a.btn-comprar {
     gap: 32px;
   }
 
-  .institucional-imagem img {
+  .sem-quadro-mobile img {
     background: transparent;
     padding: 0;
     border-radius: 5px;
-    width: 100%;
-    max-width: 100%;
   }
 }
 
