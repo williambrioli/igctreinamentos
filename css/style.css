@@ -1510,27 +1510,6 @@ a.btn-comprar {
   background: #fff;
 }
 
-/* MOBILE — equipe desliza corretamente */
-@media (max-width: 768px) {
-
-  .equipe-slider {
-    overflow-x: hidden;
-  }
-
-  .equipe-track {
-    scroll-snap-type: x mandatory;
-  }
-
-  .equipe-card {
-    width: 90%;
-    scroll-snap-align: center;
-  }
-}
-
-
-
-
-
 
 
 /* =========================================
@@ -1560,37 +1539,43 @@ a.btn-comprar {
 }
 
 
-
-
-
-/* =========================================
-   MOBILE — SLIDE LIMPO E CENTRALIZADO
-   ========================================= */
+/* =========================================================
+   EQUIPE — MOBILE DEFINITIVO (SEM SUMIR, SEM CORTAR)
+   ========================================================= */
 @media (max-width: 768px) {
 
   .institucional-equipe {
-    overflow-x: hidden;
+    overflow: hidden;
+  }
+
+  .equipe-slider {
+    overflow: hidden;
+    width: 100%;
   }
 
   .equipe-track {
     display: flex;
-    gap: 24px;
-    scroll-snap-type: x mandatory;
+    gap: 16px;
+    transition: transform 0.5s ease;
   }
 
   .equipe-card {
-    width: 88%;
-    max-width: 360px;
-    margin: 0 auto;
-    scroll-snap-align: center;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 20px;
   }
 
   .equipe-card img {
     width: 100%;
-    height: 220px;          /* CONTROLE REAL */
-    object-fit: contain;   /* 🔑 nunca corta */
-    object-position: center;
+    height: auto;
     border-radius: 16px;
-    background: rgba(255,255,255,0.05);
+    object-fit: cover;
+    background: transparent;
+  }
+
+  .equipe-card h3,
+  .equipe-card p {
+    color: #ffffff;
   }
 }
+
