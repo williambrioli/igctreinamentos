@@ -574,41 +574,6 @@ const equipe = [
     texto: "Especialista em comunicação, oratória e treinamentos corporativos de alto impacto. Há 22 anos dedica sua carreira ao desenvolvimento humano — ajudando pessoas, casais, líderes e equipes corporativas a compreenderem suas emoções, fortalecerem seus vínculos e alcançarem alta performance com equilíbrio entre vida e trabalho.",
     link: "https://williambrioli.com.br"
   },
-
-   {
-    nome: "Dr. William Brioli",
-    imagem: "assets/img/equipe/william.jpg",
-    texto: "Especialista em comunicação, oratória e treinamentos corporativos de alto impacto. Há 22 anos dedica sua carreira ao desenvolvimento humano — ajudando pessoas, casais, líderes e equipes corporativas a compreenderem suas emoções, fortalecerem seus vínculos e alcançarem alta performance com equilíbrio entre vida e trabalho.",
-    link: "https://williambrioli.com.br"
-  },
-
-   {
-    nome: "Dr. William Brioli",
-    imagem: "assets/img/equipe/william.jpg",
-    texto: "Especialista em comunicação, oratória e treinamentos corporativos de alto impacto. Há 22 anos dedica sua carreira ao desenvolvimento humano — ajudando pessoas, casais, líderes e equipes corporativas a compreenderem suas emoções, fortalecerem seus vínculos e alcançarem alta performance com equilíbrio entre vida e trabalho.",
-    link: "https://williambrioli.com.br"
-  },
-
-   {
-    nome: "Dr. William Brioli",
-    imagem: "assets/img/equipe/william.jpg",
-    texto: "Especialista em comunicação, oratória e treinamentos corporativos de alto impacto. Há 22 anos dedica sua carreira ao desenvolvimento humano — ajudando pessoas, casais, líderes e equipes corporativas a compreenderem suas emoções, fortalecerem seus vínculos e alcançarem alta performance com equilíbrio entre vida e trabalho.",
-    link: "https://williambrioli.com.br"
-  },
-
-   {
-    nome: "Dr. William Brioli",
-    imagem: "assets/img/equipe/william.jpg",
-    texto: "Especialista em comunicação, oratória e treinamentos corporativos de alto impacto. Há 22 anos dedica sua carreira ao desenvolvimento humano — ajudando pessoas, casais, líderes e equipes corporativas a compreenderem suas emoções, fortalecerem seus vínculos e alcançarem alta performance com equilíbrio entre vida e trabalho.",
-    link: "https://williambrioli.com.br"
-  },
-
-   {
-    nome: "Dr. William Brioli",
-    imagem: "assets/img/equipe/william.jpg",
-    texto: "Especialista em comunicação, oratória e treinamentos corporativos de alto impacto. Há 22 anos dedica sua carreira ao desenvolvimento humano — ajudando pessoas, casais, líderes e equipes corporativas a compreenderem suas emoções, fortalecerem seus vínculos e alcançarem alta performance com equilíbrio entre vida e trabalho.",
-    link: "https://williambrioli.com.br"
-  },
    
   {
     nome: " Prof. Francisco Arcanjo",
