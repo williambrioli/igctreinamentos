@@ -593,20 +593,10 @@ function initEquipeSlider() {
   update();
 }
 
-
-  // ================================
-// AUTOPLAY — SOMENTE DESKTOP
-// ================================
-if (window.innerWidth >= 1024) {
-  setInterval(() => {
-    index = (index + 1) % totalPages;
-    update();
-  }, 10000);
-}
-}
+  
 
 window.addEventListener("load", initEquipeSlider);
-window.addEventListener("resize", initEquipeSlider);
+// window.addEventListener("resize", initEquipeSlider);
 
 
 
