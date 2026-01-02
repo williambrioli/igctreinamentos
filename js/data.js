@@ -20,19 +20,19 @@ const categorias = [
   {
     id: "pnl",
     nome: "Treinamentos em PNL",
-    nomeMenu: "PNL",
+    nomeMenu: " Formação em PNL",
     mostrarNoMenu: true
   },
   {
     id: "oratoria",
     nome: "Treinamentos em Oratória",
-    nomeMenu: "Oratória",
+    nomeMenu: "Treinamento em Oratória",
     mostrarNoMenu: true
   },
   {
-    id: "palestas",
-    nome: "Palestras",
-    nomeMenu: "Palestras",
+    id: "workshopepalestas",
+    nome: "Worshops e Palestras",
+    nomeMenu: "Worshops e Palestras",
     mostrarNoMenu: true
   }
   
@@ -47,7 +47,52 @@ const produtos = [
     id: "1",
     nome: "Treinamento em PNL Básico",
     categoria: "pnl",
-    preco: 90.00,
+    preco: 798.00,
+    imagem: "assets/img/imgteste.png",
+    videos: [
+      "assets/videos/5htp.mp4"
+    ],
+    descricao: {
+      resumo: `
+   
+       Treinamento em pnl busca...
+       
+       `,
+      
+       oQueE: `
+      
+      O treinamento tem como...
+      
+      `,      
+      composicao: `
+      
+      Metodologia validada
+      
+      `,
+      comoUsar: `
+      
+      Para quem é...
+      
+      `,
+      advertencias: `
+      
+      muito bom
+
+      `
+    },
+         
+    destaque: true,
+    mostrarlancamento: true,
+    mostrarVideo: true,
+    textoParcelamento: "ou 1x de R$ 90,00"
+    },
+
+
+   {
+    id: "2",
+    nome: "Treinamento em PNL Intermediário",
+    categoria: "pnl",
+    preco: 997.00,
     imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
@@ -89,67 +134,135 @@ const produtos = [
 
 
  {
-    id: "2",
-    nome: "Treinamento em PNL Intermediário",
+    id: "3",
+    nome: "Treinamento em PNL Avançado",
     categoria: "pnl",
+    preco: 1600.00,
+    imagem: "assets/img/imgteste.png",
+    videos: [
+      "assets/videos/5htp.mp4"
+    ],
+    descricao: {
+      resumo: `
+   
+       Treinamento em pnl busca...
+       
+       `,
+      
+       oQueE: `
+      
+      O treinamento tem como...
+      
+      `,      
+      composicao: `
+      
+      Metodologia validada
+      
+      `,
+      comoUsar: `
+      
+      Para quem é...
+      
+      `,
+      advertencias: `
+      
+      muito bom
+
+      `
+    },
+         
+    destaque: true,
+    mostrarlancamento: true,
+    mostrarVideo: true,
+    textoParcelamento: "ou 1x de R$ 90,00"
+    },
+
+
+
+
+   {
+    id: "4",
+    nome: "Treinamento em Oratória Básico",
+    categoria: "oratoria",
+    preco: 798.00,
+    imagem: "assets/img/imgteste.png",
+    videos: [
+      "assets/videos/5htp.mp4"
+    ],
+    descricao: {
+      resumo: `
+   
+       Treinamento em pnl busca...
+       
+       `,
+      
+       oQueE: `
+      
+      O treinamento tem como...
+      
+      `,      
+      composicao: `
+      
+      Metodologia validada
+      
+      `,
+      comoUsar: `
+      
+      Para quem é...
+      
+      `,
+      advertencias: `
+      
+      muito bom
+
+      `
+    },
+         
+    destaque: true,
+    mostrarlancamento: true,
+    mostrarVideo: true,
+    textoParcelamento: "ou 1x de R$ 90,00"
+    },
+   
+ 
+
+
+{
+    id: "5",
+    nome: "Treinamento em Oratória Intermediário",
+    categoria: "oratoria",
     preco: 997.00,
     imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
     descricao: {
-      resumo: "Deseja melhorar o humor e dormir de forma tranquila?",
-      oQueE: "O 5-HTP é um precursor da serotonina...",
-      composicao: "5-Hidroxitriptofano 50mg...",
-      comoUsar: "Tomar 1 cápsula antes de dormir...",
-      advertencias: "Não utilizar sem orientação profissional..."
-    },
-         
-    destaque: true,
-    mostrarlancamento: false,
-    mostrarVideo: true,
-    textoParcelamento: "ou 1x de R$ 90,00"
-    },
+      resumo: `
    
-{
-    id: "3",
-    nome: "Emagrecimento2",
-    categoria: "emagrecimento",
-    preco: 90.00,
-    imagem: "assets/img/imgteste.png",
-    videos: [
-      "assets/videos/5htp.mp4"
-    ],
-    descricao: {
-      resumo: "Deseja melhorar o humor e dormir de forma tranquila?",
-      oQueE: "O 5-HTP é um precursor da serotonina...",
-      composicao: "5-Hidroxitriptofano 50mg...",
-      comoUsar: "Tomar 1 cápsula antes de dormir...",
-      advertencias: "Não utilizar sem orientação profissional..."
-    },
-         
-    destaque: true,
-    mostrarlancamento: false,
-    mostrarVideo: true,
-    textoParcelamento: "ou 1x de R$ 90,00"
-    },
+       Treinamento em pnl busca...
+       
+       `,
+      
+       oQueE: `
+      
+      O treinamento tem como...
+      
+      `,      
+      composicao: `
+      
+      Metodologia validada
+      
+      `,
+      comoUsar: `
+      
+      Para quem é...
+      
+      `,
+      advertencias: `
+      
+      muito bom
 
-
-{
-    id: "4",
-    nome: "Emagrecimento3",
-    categoria: "emagrecimento",
-    preco: 90.00,
-    imagem: "assets/img/imgteste.png",
-    videos: [
-      "assets/videos/5htp.mp4"
-    ],
-    descricao: {
-      resumo: "Deseja melhorar o humor e dormir de forma tranquila?",
-      oQueE: "O 5-HTP é um precursor da serotonina...",
-      composicao: "5-Hidroxitriptofano 50mg...",
-      comoUsar: "Tomar 1 cápsula antes de dormir...",
-      advertencias: "Não utilizar sem orientação profissional..."
+      `
     },
          
     destaque: true,
@@ -161,24 +274,45 @@ const produtos = [
 
 
 {
-    id: "5",
-    nome: "Emagrecimento4",
-    categoria: "emagrecimento",
-    preco: 90.00,
+    id: "6",
+    nome: "Treinamento em Oratória Avançado",
+    categoria: "oratoria",
+    preco: 1600.00,
     imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
     descricao: {
-      resumo: "Deseja melhorar o humor e dormir de forma tranquila?",
-      oQueE: "O 5-HTP é um precursor da serotonina...",
-      composicao: "5-Hidroxitriptofano 50mg...",
-      comoUsar: "Tomar 1 cápsula antes de dormir...",
-      advertencias: "Não utilizar sem orientação profissional..."
+      resumo: `
+   
+       Treinamento em pnl busca...
+       
+       `,
+      
+       oQueE: `
+      
+      O treinamento tem como...
+      
+      `,      
+      composicao: `
+      
+      Metodologia validada
+      
+      `,
+      comoUsar: `
+      
+      Para quem é...
+      
+      `,
+      advertencias: `
+      
+      muito bom
+
+      `
     },
          
     destaque: true,
-    mostrarlancamento: false,
+    mostrarlancamento: true,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
     },
@@ -186,24 +320,45 @@ const produtos = [
    
 
 {
-    id: "6",
-    nome: "Emagrecimento5",
-    categoria: "emagrecimento",
+    id: "7",
+    nome: "Workshops e Palestas",
+    categoria: "workshopepalestas",
     preco: 90.00,
     imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
     descricao: {
-      resumo: "Deseja melhorar o humor e dormir de forma tranquila?",
-      oQueE: "O 5-HTP é um precursor da serotonina...",
-      composicao: "5-Hidroxitriptofano 50mg...",
-      comoUsar: "Tomar 1 cápsula antes de dormir...",
-      advertencias: "Não utilizar sem orientação profissional..."
+      resumo: `
+   
+       Treinamento em pnl busca...
+       
+       `,
+      
+       oQueE: `
+      
+      O treinamento tem como...
+      
+      `,      
+      composicao: `
+      
+      Metodologia validada
+      
+      `,
+      comoUsar: `
+      
+      Para quem é...
+      
+      `,
+      advertencias: `
+      
+      muito bom
+
+      `
     },
          
     destaque: true,
-    mostrarlancamento: false,
+    mostrarlancamento: true,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
     },
@@ -212,167 +367,181 @@ const produtos = [
 
 
    {
-    id: "7",
-    nome: "Desempenho Físico",
-    categoria: "desempenhofisico",
-    preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
-    videos: [
-      "assets/videos/5htp.mp4"
-    ],
-    descricao: {
-      resumo: "Deseja melhorar o humor e dormir de forma tranquila?",
-      oQueE: "O 5-HTP é um precursor da serotonina...",
-      composicao: "5-Hidroxitriptofano 50mg...",
-      comoUsar: "Tomar 1 cápsula antes de dormir...",
-      advertencias: "Não utilizar sem orientação profissional..."
-    },
-         
-    destaque: false,
-    mostrarlancamento: false,
-    mostrarVideo: true,
-    textoParcelamento: "ou 1x de R$ 90,00"
-    },
-
-   
-    {
     id: "8",
-    nome: "Desempenho Físico1",
-    categoria: "desempenhofisico",
+    nome: "Workshops e Palestas",
+    categoria: "workshopepalestas",
     preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
+    imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
     descricao: {
-      resumo: "Deseja melhorar o humor e dormir de forma tranquila?",
-      oQueE: "O 5-HTP é um precursor da serotonina...",
-      composicao: "5-Hidroxitriptofano 50mg...",
-      comoUsar: "Tomar 1 cápsula antes de dormir...",
-      advertencias: "Não utilizar sem orientação profissional..."
+      resumo: `
+   
+       Treinamento em pnl busca...
+       
+       `,
+      
+       oQueE: `
+      
+      O treinamento tem como...
+      
+      `,      
+      composicao: `
+      
+      Metodologia validada
+      
+      `,
+      comoUsar: `
+      
+      Para quem é...
+      
+      `,
+      advertencias: `
+      
+      muito bom
+
+      `
     },
          
-    destaque: false,
+    destaque: true,
     mostrarlancamento: true,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
     },
+
+
+   
+    {
+    id: "9",
+    nome: "Workshops e Palestas",
+    categoria: "workshopepalestas",
+    preco: 90.00,
+    imagem: "assets/img/imgteste.png",
+    videos: [
+      "assets/videos/5htp.mp4"
+    ],
+    descricao: {
+      resumo: `
+   
+       Treinamento em pnl busca...
+       
+       `,
+      
+       oQueE: `
+      
+      O treinamento tem como...
+      
+      `,      
+      composicao: `
+      
+      Metodologia validada
+      
+      `,
+      comoUsar: `
+      
+      Para quem é...
+      
+      `,
+      advertencias: `
+      
+      muito bom
+
+      `
+    },
+         
+    destaque: true,
+    mostrarlancamento: true,
+    mostrarVideo: true,
+    textoParcelamento: "ou 1x de R$ 90,00"
+    },
+
    
   
 
-    {
-    id: "9",
-    nome: "Desempenho Físico2",
-    categoria: "desempenhofisico",
-    preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
-    videos: [
-      "assets/videos/5htp.mp4"
-    ],
-    descricao: {
-      resumo: "Deseja melhorar o humor e dormir de forma tranquila?",
-      oQueE: "O 5-HTP é um precursor da serotonina...",
-      composicao: "5-Hidroxitriptofano 50mg...",
-      comoUsar: "Tomar 1 cápsula antes de dormir...",
-      advertencias: "Não utilizar sem orientação profissional..."
-    },
-         
-    destaque: false,
-    mostrarlancamento: false,
-    mostrarVideo: true,
-    textoParcelamento: "ou 1x de R$ 90,00"
-    },
-
-   
-
-    {
+   {
     id: "10",
-    nome: "Desempenho Físico3",
-    categoria: "desempenhofisico",
+    nome: "Workshops e Palestas",
+    categoria: "workshopepalestas",
     preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
+    imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
     descricao: {
-      resumo: "Deseja melhorar o humor e dormir de forma tranquila?",
-      oQueE: "O 5-HTP é um precursor da serotonina...",
-      composicao: "5-Hidroxitriptofano 50mg...",
-      comoUsar: "Tomar 1 cápsula antes de dormir...",
-      advertencias: "Não utilizar sem orientação profissional..."
+      resumo: `
+   
+       Treinamento em pnl busca...
+       
+       `,
+      
+       oQueE: `
+      
+      O treinamento tem como...
+      
+      `,      
+      composicao: `
+      
+      Metodologia validada
+      
+      `,
+      comoUsar: `
+      
+      Para quem é...
+      
+      `,
+      advertencias: `
+      
+      muito bom
+
+      `
     },
          
-    destaque: false,
-    mostrarlancamento: false,
+    destaque: true,
+    mostrarlancamento: true,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
     },
+
+
    
 
     {
     id: "11",
-    nome: "Desempenho Físico4",
-    categoria: "desempenhofisico",
+    nome: "Workshops e Palestas",
+    categoria: "workshopepalestas",
     preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
+    imagem: "assets/img/imgteste.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
     descricao: {
-      resumo: "Deseja melhorar o humor e dormir de forma tranquila?",
-      oQueE: "O 5-HTP é um precursor da serotonina...",
-      composicao: "5-Hidroxitriptofano 50mg...",
-      comoUsar: "Tomar 1 cápsula antes de dormir...",
-      advertencias: "Não utilizar sem orientação profissional..."
-    },
-         
-    destaque: false,
-    mostrarlancamento: false,
-    mostrarVideo: true,
-    textoParcelamento: "ou 1x de R$ 90,00"
-    },
+      resumo: `
    
+       Treinamento em pnl busca...
+       
+       `,
+      
+       oQueE: `
+      
+      O treinamento tem como...
+      
+      `,      
+      composicao: `
+      
+      Metodologia validada
+      
+      `,
+      comoUsar: `
+      
+      Para quem é...
+      
+      `,
+      advertencias: `
+      
+      muito bom
 
-
-    {
-    id: "12",
-    nome: "Desempenho Físico5",
-    categoria: "desempenhofisico",
-    preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
-    videos: [
-      "assets/videos/5htp.mp4"
-    ],
-    descricao: {
-      resumo: "Deseja melhorar o humor e dormir de forma tranquila?",
-      oQueE: "O 5-HTP é um precursor da serotonina...",
-      composicao: "5-Hidroxitriptofano 50mg...",
-      comoUsar: "Tomar 1 cápsula antes de dormir...",
-      advertencias: "Não utilizar sem orientação profissional..."
-    },
-         
-    destaque: false,
-    mostrarlancamento: false,
-    mostrarVideo: true,
-    textoParcelamento: "ou 1x de R$ 90,00"
-    },
-
-   
- {
-    id: "13",
-    nome: "Saúde",
-    categoria: "saude",
-    preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
-    videos: [
-      "assets/videos/5htp.mp4"
-    ],
-    descricao: {
-      resumo: "Deseja melhorar o humor e dormir de forma tranquila?",
-      oQueE: "O 5-HTP é um precursor da serotonina...",
-      composicao: "5-Hidroxitriptofano 50mg...",
-      comoUsar: "Tomar 1 cápsula antes de dormir...",
-      advertencias: "Não utilizar sem orientação profissional..."
+      `
     },
          
     destaque: true,
@@ -381,103 +550,9 @@ const produtos = [
     textoParcelamento: "ou 1x de R$ 90,00"
     },
 
-   {
-    id: "14",
-    nome: "Saúde1",
-    categoria: "saude",
-    preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
-    videos: [
-      "assets/videos/5htp.mp4"
-    ],
-    descricao: {
-      resumo: "Deseja melhorar o humor e dormir de forma tranquila?",
-      oQueE: "O 5-HTP é um precursor da serotonina...",
-      composicao: "5-Hidroxitriptofano 50mg...",
-      comoUsar: "Tomar 1 cápsula antes de dormir...",
-      advertencias: "Não utilizar sem orientação profissional..."
-    },
-         
-    destaque: true,
-    mostrarlancamento: false,
-    mostrarVideo: true,
-    textoParcelamento: "ou 1x de R$ 90,00"
-    },
-  
-
- {
-    id: "15",
-    nome: "Saúde2",
-    categoria: "saude",
-    preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
-    videos: [
-      "assets/videos/5htp.mp4"
-    ],
-    descricao: {
-      resumo: "Deseja melhorar o humor e dormir de forma tranquila?",
-      oQueE: "O 5-HTP é um precursor da serotonina...",
-      composicao: "5-Hidroxitriptofano 50mg...",
-      comoUsar: "Tomar 1 cápsula antes de dormir...",
-      advertencias: "Não utilizar sem orientação profissional..."
-    },
-         
-    destaque: true,
-    mostrarlancamento: false,
-    mostrarVideo: true,
-    textoParcelamento: "ou 1x de R$ 90,00"
-    },
-
    
 
-    {
-    id: "16",
-    nome: "Saúde3",
-    categoria: "saude",
-    preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
-    videos: [
-      "assets/videos/5htp.mp4"
-    ],
-    descricao: {
-      resumo: "Deseja melhorar o humor e dormir de forma tranquila?",
-      oQueE: "O 5-HTP é um precursor da serotonina...",
-      composicao: "5-Hidroxitriptofano 50mg...",
-      comoUsar: "Tomar 1 cápsula antes de dormir...",
-      advertencias: "Não utilizar sem orientação profissional..."
-    },
-         
-    destaque: true,
-    mostrarlancamento: false,
-    mostrarVideo: true,
-    textoParcelamento: "ou 1x de R$ 90,00"
-    },
-
-   
- {
-    id: "17",
-    nome: "Saúde4",
-    categoria: "saude",
-    preco: 90.00,
-    imagem: "assets/img/imgpoteteste.png",
-    videos: [
-      "assets/videos/5htp.mp4"
-    ],
-    descricao: {
-      resumo: "Deseja melhorar o humor e dormir de forma tranquila?",
-      oQueE: "O 5-HTP é um precursor da serotonina...",
-      composicao: "5-Hidroxitriptofano 50mg...",
-      comoUsar: "Tomar 1 cápsula antes de dormir...",
-      advertencias: "Não utilizar sem orientação profissional..."
-    },
-         
-    destaque: true,
-    mostrarlancamento: false,
-    mostrarVideo: false,
-    textoParcelamento: "ou 1x de R$ 90,00"
-    },
-
- 
+     
    
 ];
 
