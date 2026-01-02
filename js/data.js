@@ -31,8 +31,8 @@ const categorias = [
   },
   {
     id: "workshopepalestas",
-    nome: "Worshops e Palestras",
-    nomeMenu: "Worshops e Palestras",
+    nome: "Worshop e Palestra",
+    nomeMenu: "Worshop e Palestra",
     mostrarNoMenu: true
   }
   
@@ -179,9 +179,53 @@ const produtos = [
 
 
 
-
    {
     id: "4",
+    nome: "Treinamento em PNL Avançado",
+    categoria: "pnl",
+    preco: 1600.00,
+    imagem: "assets/img/imgteste.png",
+    videos: [
+      "assets/videos/5htp.mp4"
+    ],
+    descricao: {
+      resumo: `
+   
+       Treinamento em pnl busca...
+       
+       `,
+      
+       oQueE: `
+      
+      O treinamento tem como...
+      
+      `,      
+      composicao: `
+      
+      Metodologia validada
+      
+      `,
+      comoUsar: `
+      
+      Para quem é...
+      
+      `,
+      advertencias: `
+      
+      muito bom
+
+      `
+    },
+         
+    destaque: true,
+    mostrarlancamento: true,
+    mostrarVideo: true,
+    textoParcelamento: "ou 1x de R$ 90,00"
+    },
+
+
+   {
+    id: "5",
     nome: "Treinamento em Oratória Básico",
     categoria: "oratoria",
     preco: 798.00,
@@ -228,7 +272,7 @@ const produtos = [
 
 
 {
-    id: "5",
+    id: "6",
     nome: "Treinamento em Oratória Intermediário",
     categoria: "oratoria",
     preco: 997.00,
@@ -274,7 +318,7 @@ const produtos = [
 
 
 {
-    id: "6",
+    id: "8",
     nome: "Treinamento em Oratória Avançado",
     categoria: "oratoria",
     preco: 1600.00,
@@ -317,10 +361,54 @@ const produtos = [
     textoParcelamento: "ou 1x de R$ 90,00"
     },
    
+
+   {
+    id: "9",
+    nome: "Treinamento em Oratória Avançado",
+    categoria: "oratoria",
+    preco: 1600.00,
+    imagem: "assets/img/imgteste.png",
+    videos: [
+      "assets/videos/5htp.mp4"
+    ],
+    descricao: {
+      resumo: `
+   
+       Treinamento em pnl busca...
+       
+       `,
+      
+       oQueE: `
+      
+      O treinamento tem como...
+      
+      `,      
+      composicao: `
+      
+      Metodologia validada
+      
+      `,
+      comoUsar: `
+      
+      Para quem é...
+      
+      `,
+      advertencias: `
+      
+      muito bom
+
+      `
+    },
+         
+    destaque: true,
+    mostrarlancamento: true,
+    mostrarVideo: true,
+    textoParcelamento: "ou 1x de R$ 90,00"
+    },
    
 
 {
-    id: "7",
+    id: "10",
     nome: "Workshops e Palestas",
     categoria: "workshopepalestas",
     preco: 90.00,
@@ -367,7 +455,7 @@ const produtos = [
 
 
    {
-    id: "8",
+    id: "11",
     nome: "Workshops e Palestas",
     categoria: "workshopepalestas",
     preco: 90.00,
@@ -413,7 +501,7 @@ const produtos = [
 
    
     {
-    id: "9",
+    id: "12",
     nome: "Workshops e Palestas",
     categoria: "workshopepalestas",
     preco: 90.00,
@@ -460,7 +548,7 @@ const produtos = [
   
 
    {
-    id: "10",
+    id: "13",
     nome: "Workshops e Palestas",
     categoria: "workshopepalestas",
     preco: 90.00,
@@ -507,7 +595,7 @@ const produtos = [
    
 
     {
-    id: "11",
+    id: "14",
     nome: "Workshops e Palestas",
     categoria: "workshopepalestas",
     preco: 90.00,
@@ -550,7 +638,49 @@ const produtos = [
     textoParcelamento: "ou 1x de R$ 90,00"
     },
 
+   {
+    id: "15",
+    nome: "Workshops e Palestas",
+    categoria: "workshopepalestas",
+    preco: 90.00,
+    imagem: "assets/img/imgteste.png",
+    videos: [
+      "assets/videos/5htp.mp4"
+    ],
+    descricao: {
+      resumo: `
    
+       Treinamento em pnl busca...
+       
+       `,
+      
+       oQueE: `
+      
+      O treinamento tem como...
+      
+      `,      
+      composicao: `
+      
+      Metodologia validada
+      
+      `,
+      comoUsar: `
+      
+      Para quem é...
+      
+      `,
+      advertencias: `
+      
+      muito bom
+
+      `
+    },
+         
+    destaque: true,
+    mostrarlancamento: true,
+    mostrarVideo: true,
+    textoParcelamento: "ou 1x de R$ 90,00"
+    },
 
      
    
