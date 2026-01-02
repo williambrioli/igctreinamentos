@@ -1425,7 +1425,11 @@ a.btn-comprar {
   }
 
   .institucional-ebwu .institucional-imagem img {
-    max-height: 280px;
+    background: transparent;
+    padding: 0;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 100%;
   }
 }
 
