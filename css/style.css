@@ -1543,7 +1543,7 @@ a.btn-comprar {
 
   .equipe-track {
     display: flex;
-    gap: 0;              /* 🔥 zero espaço entre slides */
+    gap: 16px;              /* 🔥 zero espaço entre slides */
     padding: 0;          /* 🔥 remove causa do vazamento */
     box-sizing: border-box;
   }
