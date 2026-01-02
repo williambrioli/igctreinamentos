@@ -33,7 +33,7 @@ body {
    ============================================================ */
 
 .logo img {
-  height: 80px;
+  height: 90px;
   width: auto;
   display: block;
 }
@@ -57,7 +57,7 @@ body {
   line-height: 1.25;
   text-align: center;
   white-space: normal;   /* 🔥 permite quebrar linha */
-  max-width: 120px;      /* 🔥 controla largura do item */
+  max-width: 150px;      /* 🔥 controla largura do item */
 }
 
 .nav a:hover {
