@@ -1543,18 +1543,18 @@ a.btn-comprar {
 
   .equipe-track {
     display: flex;
-    gap: 16px;                 /* espaço entre cards */
-    padding: 0 16px;           /* respiro lateral da tela */
+    gap: 0;              /* 🔥 zero espaço entre slides */
+    padding: 0;          /* 🔥 remove causa do vazamento */
     box-sizing: border-box;
   }
 
   .equipe-card {
-    flex: 0 0 100%;             /* largura ideal no mobile */
+    flex: 0 0 100%;       /* 🔥 1 card por tela */
     max-width: 100%;
-    margin: 0;                 /* 🔥 remove o deslocamento */
-    padding: 20px;
+    margin: 0;
+    padding: 24px;        /* respiro INTERNO */
     border-radius: 20px;
-    scroll-snap-align: center; /* 🔥 centraliza no swipe */
+    scroll-snap-align: start;
   }
 
   .equipe-card img {
