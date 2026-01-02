@@ -509,10 +509,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-/* ============================================================
-   SLIDER EQUIPE – INDEPENDENTE (NÃO QUEBRA NADA)
-   ============================================================ */
-
 function initEquipeSlider() {
   const track = document.querySelector(".equipe-track");
   const dotsContainer = document.querySelector(".equipe-dots");
@@ -537,6 +533,7 @@ function initEquipeSlider() {
   });
 
   const cards = [...track.children];
+  if (!cards.length) return;
 
   const isDesktop = window.innerWidth >= 1024;
   const cardsPerView = isDesktop ? 3 : 1;
@@ -544,10 +541,10 @@ function initEquipeSlider() {
 
   let index = Math.floor(Math.random() * totalPages);
 
-  // cria dots corretamente
+  // cria dots
   for (let i = 0; i < totalPages; i++) {
     const dot = document.createElement("span");
-    if (i === 0) dot.classList.add("active");
+    if (i === index) dot.classList.add("active");
     dot.onclick = () => {
       index = i;
       update();
@@ -556,29 +553,46 @@ function initEquipeSlider() {
   }
 
   function update() {
+    const cardWidth = cards[0].offsetWidth + 32;
 
-  const cardWidth = cards[0].offsetWidth + 32;
+    // 📱 MOBILE — scroll real
+    if (window.innerWidth < 768) {
+      track.scrollLeft = index * cardWidth;
+    }
 
-  // 📱 MOBILE — usa scroll real
+    // 💻 DESKTOP — transform
+    if (window.innerWidth >= 768) {
+      track.style.transform =
+        `translateX(-${index * cardWidth * cardsPerView}px)`;
+    }
+
+    // dots
+    [...dotsContainer.children].forEach((d, i) =>
+      d.classList.toggle("active", i === index)
+    );
+  }
+
+  // ================================
+  // MOBILE — dots acompanham swipe
+  // ================================
   if (window.innerWidth < 768) {
-    track.scrollLeft = index * cardWidth;
+    const cardWidth = cards[0].offsetWidth + 32;
+
+    track.addEventListener("scroll", () => {
+      const novoIndex = Math.round(track.scrollLeft / cardWidth);
+
+      if (novoIndex !== index) {
+        index = novoIndex;
+        [...dotsContainer.children].forEach((dot, i) =>
+          dot.classList.toggle("active", i === index)
+        );
+      }
+    });
   }
-
-  // 💻 DESKTOP — usa transform
-  if (window.innerWidth >= 768) {
-    track.style.transform =
-      `translateX(-${index * cardWidth * cardsPerView}px)`;
-  }
-
-  // 🔘 dots sincronizados
-  [...dotsContainer.children].forEach((d, i) =>
-    d.classList.toggle("active", i === index)
-  );
-}
-
-
 
   update();
+}
+
 
   // ================================
 // AUTOPLAY — SOMENTE DESKTOP
