@@ -1425,11 +1425,13 @@ a.btn-comprar {
   }
 
 
-  .institucional-ebwu .sem-quadro-mobile img {
+  /* remove COMPLETAMENTE o efeito de cartão apenas da imagem de baixo */
+  .institucional-ebwu .institucional-imagem.sem-quadro-mobile img {
     background: transparent;
     padding: 0;
-    border-radius: 3px;
-  
+    border-radius: 0;
+    box-shadow: none;
   }
+
 }
 
