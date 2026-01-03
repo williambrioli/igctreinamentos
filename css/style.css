@@ -1958,3 +1958,36 @@ a.btn-comprar {
   cursor: pointer;
 }
 
+
+
+
+/* =========================================================
+   EQUIPE — DESKTOP SEM AUTOPLAY (ISOLADO, SEM JS)
+   ========================================================= */
+@media (min-width: 1024px) {
+
+  /* neutraliza qualquer transform do JS */
+  .institucional-equipe .equipe-track {
+    transform: none !important;
+    overflow: hidden;
+  }
+
+  /* mostra exatamente 3 cards */
+  .institucional-equipe .equipe-card {
+    display: none;
+  }
+
+  /* cards visíveis por "página" simulada */
+  .institucional-equipe .equipe-card:nth-child(-n+3) {
+    display: block;
+  }
+
+  /* quando o JS muda o transform, o layout NÃO quebra */
+  .institucional-equipe .equipe-track {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+}
+
