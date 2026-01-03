@@ -506,100 +506,68 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
-
-
 function initEquipeSlider() {
   const track = document.querySelector(".equipe-track");
   const dotsContainer = document.querySelector(".equipe-dots");
 
   if (!track || !dotsContainer) return;
 
-  track.innerHTML = "";
-  dotsContainer.innerHTML = "";
-
-  equipe.forEach(pessoa => {
-    const card = document.createElement("div");
-    card.className = "equipe-card";
-    card.innerHTML = `
-      <img src="${pessoa.imagem}" alt="${pessoa.nome}">
-      <h3>${pessoa.nome}</h3>
-      <p>${pessoa.texto}</p>
-      <a href="${pessoa.link}" class="btn-comprar">Conheça mais</a>
-    `;
-    track.appendChild(card);
-  });
-
   const cards = [...track.children];
   if (!cards.length) return;
 
   const isDesktop = window.innerWidth >= 1024;
-  const cardsPerView = isDesktop ? 3 : 1;
 
-  const totalPages = isDesktop
-    ? Math.ceil(cards.length / cardsPerView)
-    : cards.length;
+  // 🔒 MOBILE: não mexe em absolutamente nada
+  if (!isDesktop) return;
 
-  let index = Math.floor(Math.random() * totalPages);
+  const cardsPerPage = 3;
+  const totalPages = Math.ceil(cards.length / cardsPerPage);
 
-  const cardWidth = cards[0].offsetWidth + 32;
+  let index = 0;
 
-  // dots
+  dotsContainer.innerHTML = "";
+
+  // cria dots
   for (let i = 0; i < totalPages; i++) {
     const dot = document.createElement("span");
     if (i === index) dot.classList.add("active");
 
-    dot.onclick = () => {
+    dot.addEventListener("click", () => {
       index = i;
-      track.scrollTo({
-        left: index * cardWidth,
-        behavior: "smooth"
-      });
-      updateDots();
-    };
+      update();
+    });
 
     dotsContainer.appendChild(dot);
   }
 
-  function updateDots() {
+  function update() {
+    cards.forEach(card => card.classList.remove("is-visible"));
+
+    const start = index * cardsPerPage;
+    const end = start + cardsPerPage;
+
+    cards.slice(start, end).forEach(card =>
+      card.classList.add("is-visible")
+    );
+
     [...dotsContainer.children].forEach((d, i) =>
       d.classList.toggle("active", i === index)
     );
   }
 
-  function update() {
-    if (window.innerWidth < 768) {
-      track.scrollLeft = index * cardWidth;
-    } else {
-      track.style.transform =
-        `translateX(-${index * cardWidth * cardsPerView}px)`;
-    }
-    updateDots();
-  }
-
-  // swipe mobile
-  if (window.innerWidth < 768) {
-    track.addEventListener("scroll", () => {
-      const novoIndex = Math.floor(
-        (track.scrollLeft + cardWidth / 2) / cardWidth
-      );
-
-      index = Math.min(
-        Math.max(novoIndex, 0),
-        totalPages - 1
-      );
-
-      updateDots();
-    });
-  }
-
   update();
 }
 
+window.addEventListener("load", initEquipeSlider);
+
+
+
+
+  
+  
 
   
 
-window.addEventListener("load", initEquipeSlider);
 // window.addEventListener("resize", initEquipeSlider);
 
 
