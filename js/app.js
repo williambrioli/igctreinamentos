@@ -716,32 +716,32 @@ function initDepoimentos() {
   // ================================
 // AUTOPLAY (MOBILE E DESKTOP)
 // ================================
-let autoPlayInterval = null;
+// let autoPlayInterval = null;
 
-function startAutoPlay() {
-  stopAutoPlay(); // evita duplicar
+// function startAutoPlay() {
+//  stopAutoPlay(); // evita duplicar
 
-  autoPlayInterval = setInterval(() => {
-    page++;
+//  autoPlayInterval = setInterval(() => {
+//    page++;
 
-    if (page >= pages) {
-      page = 0;
-    }
+ //   if (page >= pages) {
+ //     page = 0;
+ //   }
 
-    update();
-  }, 60000); // tempo em ms (4000 = 4 segundos)
-}
+//    update();
+//  }, 60000); // tempo em ms (4000 = 4 segundos)
+// }
 
-function stopAutoPlay() {
-  if (autoPlayInterval) {
-    clearInterval(autoPlayInterval);
-    autoPlayInterval = null;
-  }
-}
+// function stopAutoPlay() {
+//  if (autoPlayInterval) {
+//    clearInterval(autoPlayInterval);
+//    autoPlayInterval = null;
+//  }
+// }
  
 
   update();
-  startAutoPlay();
+//  startAutoPlay();
 
 
   closeBtn.onclick = () => {
@@ -840,21 +840,21 @@ function initIgcVideos() {
   update();
 
   /* AUTOPLAY */
-  let timer = setInterval(() => {
-    page = (page + 1) % pages;
-    update();
-  }, 60000);
+ // let timer = setInterval(() => {
+ //   page = (page + 1) % pages;
+ //   update();
+//  }, 60000);
 
-  function stopAuto() {
-    clearInterval(timer);
-  }
+//  function stopAuto() {
+//    clearInterval(timer);
+//  }
 
-  function startAuto() {
-    timer = setInterval(() => {
-      page = (page + 1) % pages;
-      update();
-    }, 6000);
-  }
+//  function startAuto() {
+//    timer = setInterval(() => {
+//      page = (page + 1) % pages;
+//     update();
+//    }, 6000);
+//  }
 
   closeBtn.onclick = () => {
     modal.classList.remove("active");
