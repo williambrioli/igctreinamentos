@@ -506,7 +506,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-function initEquipeSlider() {
+
+
+ function initEquipeSlider() {
   const track = document.querySelector(".equipe-track");
   const dotsContainer = document.querySelector(".equipe-dots");
 
@@ -517,30 +519,37 @@ function initEquipeSlider() {
 
   const isDesktop = window.innerWidth >= 1024;
 
-  // 🔒 MOBILE: não mexe em absolutamente nada
-  if (!isDesktop) return;
+  /* =================================================
+     MOBILE — NÃO MEXE EM NADA
+     ================================================= */
+  if (!isDesktop) {
+    // mobile continua usando scroll + swipe normalmente
+    return;
+  }
 
+  /* =================================================
+     DESKTOP — CONTROLE POR DOTS (3 CARDS)
+     ================================================= */
   const cardsPerPage = 3;
   const totalPages = Math.ceil(cards.length / cardsPerPage);
-
   let index = 0;
 
   dotsContainer.innerHTML = "";
 
-  // cria dots
+  // cria dots do desktop
   for (let i = 0; i < totalPages; i++) {
     const dot = document.createElement("span");
     if (i === index) dot.classList.add("active");
 
     dot.addEventListener("click", () => {
       index = i;
-      update();
+      updateDesktop();
     });
 
     dotsContainer.appendChild(dot);
   }
 
-  function update() {
+  function updateDesktop() {
     cards.forEach(card => card.classList.remove("is-visible"));
 
     const start = index * cardsPerPage;
@@ -555,11 +564,10 @@ function initEquipeSlider() {
     );
   }
 
-  update();
+  updateDesktop();
 }
 
-window.addEventListener("load", initEquipeSlider);
-
+window.addEventListener("load", initEquipeSlider); 
 
 
 
