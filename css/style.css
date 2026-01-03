@@ -1958,3 +1958,18 @@ a.btn-comprar {
   cursor: pointer;
 }
 
+
+/* =========================================================
+   EQUIPE — DESKTOP COM PAGINAÇÃO VIA DOTS (SEM SCROLL)
+   ========================================================= */
+@media (min-width: 1024px) {
+
+  .equipe-card {
+    display: none;
+  }
+
+  .equipe-card.is-visible {
+    display: block;
+  }
+
+}
