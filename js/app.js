@@ -690,7 +690,7 @@ function initDepoimentos() {
   const isDesktop = window.innerWidth >= 1024;
   const perPage = isDesktop ? 3 : 1;
   const pages = Math.ceil(depoimentosVideos.length / perPage);
-  let page = 0;
+  let page = Math.floor(Math.random() * pages);
 
   for (let i = 0; i < pages; i++) {
     const dot = document.createElement("span");
@@ -815,7 +815,7 @@ function initIgcVideos() {
   const isDesktop = window.innerWidth >= 1024;
   const perPage = isDesktop ? 3 : 1;
   const pages = Math.ceil(videos.length / perPage);
-  let page = 0;
+  let page = Math.floor(Math.random() * pages);
 
   for (let i = 0; i < pages; i++) {
     const dot = document.createElement("span");
