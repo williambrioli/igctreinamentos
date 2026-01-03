@@ -594,6 +594,45 @@ function initEquipeSlider() {
   }
 
   update();
+
+
+// =================================================
+// DESKTOP — CONTROLE DOS DOTS SEM AUTOPLAY
+// =================================================
+if (window.innerWidth >= 1024) {
+
+  const cards = Array.from(track.children);
+  const dots = Array.from(dotsContainer.children);
+  const cardsPerPage = 3;
+
+  function updateDesktopByDots(page) {
+
+    cards.forEach(card => card.style.display = "none");
+
+    const start = page * cardsPerPage;
+    const end = start + cardsPerPage;
+
+    cards.slice(start, end).forEach(card => {
+      card.style.display = "block";
+    });
+
+    dots.forEach((dot, i) =>
+      dot.classList.toggle("active", i === page)
+    );
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      updateDesktopByDots(index);
+    });
+  });
+
+  updateDesktopByDots(0);
+}
+
+   
+
+   
 }
 
 
