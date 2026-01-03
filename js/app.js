@@ -729,7 +729,7 @@ function startAutoPlay() {
     }
 
     update();
-  }, 20000); // tempo em ms (4000 = 4 segundos)
+  }, 60000); // tempo em ms (4000 = 4 segundos)
 }
 
 function stopAutoPlay() {
@@ -843,7 +843,7 @@ function initIgcVideos() {
   let timer = setInterval(() => {
     page = (page + 1) % pages;
     update();
-  }, 22000);
+  }, 60000);
 
   function stopAuto() {
     clearInterval(timer);
