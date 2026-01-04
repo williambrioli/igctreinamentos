@@ -31,8 +31,8 @@ const categorias = [
   },
   {
     id: "workshopepalestas",
-    nome: "Worshops e Palestras",
-    nomeMenu: "Worshops e Palestras",
+    nome: "Worshop e Palestra",
+    nomeMenu: "Worshop e Palestra",
     mostrarNoMenu: true
   }
   
@@ -127,7 +127,7 @@ const produtos = [
     },
          
     destaque: true,
-    mostrarlancamento: true,
+    mostrarlancamento: false,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
     },
@@ -172,7 +172,7 @@ const produtos = [
     },
          
     destaque: true,
-    mostrarlancamento: true,
+    mostrarlancamento: false,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
     },
@@ -219,7 +219,7 @@ const produtos = [
     },
          
     destaque: true,
-    mostrarlancamento: true,
+    mostrarlancamento: false,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
     },
@@ -266,7 +266,7 @@ const produtos = [
     },
          
     destaque: true,
-    mostrarlancamento: true,
+    mostrarlancamento: false,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
     },
@@ -312,7 +312,7 @@ const produtos = [
     },
          
     destaque: true,
-    mostrarlancamento: true,
+    mostrarlancamento: false,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
     },
@@ -358,7 +358,7 @@ const produtos = [
     },
          
     destaque: true,
-    mostrarlancamento: true,
+    mostrarlancamento: false,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
     },
@@ -405,7 +405,7 @@ const produtos = [
     },
          
     destaque: true,
-    mostrarlancamento: true,
+    mostrarlancamento: false,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
     },
@@ -451,7 +451,7 @@ const produtos = [
     },
          
     destaque: true,
-    mostrarlancamento: true,
+    mostrarlancamento: false,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
     },
@@ -498,7 +498,7 @@ const produtos = [
     },
          
     destaque: true,
-    mostrarlancamento: true,
+    mostrarlancamento: false,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
     },
@@ -545,7 +545,7 @@ const produtos = [
     },
          
     destaque: true,
-    mostrarlancamento: true,
+    mostrarlancamento: false,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
     },
