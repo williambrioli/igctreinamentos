@@ -43,38 +43,20 @@ body {
    ============================================================ */
 
 .nav ul {
-    display: flex;
-    align-items: center;
-    gap: 28px;               /* MAIS RESPIRO */
-    white-space: nowrap;    /* NÃO QUEBRA TEXTO */
-  }
+  list-style: none;
+  display: flex;
+  gap: 16px;
+}
 
 .nav a {
-    font-size: 1rem;           /* MAIS LEGÍVEL */
-    font-weight: 500;          /* PROFISSIONAL */
-    letter-spacing: 0.3px;     /* REFINAMENTO */
-    padding: 8px 4px;          /* ÁREA DE CLIQUE */
-    white-space: nowrap;       /* NÃO QUEBRA */
-  }
+  color: var(--branco);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
 
-.nav a {
-    position: relative;
-  }
-
-  .nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 0%;
-    height: 2px;
-    background-color: var(--azul-medio);
-    transition: width 0.3s ease;
-  }
-
-  .nav a:hover::after {
-    width: 100%;
-  }
+.nav a:hover {
+  text-decoration: underline;
+}
 
 /* ============================================================
    BUSCA
