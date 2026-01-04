@@ -44,6 +44,7 @@ body {
 
 .nav ul {
     display: flex;
+    list-style: none;
     align-items: center;
     gap: 28px;           /* MAIS RESPIRO */
   }
