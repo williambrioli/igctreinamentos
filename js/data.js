@@ -381,7 +381,7 @@ configuracoes: {
       <h2>Sobre o Workshop</h2>
       <br>
       <p>
-      O curso <strong>Programação Neurolinguística (PNL) – Alta Performance</strong>
+      O Whorkshop <strong>Programação Neurolinguística (PNL) – Alta Performance</strong>
       foi desenvolvido para pessoas que desejam compreender como a mente humana
       funciona e como pensamentos, linguagem e comportamento influenciam
       diretamente os resultados da vida pessoal e profissional.
@@ -395,7 +395,7 @@ configuracoes: {
     </p>
 
     <p>
-      A proposta do curso é unir <strong>conhecimento, prática e consciência</strong>,
+      A proposta do Wokshop é unir <strong>conhecimento, prática e consciência</strong>,
       permitindo que cada aluno aplique imediatamente as ferramentas aprendidas
       em seu cotidiano, promovendo maior segurança, clareza, autonomia emocional
       e produtividade.
