@@ -186,7 +186,7 @@ ${produto.textoParcelamento && produto.configuracoes?.mostrarPreco !== false
       qtdSpan.textContent = quantidade;
     }
   });
-
+}
   // Comprar via WhatsApp
 btnComprar.addEventListener("click", () => {
 
