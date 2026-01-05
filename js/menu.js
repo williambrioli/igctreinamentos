@@ -14,6 +14,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let count = 0;
 
+
+
+// ============================
+// LINK INSTITUCIONAL — HISTÓRIA
+// ============================
+if (typeof historiaIGC !== "undefined" && historiaIGC.mostrarNoMenu) {
+  const li = document.createElement("li");
+  const a = document.createElement("a");
+
+  a.href = `index.html#${historiaIGC.id}`;
+  a.textContent = "Nossa História";
+
+  li.appendChild(a);
+  menuCategorias.appendChild(li);
+}
+
+
+
+
+
+  
   // cria o item "+ Mais"
   const liMais = document.createElement("li");
   liMais.className = "menu-mais";
