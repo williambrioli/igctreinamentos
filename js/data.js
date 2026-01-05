@@ -379,7 +379,9 @@ configuracoes: {
        `,
       
        oQueE: `
-      
+
+      <h2>Sobre o Curso</h2>
+      <br>
       <p>
       O curso <strong>Programação Neurolinguística (PNL) – Alta Performance</strong>
       foi desenvolvido para pessoas que desejam compreender como a mente humana
@@ -405,7 +407,8 @@ configuracoes: {
        
       composicao: `
       
-     <h3>Conteúdo Programático</h3>
+     <h2>Conteúdo Programático</h2> 
+     <br>
 
     <h4>Módulo 1 – Fundamentos da PNL</h4>
     <ul>
@@ -465,7 +468,7 @@ configuracoes: {
       `,
       comoUsar: `
       
-      <h3>Metodologia</h3>
+      <h2>Metodologia</h2>
     <p>
       A metodologia do curso é <strong>prática, dinâmica e experiencial</strong>,
       focada no aprendizado real e aplicável.
@@ -487,7 +490,7 @@ configuracoes: {
       `,
       advertencias: `
       
-      <h3>Conheça o Palestrante</h3>
+      <h2>Conheça o Palestrante</h2>
     <p>
       <strong>Dr. Paulo Takahashi</strong> atua há mais de duas décadas na área
       de desenvolvimento humano, comunicação e comportamento.
@@ -511,7 +514,7 @@ configuracoes: {
 
 configuracoes: {
   mostrarNome: true,
-  mostrarPreco: true,
+  mostrarPreco: false,
   mostrarResumo: true
 },
 
