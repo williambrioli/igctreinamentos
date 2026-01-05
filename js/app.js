@@ -118,16 +118,29 @@ function criarCardProduto(produto, isBanner = false) {
   card.innerHTML = `
     ${produto.mostrarlancamento ? `<span class="badge-lancamento">Lançamento</span>` : ``}
     <img src="${produto.imagem}" alt="${produto.nome}">
-    <h3>${produto.nome}</h3>
-    <a 
+    ${produto.configuracoes?.mostrarNome !== false
+  ? `<h3>${produto.nome}</h3>`
+  : ``}
+
+<a 
   href="produto.html?id=${produto.id}" 
   class="btn-detalhes"
 >
   Ver produto
 </a>
-    <p class="descricao">${produto.descricao.resumo}</p>
-    <span class="preco">${formatarPreco(produto.preco)}</span>
-    ${produto.textoParcelamento ? `<span class="texto-parcelamento">${produto.textoParcelamento}</span>` : ``}
+
+${produto.configuracoes?.mostrarResumo !== false
+  ? `<p class="descricao">${produto.descricao.resumo}</p>`
+  : ``}
+
+${produto.configuracoes?.mostrarPreco !== false
+  ? `<span class="preco">${formatarPreco(produto.preco)}</span>`
+  : ``}
+
+${produto.textoParcelamento && produto.configuracoes?.mostrarPreco !== false
+  ? `<span class="texto-parcelamento">${produto.textoParcelamento}</span>`
+  : ``}
+
 
     <div class="card-acoes">
   <div class="quantidade">
@@ -136,8 +149,11 @@ function criarCardProduto(produto, isBanner = false) {
     <button class="btn-mais">+</button>
   </div>
 
-  <button class="btn-comprar">Reservar vaga</button>
-</div>
+  <button class="btn-comprar">
+  ${produto.configuracoes?.mostrarPreco === false
+    ? "Falar com um consultor"
+    : "Reservar vaga"}
+</button>
 
   `;
 
@@ -170,7 +186,13 @@ btnComprar.addEventListener("click", () => {
   const valorTotal = valorUnitario * quantidade;
   const linkProduto = `${window.location.origin}${window.location.pathname}%23produto-${produto.id}`;
   // 2️⃣ monta a mensagem
-  const mensagem =
+  let mensagem = "";
+
+if (produto.configuracoes?.mostrarPreco === false) {
+  mensagem =
+    `Olá, quero falar com um consultor sobre o curso "${produto.nome}".`;
+} else {
+  mensagem =
     `Olá! Gostaria de reservar minhas vagas:%0A%0A` +
     `Produto: ${produto.nome}%0A` +
     `Categoria: ${slugParaNomeCategoria(produto.categoria)}%0A` +
@@ -178,6 +200,8 @@ btnComprar.addEventListener("click", () => {
     `Valor unitário: ${formatarPreco(valorUnitario)}%0A` +
     `Valor total: ${formatarPreco(valorTotal)}%0A%0A` +
     `Link do produto:%0A${linkProduto}`;
+}
+
 
   // 3️⃣ abre o WhatsApp
   const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${mensagem}`;
