@@ -35,17 +35,7 @@ const categorias = [
     nomeMenu: "Worshop e Palestra",
     mostrarNoMenu: true
   }
-
-
-   {
-  id: "historia-igc",
-  nome: "História do IGC",
-  nomeMenu: "Nossa História",
-  mostrarNoMenu: true
-}
-   
-   
-   
+  
 ];
 
 /* ============================================================
@@ -332,43 +322,16 @@ configuracoes: {
     mostrarVideo: false,
     textoParcelamento: ""
     },
+
+
+
+
+   
+   
+
      
    
 ];
-
-
-
-
-/* ============================================================
-   HISTÓRIA DO IGC - CONHEÇA NOSSA HISTÓRIA
-   ============================================================ */
-
-
-const blocoHistoriaIGC = {
-  id: "historia-igc",
-  titulo: "Conheça nossa história",
-  texto: `
-    
-
-    
-    O IGC – Instituto Global de Consultoria nasceu com o propósito de
-    desenvolver pessoas e empresas por meio do conhecimento, da consciência
-    e da transformação humana.
-
-    Ao longo dos anos, consolidamos nossa atuação em treinamentos,
-    formações e consultorias que unem técnica, ética e desenvolvimento
-    emocional, sempre alinhados às demandas do mundo moderno.
-
-
-
-    
-  `,
-  imagem: "img/historia-igc.jpg"
-};
-
-
-
-
 
 
 /* ============================================================
