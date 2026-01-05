@@ -104,7 +104,7 @@ const produtos = [
     nome: "Curso de Oratória & Comunicação Avançada",
     categoria: "oratoria",
     preco: 798.00,
-    imagem: "assets/img/imgteste.png",
+    imagem: "assets/img/oroatoriaavancada.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
