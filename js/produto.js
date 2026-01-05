@@ -91,22 +91,22 @@ function montarProduto(produto) {
   // ----- DESCRIÇÃO COMPLETA -----
   document.getElementById("produto-descricao").innerHTML = `
     <section>
-      <h2>O que é o produto?</h2>
+      
       <p>${produto.descricao.oQueE}</p>
     </section>
 
     <section>
-      <h2>Composição</h2>
+      
       <p>${produto.descricao.composicao}</p>
     </section>
 
     <section>
-      <h2>Como usar</h2>
+      
       <p>${produto.descricao.comoUsar}</p>
     </section>
 
     <section>
-      <h2>Advertências</h2>
+      
       <p>${produto.descricao.advertencias}</p>
     </section>
   `;
