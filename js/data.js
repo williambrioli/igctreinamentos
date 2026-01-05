@@ -35,7 +35,17 @@ const categorias = [
     nomeMenu: "Worshop e Palestra",
     mostrarNoMenu: true
   }
-  
+
+
+   {
+  id: "historia-igc",
+  nome: "História do IGC",
+  nomeMenu: "Nossa História",
+  mostrarNoMenu: true
+}
+   
+   
+   
 ];
 
 /* ============================================================
