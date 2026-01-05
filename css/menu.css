@@ -169,18 +169,17 @@ body {
 
 
 /* ============================================================
-   MENU DESKTOP — 3 ITENS + "+ MAIS" COM SEPARADOR "|"
+   MENU DESKTOP — 3 ITENS + "+ MAIS" (HOVER CORRETO)
    ============================================================ */
 
 @media (min-width: 1024px) {
 
-  /* base do menu */
   .nav ul {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 0; /* controlamos o espaçamento via padding */
-    white-space: nowrap; /* NÃO quebra linha */
+    gap: 0;
+    white-space: nowrap;
   }
 
   /* espaçamento dos links */
@@ -188,34 +187,41 @@ body {
     padding: 0 10px;
   }
 
-  /* separador visual "|" entre itens */
+  /* separador "|" */
   .nav ul li:not(:last-child)::after {
     content: "|";
     color: rgba(255,255,255,0.6);
     margin-left: 10px;
   }
 
-  /* mostra apenas os 3 primeiros itens */
+  /* mostra apenas 3 itens */
   .nav ul li:nth-child(n+4) {
     display: none;
   }
 
-  /* botão visual "+ Mais" */
+  /* ===============================
+     ÁREA DO "+ MAIS"
+     =============================== */
+
   .nav ul::after {
     content: "+ Mais ▾";
     color: var(--branco);
     font-size: 0.95rem;
     cursor: pointer;
     padding-left: 10px;
-    white-space: nowrap;
   }
 
-  /* ao hover, revela os itens extras */
-  .nav ul:hover li:nth-child(n+4) {
-    display: block;
+  /* área invisível que segura o hover */
+  .nav ul::before {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 0;
+    width: 120px;
+    height: 40px;
   }
 
-  /* dropdown dos itens extras */
+  /* dropdown fechado por padrão */
   .nav ul li:nth-child(n+4) {
     position: absolute;
     top: 42px;
@@ -226,6 +232,13 @@ body {
     border-radius: 10px;
     box-shadow: 0 12px 30px rgba(0,0,0,0.18);
     z-index: 2000;
+    display: none;
+  }
+
+  /* abre SOMENTE ao hover no "+ Mais" */
+  .nav ul:hover::after,
+  .nav ul:hover li:nth-child(n+4) {
+    display: block;
   }
 
   /* remove separador dentro do dropdown */
@@ -247,3 +260,4 @@ body {
   }
 
 }
+
