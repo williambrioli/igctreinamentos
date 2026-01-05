@@ -378,7 +378,7 @@ configuracoes: {
       
        oQueE: `
 
-      <h2>Sobre o Curso</h2>
+      <h2>Sobre o Workshop</h2>
       <br>
       <p>
       O curso <strong>Programação Neurolinguística (PNL) – Alta Performance</strong>
