@@ -35,6 +35,14 @@ const categorias = [
     nomeMenu: "Worshop e Palestra",
     mostrarNoMenu: true
   }
+
+   /* 🔽 BLOCO INSTITUCIONAL (ÂNCORA) */
+  {
+    id: "historia-igc",
+    nome: "Nossa História",
+    nomeMenu: "Nossa História",
+    mostrarNoMenu: true
+  }
   
 ];
 
