@@ -36,6 +36,14 @@ const categorias = [
     mostrarNoMenu: true
   },
 
+/* 🔽 BLOCO INSTITUCIONAL (ÂNCORA) */
+  {
+    id: "equipe-igc",
+    nome: "Nossa Equipe",
+    nomeMenu: "Nossa Equipe",
+    mostrarNoMenu: true
+  },
+
    /* 🔽 BLOCO INSTITUCIONAL (ÂNCORA) */
   {
     id: "historia-igc",
