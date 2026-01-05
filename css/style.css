@@ -459,19 +459,28 @@ img {
 }
 
 /* ============================================================
-   DESKTOP — esconder setas e dots quando NÃO há overflow
-   (menos de 4 cards visíveis)
+   DESKTOP — esconder setas e dots quando houver MENOS de 4 cards
+   (regra por categoria, sem JS)
    ============================================================ */
 
 @media (min-width: 1024px) {
 
-  /* se o track couber inteiro no slider */
-  .slider:not(:has(.slider-track:overflowing)) .arrow,
-  .slider:not(:has(.slider-track:overflowing)) + .slider-dots {
+  /* se NÃO existir o 4º card, escondemos setas e dots */
+  .slider:not(:has(.card:nth-child(4))) .arrow {
     display: none !important;
   }
 
+  .slider:not(:has(.card:nth-child(4))) + .slider-dots {
+    display: none !important;
+  }
+
+  /* opcional: centraliza os cards quando forem menos de 4 */
+  .slider:not(:has(.card:nth-child(4))) .slider-track {
+    justify-content: center;
+  }
+
 }
+
 
 /* ===== SETAS ===== */
 .arrow {
