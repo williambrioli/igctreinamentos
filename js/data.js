@@ -13,7 +13,7 @@ const categorias = [
 
    {
     id: "inicio",
-    nome: "#",
+    nome: "https://williambrioli.com.br/igctreinamentos/",
     nomeMenu: "Início",
     mostrarNoMenu: true
   },
