@@ -458,6 +458,21 @@ img {
   }
 }
 
+/* ============================================================
+   DESKTOP — esconder setas e dots quando NÃO há overflow
+   (menos de 4 cards visíveis)
+   ============================================================ */
+
+@media (min-width: 1024px) {
+
+  /* se o track couber inteiro no slider */
+  .slider:not(:has(.slider-track:overflowing)) .arrow,
+  .slider:not(:has(.slider-track:overflowing)) + .slider-dots {
+    display: none !important;
+  }
+
+}
+
 /* ===== SETAS ===== */
 .arrow {
   position: absolute;
