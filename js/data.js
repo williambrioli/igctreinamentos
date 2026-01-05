@@ -91,7 +91,7 @@ const produtos = [
     destaque: true,
     mostrarlancamento: true,
     mostrarVideo: true,
-    textoParcelamento: "ou 1x de R$ 90,00"
+    textoParcelamento: ""
     },
 
 
