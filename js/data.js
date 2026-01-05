@@ -520,7 +520,7 @@ configuracoes: {
 configuracoes: {
   mostrarNome: true,
   mostrarPreco: false,
-  mostrarResumo: true
+  mostrarResumo: false
 },
 
    
