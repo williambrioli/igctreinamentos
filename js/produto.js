@@ -61,23 +61,26 @@ function montarProduto(produto) {
   </p>
 
   <!-- AÇÕES: quantidade + comprar -->
-  <div class="produto-acoes">
+    <div class="produto-acoes">
 
-    <div class="produto-quantidade">
-  <div class="produto-quantidade-anel">
-    <button onclick="alterarQuantidade(-1)">−</button>
-    <span id="quantidade">1</span>
-    <button onclick="alterarQuantidade(1)">+</button>
-  </div>
-  </div>
+    ${produto.configuracoes?.mostrarPreco !== false ? `
+      <div class="produto-quantidade">
+        <div class="produto-quantidade-anel">
+          <button onclick="alterarQuantidade(-1)">−</button>
+          <span id="quantidade">1</span>
+          <button onclick="alterarQuantidade(1)">+</button>
+        </div>
+      </div>
+    ` : ``}
 
     <button class="btn-comprar" onclick="comprarProduto()">
-  ${produto.configuracoes?.mostrarPreco === false
-    ? "Falar com um consultor"
-    : "Reservar vaga"}
-</button>
+      ${produto.configuracoes?.mostrarPreco === false
+        ? "Falar com um consultor"
+        : "Reservar vaga"}
+    </button>
 
   </div>
+
 
 </div>
 
@@ -153,14 +156,23 @@ function abrirVideo(src) {
 let quantidadeAtual = 1;
 
 function alterarQuantidade(valor) {
+
+  if (produto.configuracoes?.mostrarPreco === false) {
+    return;
+  }
+
   quantidadeAtual += valor;
 
   if (quantidadeAtual < 1) {
     quantidadeAtual = 1;
   }
 
-  document.getElementById("quantidade").textContent = quantidadeAtual;
+  const qtdEl = document.getElementById("quantidade");
+  if (qtdEl) {
+    qtdEl.textContent = quantidadeAtual;
+  }
 }
+
 
 // ================================
 // COMPRAR PRODUTO (WHATSAPP)
