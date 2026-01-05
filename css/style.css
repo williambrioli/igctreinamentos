@@ -435,7 +435,6 @@ img {
 .slider {
   position: relative;
   margin: 0 auto;
-  width: fit-content;
   max-width: 100%;
 }
 
