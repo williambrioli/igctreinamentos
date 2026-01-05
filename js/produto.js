@@ -44,17 +44,17 @@ function montarProduto(produto) {
 
      <div class="produto-info">
 
-  <h1>${produto.nome}</h1>
+  ${produto.configuracoes?.mostrarNome !== false
+  ? `<h1>${produto.nome}</h1>`
+  : ``}
 
-  ${produto.descricao?.resumo ? `
-  <p class="produto-resumo">
-    ${produto.descricao.resumo}
-  </p>
-` : ""}
+  ${produto.configuracoes?.mostrarResumo !== false
+  ? `<p class="produto-resumo">${produto.descricao.resumo}</p>`
+  : ``}
 
-  <p class="produto-preco">
-    R$ ${produto.preco.toFixed(2)}
-  </p>
+  ${produto.configuracoes?.mostrarPreco !== false
+  ? `<p class="produto-preco">${formatarPreco(produto.preco)}</p>`
+  : ``}
 
   <p class="produto-parcelamento">
     ${produto.textoParcelamento || ""}
@@ -72,7 +72,9 @@ function montarProduto(produto) {
   </div>
 
     <button class="btn-comprar" onclick="comprarProduto()">
-  Comprar
+  ${produto.configuracoes?.mostrarPreco === false
+    ? "Falar com um consultor"
+    : "Reservar vaga"}
 </button>
 
   </div>
@@ -166,6 +168,16 @@ function alterarQuantidade(valor) {
 
 function comprarProduto() {
 
+if (produto.configuracoes?.mostrarPreco === false) {
+  const mensagem =
+    `Olá, quero falar com um consultor sobre o curso "${produto.nome}".`;
+
+  const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensagem)}`;
+  window.open(url, "_blank");
+  return;
+}
+  
+  
   if (!produto) return;
 
   const valorUnitario = produto.preco;
