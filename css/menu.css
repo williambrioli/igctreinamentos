@@ -169,60 +169,34 @@ body {
 
 
 /* ============================================================
-   MENU DESKTOP — 3 ITENS + "+ MAIS" (HOVER CORRETO)
+   MENU DESKTOP — "+ MAIS" REAL (JS + CSS CORRETOS)
    ============================================================ */
 
 @media (min-width: 1024px) {
 
-  .nav ul {
+  /* separador | apenas entre itens principais */
+  .nav > ul > li:not(.menu-mais):not(:last-child)::after {
+    content: "|";
+    color: rgba(255,255,255,0.6);
+    margin: 0 10px;
+  }
+
+  /* item + Mais */
+  .menu-mais {
     position: relative;
-    display: flex;
-    align-items: center;
-    gap: 0;
+    cursor: pointer;
+  }
+
+  .menu-mais > span {
+    color: var(--branco);
+    font-size: 0.95rem;
+    padding: 0 10px;
     white-space: nowrap;
   }
 
-  /* espaçamento dos links */
-  .nav ul li a {
-    padding: 0 10px;
-  }
-
-  /* separador "|" */
-  .nav ul li:not(:last-child)::after {
-    content: "|";
-    color: rgba(255,255,255,0.6);
-    margin-left: 10px;
-  }
-
-  /* mostra apenas 3 itens */
-  .nav ul li:nth-child(n+4) {
+  /* dropdown fechado */
+  .submenu-mais {
     display: none;
-  }
-
-  /* ===============================
-     ÁREA DO "+ MAIS"
-     =============================== */
-
-  .nav ul::after {
-    content: "+ Mais ▾";
-    color: var(--branco);
-    font-size: 0.95rem;
-    cursor: pointer;
-    padding-left: 10px;
-  }
-
-  /* área invisível que segura o hover */
-  .nav ul::before {
-    content: "";
-    position: absolute;
-    right: -20px;
-    top: 0;
-    width: 120px;
-    height: 40px;
-  }
-
-  /* dropdown fechado por padrão */
-  .nav ul li:nth-child(n+4) {
     position: absolute;
     top: 42px;
     right: 0;
@@ -232,22 +206,18 @@ body {
     border-radius: 10px;
     box-shadow: 0 12px 30px rgba(0,0,0,0.18);
     z-index: 2000;
-    display: none;
   }
 
   /* abre SOMENTE ao hover no "+ Mais" */
-  .nav ul:hover::after,
-  .nav ul:hover li:nth-child(n+4) {
+  .menu-mais:hover .submenu-mais {
     display: block;
   }
 
-  /* remove separador dentro do dropdown */
-  .nav ul li:nth-child(n+4)::after {
-    display: none;
+  .submenu-mais li {
+    list-style: none;
   }
 
-  /* links do dropdown */
-  .nav ul li:nth-child(n+4) a {
+  .submenu-mais a {
     color: #222;
     font-size: 0.9rem;
     display: block;
@@ -255,9 +225,8 @@ body {
     text-decoration: none;
   }
 
-  .nav ul li:nth-child(n+4) a:hover {
+  .submenu-mais a:hover {
     color: var(--azul-escuro);
   }
-
 }
 
