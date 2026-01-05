@@ -1,16 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById("historia-igc");
-  if (!container || typeof blocoHistoriaIGC === "undefined") return;
+  if (typeof historiaIGC === "undefined") return;
+
+  const container = document.getElementById(historiaIGC.id);
+  if (!container) return;
 
   container.innerHTML = `
-    <div class="institucional-wrap">
-      <div class="institucional-texto">
-        <h2>${blocoHistoriaIGC.titulo}</h2>
-        <p>${blocoHistoriaIGC.texto.replace(/\n/g, "<br><br>")}</p>
+    <div class="institucional-inner">
+      <div class="institucional-header">
+        <h2>${historiaIGC.titulo}</h2>
       </div>
 
-      <div class="institucional-imagem">
-        <img src="${blocoHistoriaIGC.imagem}" alt="${blocoHistoriaIGC.titulo}">
+      <div class="institucional-grid">
+        <div class="institucional-texto">
+          ${historiaIGC.texto
+            .trim()
+            .split("\n\n")
+            .map(p => `<p>${p}</p>`)
+            .join("")}
+        </div>
+
+        <div class="institucional-imagem">
+          <img src="${historiaIGC.imagem}" alt="${historiaIGC.titulo}">
+        </div>
       </div>
     </div>
   `;
