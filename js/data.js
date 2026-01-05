@@ -89,7 +89,7 @@ const produtos = [
 },
    
     destaque: true,
-    mostrarlancamento: true,
+    mostrarlancamento: false,
     mostrarVideo: true,
     textoParcelamento: ""
     },
@@ -362,7 +362,7 @@ configuracoes: {
 
 {
     id: "7",
-    nome: "Workshops e Palestas",
+    nome: "Workshop de Programação Neurolinguística (PNL) - Alta Performance",
     categoria: "workshopepalestas",
     preco: 90.00,
     imagem: "assets/img/imgteste.png",
@@ -372,7 +372,7 @@ configuracoes: {
     descricao: {
       resumo: `
    
-       Treinamento em pnl busca...
+       Este Wor
        
        `,
       
@@ -406,10 +406,10 @@ configuracoes: {
 },
 
    
-    destaque: false,
+    destaque: true,
     mostrarlancamento: false,
-    mostrarVideo: true,
-    textoParcelamento: "ou 1x de R$ 90,00"
+    mostrarVideo: false,
+    textoParcelamento: ""
     },
 
 
