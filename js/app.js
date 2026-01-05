@@ -240,12 +240,6 @@ whatsappFooter.href = `https://wa.me/${WHATSAPP_NUMERO}`;
 renderBanner();
 renderProdutos(produtos);
 
-// 🔥 inicializa sliders APÓS imagens carregarem
-window.addEventListener("load", () => {
-  initProductSliders();
-});
-
-
 /* ============================================================
    MENU HAMBÚRGUER FLUTUANTE (MOBILE)
    ============================================================ */
@@ -290,121 +284,90 @@ document.addEventListener("click", function (event) {
   }
 });
 
-
-/* ============================================================
-   SINCRONIZA DOTS COM SCROLL NO MOBILE
-   ============================================================ */
-
-if (window.innerWidth < 1024 && dots) {
-  track.addEventListener("scroll", () => {
-    const scrollLeft = track.scrollLeft;
-    const newPage = Math.round(
-      scrollLeft / (cardWidth * visible)
-    );
-
-    if (newPage !== page) {
-      page = Math.min(Math.max(newPage, 0), pages - 1);
-
-      [...dots.children].forEach((d, i) =>
-        d.classList.toggle("active", i === page)
-      );
-    }
-  });
-}
-
-update();
-});
-     
-
 // ============================================================
 // SLIDER PROFISSIONAL (DESKTOP + MOBILE)
 // ============================================================
 
-function initProductSliders() {
+document.querySelectorAll(".slider").forEach(slider => {
+  const track = slider.querySelector(".slider-track");
+  const left = slider.querySelector(".arrow.left");
+  const right = slider.querySelector(".arrow.right");
+  const dots = slider.parentElement.querySelector(".slider-dots");
 
-  document.querySelectorAll(".slider").forEach(slider => {
-    const track = slider.querySelector(".slider-track");
-    const left = slider.querySelector(".arrow.left");
-    const right = slider.querySelector(".arrow.right");
-    const dots = slider.parentElement.querySelector(".slider-dots");
+  if (!track) return;
 
-    if (!track) return;
+  const cards = [...track.children];
+  const cardWidth = cards[0].offsetWidth + 16;
 
-    const cards = [...track.children];
-    if (!cards.length) return;
+  const visible =
+    window.innerWidth >= 1024 ? Math.min(4, cards.length) : 1;
 
-    const GAP = 16;
-    const CARD_WIDTH_DESKTOP = 260;
+  const pages = Math.ceil(cards.length / visible);
+  let page = 0;
 
-    const cardWidth =
-      window.innerWidth >= 1024
-        ? CARD_WIDTH_DESKTOP + GAP
-        : cards[0].offsetWidth + GAP;
 
-    const visible =
-      window.innerWidth >= 1024 ? Math.min(4, cards.length) : 1;
+  /* dots */
+  if (dots) {
+    dots.innerHTML = "";
+    for (let i = 0; i < pages; i++) {
+      const dot = document.createElement("span");
+      if (i === 0) dot.classList.add("active");
+      dots.appendChild(dot);
 
-    const pages = Math.ceil(cards.length / visible);
-    let page = 0;
-
-    // 🔒 DESKTOP: se não há scroll real, desativa slider
-    if (window.innerWidth >= 1024 && cards.length <= visible) {
-      left.style.display = "none";
-      right.style.display = "none";
-      if (dots) dots.style.display = "none";
-
-      track.style.justifyContent = "center";
-      track.style.overflow = "visible";
-      return;
+      dot.onclick = () => {
+        page = i;
+        update();
+      };
     }
+  }
+
+  function update() {
+    track.scrollTo({
+      left: page * cardWidth * visible,
+      behavior: "smooth"
+    });
 
     if (dots) {
-      dots.innerHTML = "";
-      for (let i = 0; i < pages; i++) {
-        const dot = document.createElement("span");
-        if (i === 0) dot.classList.add("active");
-        dots.appendChild(dot);
-
-        dot.onclick = () => {
-          page = i;
-          update();
-        };
-      }
+      [...dots.children].forEach((d, i) =>
+        d.classList.toggle("active", i === page)
+      );
     }
+  }
 
-    function update() {
-      track.scrollTo({
-        left: page * cardWidth * visible,
-        behavior: "smooth"
-      });
+  left?.addEventListener("click", () => {
+    page = Math.max(0, page - 1);
+    update();
+  });
 
-      if (dots) {
+  right?.addEventListener("click", () => {
+    page = Math.min(pages - 1, page + 1);
+    update();
+  });
+
+     /* ============================================================
+     SINCRONIZA DOTS COM SCROLL NO MOBILE
+     ============================================================ */
+
+  if (window.innerWidth < 1024 && dots) {
+    track.addEventListener("scroll", () => {
+      const scrollLeft = track.scrollLeft;
+      const newPage = Math.round(
+        scrollLeft / (cardWidth * visible)
+      );
+
+      if (newPage !== page) {
+        page = Math.min(Math.max(newPage, 0), pages - 1);
+
         [...dots.children].forEach((d, i) =>
           d.classList.toggle("active", i === page)
         );
       }
-    }
-
-    left?.addEventListener("click", () => {
-      page = Math.max(0, page - 1);
-      update();
     });
+  }
 
-    right?.addEventListener("click", () => {
-      page = Math.min(pages - 1, page + 1);
-      update();
-    });
-
-    update();
-  });
-
-}
-
-
-
-
-
-
+   
+  update();
+});
 
 // ============================================================
 // SLIDER DE PROPAGANDA AUTOMÁTICO + DOTS (COM RANDOM REAL)

@@ -435,6 +435,7 @@ img {
 .slider {
   position: relative;
   margin: 0 auto;
+  width: fit-content;
   max-width: 100%;
 }
 
@@ -453,14 +454,8 @@ img {
 /* ===== DESKTOP ===== */
 @media (min-width: 1024px) {
   .slider-track {
-    width: auto; /* 🔥 deixa o JS controlar */
-    justify-content: center;
+    width: calc((260px * 4) + (16px * 3)); /* 4 cards inteiros */
   }
-
-   .slider {
-    width: calc((260px * 4) + (16px * 3));
-    overflow: hidden;
-}
 }
 
 /* ===== SETAS ===== */
