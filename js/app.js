@@ -285,10 +285,10 @@ document.addEventListener("click", function (event) {
 });
 
 // ============================================================
-// SLIDER PROFISSIONAL (DESKTOP + MOBILE) — CORRIGIDO
+// SLIDER PROFISSIONAL (DESKTOP + MOBILE)
 // ============================================================
 
-function initSlider(slider) {
+document.querySelectorAll(".slider").forEach(slider => {
   const track = slider.querySelector(".slider-track");
   const left = slider.querySelector(".arrow.left");
   const right = slider.querySelector(".arrow.right");
@@ -297,101 +297,52 @@ function initSlider(slider) {
   if (!track) return;
 
   const cards = [...track.children];
-  if (!cards.length) return;
+  const cardWidth = cards[0].offsetWidth + 16;
 
-  const gap = 16;
+  const visible =
+    window.innerWidth >= 1024 ? Math.min(4, cards.length) : 1;
 
-  function calcular() {
-    const cardWidth = cards[0].getBoundingClientRect().width + gap;
+  const pages = Math.ceil(cards.length / visible);
+  let page = 0;
 
-    const visible =
-      window.innerWidth >= 1024 ? Math.min(4, cards.length) : 1;
 
-    const pages = Math.ceil(cards.length / visible);
-    let page = 0;
+  /* dots */
+  if (dots) {
+    dots.innerHTML = "";
+    for (let i = 0; i < pages; i++) {
+      const dot = document.createElement("span");
+      if (i === 0) dot.classList.add("active");
+      dots.appendChild(dot);
 
-    /* dots */
-    if (dots) {
-      dots.innerHTML = "";
-      for (let i = 0; i < pages; i++) {
-        const dot = document.createElement("span");
-        if (i === 0) dot.classList.add("active");
-        dots.appendChild(dot);
-
-        dot.onclick = () => {
-          page = i;
-          update();
-        };
-      }
-    }
-
-    function update() {
-      track.scrollTo({
-        left: page * cardWidth * visible,
-        behavior: "smooth"
-      });
-
-      if (dots) {
-        [...dots.children].forEach((d, i) =>
-          d.classList.toggle("active", i === page)
-        );
-      }
-    }
-
-    left?.addEventListener("click", () => {
-      page = Math.max(0, page - 1);
-      update();
-    });
-
-    right?.addEventListener("click", () => {
-      page = Math.min(pages - 1, page + 1);
-      update();
-    });
-
-    /* sincroniza dots no mobile */
-    if (window.innerWidth < 1024 && dots) {
-      track.addEventListener("scroll", () => {
-        const newPage = Math.round(
-          track.scrollLeft / (cardWidth * visible)
-        );
-
-        if (newPage !== page) {
-          page = Math.min(Math.max(newPage, 0), pages - 1);
-
-          [...dots.children].forEach((d, i) =>
-            d.classList.toggle("active", i === page)
-          );
-        }
-      });
-    }
-
-    update();
-  }
-
-  // 🔑 ESPERA TODAS AS IMAGENS DO SLIDER CARREGAREM
-  const imagens = slider.querySelectorAll("img");
-  let carregadas = 0;
-
-  imagens.forEach(img => {
-    if (img.complete) {
-      carregadas++;
-    } else {
-      img.onload = () => {
-        carregadas++;
-        if (carregadas === imagens.length) {
-          requestAnimationFrame(calcular);
-        }
+      dot.onclick = () => {
+        page = i;
+        update();
       };
     }
+  }
+
+  function update() {
+    track.scrollTo({
+      left: page * cardWidth * visible,
+      behavior: "smooth"
+    });
+
+    if (dots) {
+      [...dots.children].forEach((d, i) =>
+        d.classList.toggle("active", i === page)
+      );
+    }
+  }
+
+  left?.addEventListener("click", () => {
+    page = Math.max(0, page - 1);
+    update();
   });
 
-  if (carregadas === imagens.length) {
-    requestAnimationFrame(calcular);
-  }
-}
-
-// inicia sliders
-document.querySelectorAll(".slider").forEach(initSlider);
+  right?.addEventListener("click", () => {
+    page = Math.min(pages - 1, page + 1);
+    update();
+  });
 
      /* ============================================================
      SINCRONIZA DOTS COM SCROLL NO MOBILE
