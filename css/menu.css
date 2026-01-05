@@ -164,3 +164,65 @@ body {
     width: 100%;
   }
 }
+
+
+
+
+/* ============================================================
+   MENU DESKTOP — OPÇÃO "+ MAIS" (ESCALÁVEL, CSS PURO)
+   ============================================================ */
+
+@media (min-width: 1024px) {
+
+  /* garante referência para posicionamento */
+  .nav ul {
+    position: relative;
+  }
+
+  /* mostra apenas os 4 primeiros itens */
+  .nav ul li:nth-child(n+5) {
+    display: none;
+  }
+
+  /* cria o botão visual "+ Mais" */
+  .nav ul::after {
+    content: "+ Mais ▾";
+    color: var(--branco);
+    font-size: 0.95rem;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  /* ao passar o mouse, revela os itens extras */
+  .nav ul:hover li:nth-child(n+5) {
+    display: block;
+  }
+
+  /* dropdown dos itens extras */
+  .nav ul li:nth-child(n+5) {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: #ffffff;
+    min-width: 220px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    z-index: 2000;
+  }
+
+  /* links dentro do dropdown */
+  .nav ul li:nth-child(n+5) a {
+    color: #222;
+    font-size: 0.9rem;
+    display: block;
+    padding: 6px 0;
+    text-decoration: none;
+  }
+
+  .nav ul li:nth-child(n+5) a:hover {
+    color: var(--azul-escuro);
+  }
+
+}
+
