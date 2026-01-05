@@ -409,7 +409,7 @@ configuracoes: {
      <br>
 
     <h4>Módulo 1 – Fundamentos da PNL</h4>
-    <br>
+    
     <ul>
       <li>O que é Programação Neurolinguística: história, princípios e aplicações</li>
       <li>A relação entre pensamento, linguagem e comportamento</li>
@@ -426,7 +426,7 @@ configuracoes: {
     </ul>
     <br>
     <h4>Módulo 2 – Aprimorando a Comunicação</h4>
-    <br>
+    
     <ul>
       <li>Rapport: técnicas para criar conexão e sintonia rapidamente</li>
       <li>Sistemas representacionais: visual, auditivo e cinestésico</li>
@@ -443,7 +443,7 @@ configuracoes: {
     <br>
 
     <h4>Módulo 3 – Técnicas de Mudança e Reprogramação Mental</h4>
-    <br>
+    
     <ul>
       <li>Círculo de Excelência:
         <ul>
