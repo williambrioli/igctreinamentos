@@ -144,7 +144,7 @@ configuracoes: {
   mostrarResumo: false
 },
       
-    destaque: false,
+    destaque: true,
     mostrarlancamento: false,
     mostrarVideo: false,
     textoParcelamento: ""
