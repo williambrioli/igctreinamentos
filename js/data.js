@@ -365,7 +365,7 @@ configuracoes: {
     nome: "Workshop de Programação Neurolinguística (PNL) - Alta Performance",
     categoria: "workshopepalestas",
     preco: 90.00,
-    imagem: "assets/img/imgteste.png",
+    imagem: "assets/img/pnl1.png",
     videos: [
       "assets/videos/5htp.mp4"
     ],
