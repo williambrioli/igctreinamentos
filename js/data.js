@@ -373,9 +373,7 @@ configuracoes: {
       resumo: `
    
       <p>Desenvolva clareza mental, comunicação eficaz e domínio emocional por meio de técnicas práticas e aplicáveis da Programação Neurolinguística.</p>
-      <p> Este é um Workshop prático e transformador que ensina os fundamentos da Programação Neurolinguística (PNL) para aprimorar comunicação, comportamento,
-      inteligência emocional e resultados pessoais e profissionais, com aplicação imediata.</p>
-       
+             
        `,
       
        oQueE: `
@@ -411,6 +409,7 @@ configuracoes: {
      <br>
 
     <h4>Módulo 1 – Fundamentos da PNL</h4>
+    <br>
     <ul>
       <li>O que é Programação Neurolinguística: história, princípios e aplicações</li>
       <li>A relação entre pensamento, linguagem e comportamento</li>
@@ -425,8 +424,9 @@ configuracoes: {
         </ul>
       </li>
     </ul>
-
+    <br>
     <h4>Módulo 2 – Aprimorando a Comunicação</h4>
+    <br>
     <ul>
       <li>Rapport: técnicas para criar conexão e sintonia rapidamente</li>
       <li>Sistemas representacionais: visual, auditivo e cinestésico</li>
@@ -440,8 +440,10 @@ configuracoes: {
       </li>
       <li>O poder das palavras: impacto da linguagem verbal e não verbal</li>
     </ul>
+    <br>
 
     <h4>Módulo 3 – Técnicas de Mudança e Reprogramação Mental</h4>
+    <br>
     <ul>
       <li>Círculo de Excelência:
         <ul>
@@ -464,16 +466,17 @@ configuracoes: {
         </ul>
       </li>
     </ul>
-      
+     <br> 
       `,
       comoUsar: `
       
       <h2>Metodologia</h2>
+      <br>
     <p>
       A metodologia do curso é <strong>prática, dinâmica e experiencial</strong>,
       focada no aprendizado real e aplicável.
     </p>
-
+<br>
     <ul>
       <li>Exposição clara e objetiva dos conceitos</li>
       <li>Exercícios práticos individuais e em grupo</li>
@@ -481,16 +484,17 @@ configuracoes: {
       <li>Exemplos reais do cotidiano pessoal e profissional</li>
       <li>Aplicação imediata das técnicas aprendidas</li>
     </ul>
-
+<br>
     <p>
       O aluno não apenas aprende o conteúdo, mas desenvolve a capacidade
       de utilizá-lo conscientemente em diferentes contextos da vida.
     </p>
-      
+      <br>
       `,
       advertencias: `
       
       <h2>Conheça o Palestrante</h2>
+      <br>
     <p>
       <strong>Dr. Paulo Takahashi</strong> atua há mais de duas décadas na área
       de desenvolvimento humano, comunicação e comportamento.
@@ -507,7 +511,8 @@ configuracoes: {
       treinamentos criando um ambiente seguro, profissional e estimulante,
       favorecendo aprendizado profundo, reflexão e transformação real.
     </p>
-
+<br>
+<br>
       `
     },
 
