@@ -169,50 +169,66 @@ body {
 
 
 /* ============================================================
-   MENU DESKTOP — "+ MAIS" REAL (JS + CSS CORRETOS)
+   MENU DESKTOP — "+ MAIS" (VERSÃO ESTÁVEL E PROFISSIONAL)
    ============================================================ */
 
 @media (min-width: 1024px) {
 
+  /* menu principal continua em linha */
+  .nav > ul {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
   /* separador | apenas entre itens principais */
-  .nav > ul > li:not(.menu-mais):not(:last-child)::after {
+  .nav > ul > li:not(.menu-mais)::after {
     content: "|";
+    margin-left: 12px;
     color: rgba(255,255,255,0.6);
-    margin: 0 10px;
+  }
+
+  .nav > ul > li:last-child::after {
+    display: none;
   }
 
   /* item + Mais */
   .menu-mais {
     position: relative;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
   }
 
   .menu-mais > span {
     color: var(--branco);
     font-size: 0.95rem;
-    padding: 0 10px;
+    cursor: pointer;
     white-space: nowrap;
   }
 
-  /* dropdown fechado */
+  /* SUBMENU — totalmente fora do fluxo */
   .submenu-mais {
-    display: none;
     position: absolute;
-    top: 42px;
+    top: calc(100% + 12px);
     right: 0;
+
+    display: none;
+    flex-direction: column;
+
     background: #ffffff;
     min-width: 220px;
     padding: 10px 16px;
     border-radius: 10px;
     box-shadow: 0 12px 30px rgba(0,0,0,0.18);
-    z-index: 2000;
+    z-index: 3000;
   }
 
-  /* abre SOMENTE ao hover no "+ Mais" */
+  /* abre SOMENTE no hover do + Mais */
   .menu-mais:hover .submenu-mais {
-    display: block;
+    display: flex;
   }
 
+  /* links do submenu */
   .submenu-mais li {
     list-style: none;
   }
@@ -220,13 +236,12 @@ body {
   .submenu-mais a {
     color: #222;
     font-size: 0.9rem;
-    display: block;
     padding: 6px 0;
     text-decoration: none;
+    display: block;
   }
 
   .submenu-mais a:hover {
     color: var(--azul-escuro);
   }
 }
-
