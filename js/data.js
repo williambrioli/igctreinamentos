@@ -335,6 +335,37 @@ configuracoes: {
 
 
 /* ============================================================
+   BLOCO INSTITUCIONAL — HISTÓRIA IGC
+   ============================================================ */
+
+const historiaIGC = {
+  id: "historia-igc",
+  titulo: "Conheça nossa história",
+  texto: `
+    O IGC – Instituto Global de Consultoria nasceu com o propósito
+    de desenvolver pessoas e empresas por meio do conhecimento,
+    da consciência e da transformação humana.
+
+    Ao longo dos anos, consolidamos nossa atuação em treinamentos,
+    formações e consultorias que unem técnica, ética e desenvolvimento
+    emocional, sempre alinhados às demandas do mundo moderno.
+  `,
+  imagem: "assets/img/historia-igc.jpg",
+  mostrarNoMenu: true
+};
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
    INTEGRANTES DA EQUIPE IGC
    ============================================================ */
 
