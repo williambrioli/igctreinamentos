@@ -143,17 +143,22 @@ ${produto.textoParcelamento && produto.configuracoes?.mostrarPreco !== false
 
 
     <div class="card-acoes">
-  <div class="quantidade">
-    <button class="btn-menos">-</button>
-    <span class="qtd">1</span>
-    <button class="btn-mais">+</button>
-  </div>
+
+  ${produto.configuracoes?.mostrarPreco !== false ? `
+    <div class="quantidade">
+      <button class="btn-menos">-</button>
+      <span class="qtd">1</span>
+      <button class="btn-mais">+</button>
+    </div>
+  ` : ``}
 
   <button class="btn-comprar">
-  ${produto.configuracoes?.mostrarPreco === false
-    ? "Falar com um consultor"
-    : "Reservar vaga"}
-</button>
+    ${produto.configuracoes?.mostrarPreco === false
+      ? "Falar com um consultor"
+      : "Reservar vaga"}
+  </button>
+
+</div>
 
   `;
 
@@ -164,6 +169,10 @@ ${produto.textoParcelamento && produto.configuracoes?.mostrarPreco !== false
   const btnMais = card.querySelector(".btn-mais");
   const qtdSpan = card.querySelector(".qtd");
   const btnComprar = card.querySelector(".btn-comprar");
+
+   if (produto.configuracoes?.mostrarPreco === false) {
+  // não registra eventos de quantidade
+} else {
 
     // Quantidade
   btnMais.addEventListener("click", () => {
