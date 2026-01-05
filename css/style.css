@@ -462,6 +462,7 @@ img {
     width: calc((260px * 4) + (16px * 3));
     overflow: hidden;
 }
+}
 
 /* ===== SETAS ===== */
 .arrow {
