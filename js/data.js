@@ -34,7 +34,7 @@ const categorias = [
     nome: "Worshop e Palestra",
     nomeMenu: "Worshop e Palestra",
     mostrarNoMenu: true
-  }
+  },
 
    /* 🔽 BLOCO INSTITUCIONAL (ÂNCORA) */
   {
