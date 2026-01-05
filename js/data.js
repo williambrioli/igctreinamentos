@@ -80,7 +80,14 @@ const produtos = [
 
       `
     },
-         
+
+
+ configuracoes: {
+  mostrarNome: true,
+  mostrarPreco: true,
+  mostrarResumo: true
+},
+   
     destaque: true,
     mostrarlancamento: true,
     mostrarVideo: true,
@@ -125,7 +132,14 @@ const produtos = [
 
       `
     },
-         
+
+
+   configuracoes: {
+  mostrarNome: true,
+  mostrarPreco: true,
+  mostrarResumo: true
+},
+      
     destaque: true,
     mostrarlancamento: false,
     mostrarVideo: true,
@@ -170,7 +184,13 @@ const produtos = [
 
       `
     },
-         
+
+configuracoes: {
+  mostrarNome: true,
+  mostrarPreco: true,
+  mostrarResumo: true
+},
+    
     destaque: true,
     mostrarlancamento: false,
     mostrarVideo: true,
@@ -217,7 +237,14 @@ const produtos = [
 
       `
     },
-         
+
+
+configuracoes: {
+  mostrarNome: true,
+  mostrarPreco: true,
+  mostrarResumo: true
+},
+      
     destaque: true,
     mostrarlancamento: false,
     mostrarVideo: true,
@@ -264,7 +291,14 @@ const produtos = [
 
       `
     },
-         
+
+
+   configuracoes: {
+  mostrarNome: true,
+  mostrarPreco: true,
+  mostrarResumo: true
+},
+   
     destaque: true,
     mostrarlancamento: false,
     mostrarVideo: true,
@@ -310,7 +344,14 @@ const produtos = [
 
       `
     },
-         
+
+
+   configuracoes: {
+  mostrarNome: true,
+  mostrarPreco: true,
+  mostrarResumo: true
+},
+   
     destaque: true,
     mostrarlancamento: false,
     mostrarVideo: true,
@@ -356,7 +397,15 @@ const produtos = [
 
       `
     },
-         
+
+
+configuracoes: {
+  mostrarNome: true,
+  mostrarPreco: true,
+  mostrarResumo: true
+},
+
+   
     destaque: true,
     mostrarlancamento: false,
     mostrarVideo: true,
@@ -403,7 +452,15 @@ const produtos = [
 
       `
     },
-         
+
+
+configuracoes: {
+  mostrarNome: true,
+  mostrarPreco: true,
+  mostrarResumo: true
+},
+
+      
     destaque: true,
     mostrarlancamento: false,
     mostrarVideo: true,
@@ -449,7 +506,14 @@ const produtos = [
 
       `
     },
-         
+
+
+configuracoes: {
+  mostrarNome: true,
+  mostrarPreco: true,
+  mostrarResumo: true
+},
+       
     destaque: true,
     mostrarlancamento: false,
     mostrarVideo: true,
@@ -496,7 +560,14 @@ const produtos = [
 
       `
     },
-         
+
+
+configuracoes: {
+  mostrarNome: true,
+  mostrarPreco: true,
+  mostrarResumo: true
+},
+      
     destaque: true,
     mostrarlancamento: false,
     mostrarVideo: true,
@@ -543,7 +614,14 @@ const produtos = [
 
       `
     },
-         
+
+
+configuracoes: {
+  mostrarNome: true,
+  mostrarPreco: true,
+  mostrarResumo: true
+},
+       
     destaque: true,
     mostrarlancamento: false,
     mostrarVideo: true,
