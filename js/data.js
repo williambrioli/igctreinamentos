@@ -140,7 +140,7 @@ const produtos = [
   mostrarResumo: true
 },
       
-    destaque: true,
+    destaque: false,
     mostrarlancamento: false,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
@@ -191,7 +191,7 @@ configuracoes: {
   mostrarResumo: true
 },
     
-    destaque: true,
+    destaque: false,
     mostrarlancamento: false,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
@@ -245,7 +245,7 @@ configuracoes: {
   mostrarResumo: true
 },
       
-    destaque: true,
+    destaque: false,
     mostrarlancamento: false,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
@@ -299,7 +299,7 @@ configuracoes: {
   mostrarResumo: true
 },
    
-    destaque: true,
+    destaque: false,
     mostrarlancamento: false,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
@@ -352,7 +352,7 @@ configuracoes: {
   mostrarResumo: true
 },
    
-    destaque: true,
+    destaque: false,
     mostrarlancamento: false,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
@@ -406,7 +406,7 @@ configuracoes: {
 },
 
    
-    destaque: true,
+    destaque: false,
     mostrarlancamento: false,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
@@ -461,7 +461,7 @@ configuracoes: {
 },
 
       
-    destaque: true,
+    destaque: false,
     mostrarlancamento: false,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
@@ -514,7 +514,7 @@ configuracoes: {
   mostrarResumo: true
 },
        
-    destaque: true,
+    destaque: false,
     mostrarlancamento: false,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
@@ -568,7 +568,7 @@ configuracoes: {
   mostrarResumo: true
 },
       
-    destaque: true,
+    destaque: false,
     mostrarlancamento: false,
     mostrarVideo: true,
     textoParcelamento: "ou 1x de R$ 90,00"
