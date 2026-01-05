@@ -372,28 +372,138 @@ configuracoes: {
     descricao: {
       resumo: `
    
-       Este Wor
+      <p>Desenvolva clareza mental, comunicação eficaz e domínio emocional por meio de técnicas práticas e aplicáveis da Programação Neurolinguística.</p>
+      <p> Este é um Workshop prático e transformador que ensina os fundamentos da Programação Neurolinguística (PNL) para aprimorar comunicação, comportamento,
+      inteligência emocional e resultados pessoais e profissionais, com aplicação imediata.</p>
        
        `,
       
        oQueE: `
       
-      O treinamento tem como...
+      <p>
+      O curso <strong>Programação Neurolinguística (PNL) – Alta Performance</strong>
+      foi desenvolvido para pessoas que desejam compreender como a mente humana
+      funciona e como pensamentos, linguagem e comportamento influenciam
+      diretamente os resultados da vida pessoal e profissional.
+    </p>
+
+    <p>
+      Ao longo da formação, o participante aprenderá técnicas consagradas
+      da PNL para melhorar a comunicação interpessoal, criar conexões mais
+      profundas, desenvolver inteligência emocional, reprogramar padrões
+      mentais limitantes e estabelecer objetivos claros e alcançáveis.
+    </p>
+
+    <p>
+      A proposta do curso é unir <strong>conhecimento, prática e consciência</strong>,
+      permitindo que cada aluno aplique imediatamente as ferramentas aprendidas
+      em seu cotidiano, promovendo maior segurança, clareza, autonomia emocional
+      e produtividade.
+    </p>
       
       `,      
+       
       composicao: `
       
-      Metodologia validada
+     <h3>Conteúdo Programático</h3>
+
+    <h4>Módulo 1 – Fundamentos da PNL</h4>
+    <ul>
+      <li>O que é Programação Neurolinguística: história, princípios e aplicações</li>
+      <li>A relação entre pensamento, linguagem e comportamento</li>
+      <li>Pressupostos da PNL e seus impactos na percepção da realidade</li>
+      <li>O conceito: o mapa não é o território</li>
+      <li>Os 4 pilares da PNL:
+        <ul>
+          <li>Rapport</li>
+          <li>Acuidade sensorial</li>
+          <li>Flexibilidade comportamental</li>
+          <li>Formulação de objetivos</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h4>Módulo 2 – Aprimorando a Comunicação</h4>
+    <ul>
+      <li>Rapport: técnicas para criar conexão e sintonia rapidamente</li>
+      <li>Sistemas representacionais: visual, auditivo e cinestésico</li>
+      <li>Como identificar e utilizar o canal de comunicação preferencial</li>
+      <li>Meta Modelagem:
+        <ul>
+          <li>Como fazer perguntas específicas e estratégicas</li>
+          <li>Identificação de generalizações, omissões e distorções</li>
+          <li>Clareza, objetividade e precisão na comunicação</li>
+        </ul>
+      </li>
+      <li>O poder das palavras: impacto da linguagem verbal e não verbal</li>
+    </ul>
+
+    <h4>Módulo 3 – Técnicas de Mudança e Reprogramação Mental</h4>
+    <ul>
+      <li>Círculo de Excelência:
+        <ul>
+          <li>Criação de gatilhos mentais positivos</li>
+          <li>Acesso consciente a estados emocionais desejados</li>
+        </ul>
+      </li>
+      <li>Níveis Neurológicos:
+        <ul>
+          <li>Mudança de significado e percepção</li>
+          <li>Potencialização de recursos internos</li>
+          <li>Transformação da visão sobre situações e desafios</li>
+        </ul>
+      </li>
+      <li>Análise Transacional:
+        <ul>
+          <li>Autonomia emocional</li>
+          <li>Responsabilidade sobre ações, sentimentos e decisões</li>
+          <li>Identificação e substituição de padrões mentais improdutivos</li>
+        </ul>
+      </li>
+    </ul>
       
       `,
       comoUsar: `
       
-      Para quem é...
+      <h3>Metodologia</h3>
+    <p>
+      A metodologia do curso é <strong>prática, dinâmica e experiencial</strong>,
+      focada no aprendizado real e aplicável.
+    </p>
+
+    <ul>
+      <li>Exposição clara e objetiva dos conceitos</li>
+      <li>Exercícios práticos individuais e em grupo</li>
+      <li>Dinâmicas de vivência emocional e comportamental</li>
+      <li>Exemplos reais do cotidiano pessoal e profissional</li>
+      <li>Aplicação imediata das técnicas aprendidas</li>
+    </ul>
+
+    <p>
+      O aluno não apenas aprende o conteúdo, mas desenvolve a capacidade
+      de utilizá-lo conscientemente em diferentes contextos da vida.
+    </p>
       
       `,
       advertencias: `
       
-      muito bom
+      <h3>Conheça o Palestrante</h3>
+    <p>
+      <strong>Dr. Paulo Takahashi</strong> atua há mais de duas décadas na área
+      de desenvolvimento humano, comunicação e comportamento.
+    </p>
+
+    <p>
+      Seu trabalho integra Programação Neurolinguística, psicologia aplicada
+      e desenvolvimento pessoal, com uma abordagem ética, prática e
+      orientada a resultados consistentes.
+    </p>
+
+    <p>
+      Com uma didática clara e acessível, Dr. Paulo Takahashi conduz seus cursos e
+      treinamentos criando um ambiente seguro, profissional e estimulante,
+      favorecendo aprendizado profundo, reflexão e transformação real.
+    </p>
 
       `
     },
