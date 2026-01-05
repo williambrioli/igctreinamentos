@@ -140,14 +140,14 @@ const produtos = [
 
 configuracoes: {
   mostrarNome: true,
-  mostrarPreco: true,
-  mostrarResumo: true
+  mostrarPreco: false,
+  mostrarResumo: false
 },
       
     destaque: false,
     mostrarlancamento: false,
-    mostrarVideo: true,
-    textoParcelamento: "ou 1x de R$ 90,00"
+    mostrarVideo: false,
+    textoParcelamento: ""
     },
    
  
