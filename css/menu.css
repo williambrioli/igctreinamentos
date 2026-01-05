@@ -174,7 +174,7 @@ body {
 
 @media (min-width: 1024px) {
 
-  /* menu principal continua em linha */
+  /* menu principal em linha */
   .nav > ul {
     display: flex;
     align-items: center;
@@ -182,14 +182,11 @@ body {
   }
 
   /* separador | apenas entre itens principais */
-  .nav > ul > li:not(.menu-mais)::after {
+  .nav > ul > li:not(.menu-mais):not(:last-child)::after {
     content: "|";
     margin-left: 12px;
     color: rgba(255,255,255,0.6);
-  }
-
-  .nav > ul > li:last-child::after {
-    display: none;
+    pointer-events: none; /* 🔑 impede bug de hover */
   }
 
   /* item + Mais */
@@ -204,9 +201,10 @@ body {
     font-size: 0.95rem;
     cursor: pointer;
     white-space: nowrap;
+    pointer-events: auto;
   }
 
-  /* SUBMENU — totalmente fora do fluxo */
+  /* SUBMENU */
   .submenu-mais {
     position: absolute;
     top: calc(100% + 12px);
@@ -221,14 +219,21 @@ body {
     border-radius: 10px;
     box-shadow: 0 12px 30px rgba(0,0,0,0.18);
     z-index: 3000;
+
+    /* micro suavização profissional */
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.15s ease, transform 0.15s ease;
   }
 
   /* abre SOMENTE no hover do + Mais */
   .menu-mais:hover .submenu-mais {
     display: flex;
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  /* links do submenu */
+  /* itens do submenu */
   .submenu-mais li {
     list-style: none;
   }
