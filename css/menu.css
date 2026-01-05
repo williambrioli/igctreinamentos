@@ -169,39 +169,56 @@ body {
 
 
 /* ============================================================
-   MENU DESKTOP — OPÇÃO "+ MAIS" (ESCALÁVEL, CSS PURO)
+   MENU DESKTOP — 3 ITENS + "+ MAIS" COM SEPARADOR "|"
    ============================================================ */
 
 @media (min-width: 1024px) {
 
-  /* garante referência para posicionamento */
+  /* base do menu */
   .nav ul {
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0; /* controlamos o espaçamento via padding */
+    white-space: nowrap; /* NÃO quebra linha */
   }
 
-  /* mostra apenas os 4 primeiros itens */
-  .nav ul li:nth-child(n+5) {
+  /* espaçamento dos links */
+  .nav ul li a {
+    padding: 0 10px;
+  }
+
+  /* separador visual "|" entre itens */
+  .nav ul li:not(:last-child)::after {
+    content: "|";
+    color: rgba(255,255,255,0.6);
+    margin-left: 10px;
+  }
+
+  /* mostra apenas os 3 primeiros itens */
+  .nav ul li:nth-child(n+4) {
     display: none;
   }
 
-  /* cria o botão visual "+ Mais" */
+  /* botão visual "+ Mais" */
   .nav ul::after {
     content: "+ Mais ▾";
     color: var(--branco);
     font-size: 0.95rem;
     cursor: pointer;
+    padding-left: 10px;
     white-space: nowrap;
   }
 
-  /* ao passar o mouse, revela os itens extras */
-  .nav ul:hover li:nth-child(n+5) {
+  /* ao hover, revela os itens extras */
+  .nav ul:hover li:nth-child(n+4) {
     display: block;
   }
 
   /* dropdown dos itens extras */
-  .nav ul li:nth-child(n+5) {
+  .nav ul li:nth-child(n+4) {
     position: absolute;
-    top: 40px;
+    top: 42px;
     right: 0;
     background: #ffffff;
     min-width: 220px;
@@ -211,8 +228,13 @@ body {
     z-index: 2000;
   }
 
-  /* links dentro do dropdown */
-  .nav ul li:nth-child(n+5) a {
+  /* remove separador dentro do dropdown */
+  .nav ul li:nth-child(n+4)::after {
+    display: none;
+  }
+
+  /* links do dropdown */
+  .nav ul li:nth-child(n+4) a {
     color: #222;
     font-size: 0.9rem;
     display: block;
@@ -220,9 +242,8 @@ body {
     text-decoration: none;
   }
 
-  .nav ul li:nth-child(n+5) a:hover {
+  .nav ul li:nth-child(n+4) a:hover {
     color: var(--azul-escuro);
   }
 
 }
-
